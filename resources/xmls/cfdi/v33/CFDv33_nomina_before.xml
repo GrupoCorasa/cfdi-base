@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nomina12="http://www.sat.gob.mx/nomina12" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/nomina12 http://www.sat.gob.mx/sitio_internet/cfd/nomina/nomina12.xsd" Version="3.3" Serie="A" Folio="167ABC" Fecha="2017-10-30T09:09:25" SubTotal="7500.05" Descuento="1234.09" Moneda="MXN" Total="6265.96" TipoDeComprobante="N" FormaPago="99" MetodoPago="PUE" TipoCambio="1" LugarExpedicion="45079">
+    <cfdi:Emisor Rfc="SUL010720JN8" Nombre="SFERP SC" RegimenFiscal="601" />
+    <cfdi:Receptor Rfc="CACF8809226AA" Nombre="FERNANDO CAMPOS CASTAÑEDA" UsoCFDI="G03" />
+    <cfdi:Conceptos>
+        <cfdi:Concepto ClaveProdServ="84111505" Cantidad="1" ClaveUnidad="ACT" Descripcion="Pago de nómina" ValorUnitario="7500.05" Importe="7500.05" Descuento="1234.09" />
+    </cfdi:Conceptos>
+    <cfdi:Complemento>
+        <nomina12:Nomina Version="1.2" FechaPago="2016-10-31" FechaInicialPago="2016-10-16" FechaFinalPago="2016-10-31" NumDiasPagados="15" TipoNomina="O" TotalDeducciones="1234.09" TotalOtrosPagos="0.0" TotalPercepciones="7500.05">
+            <nomina12:Emisor RegistroPatronal="5525665412" />
+            <nomina12:Receptor Curp="CACF880922HJCMSR03" TipoContrato="01" TipoRegimen="02" NumEmpleado="060" PeriodicidadPago="04" ClaveEntFed="JAL" NumSeguridadSocial="04078873454" Banco="021" FechaInicioRelLaboral="2016-06-01" Antigüedad="P21W" Puesto="Desarrollador" SalarioBaseCotApor="435.50" RiesgoPuesto="2" SalarioDiarioIntegrado="435.50" />
+            <nomina12:Percepciones TotalGravado="7500.05" TotalExento="0.00" TotalSueldos="7500.05">
+                <nomina12:Percepcion TipoPercepcion="001" Clave="001" Concepto="Sueldos, Salarios Rayas y Jornales" ImporteGravado="6250.05" ImporteExento="0.00" />
+                <nomina12:Percepcion TipoPercepcion="049" Clave="014" Concepto="Premios de asistencia" ImporteGravado="625.00" ImporteExento="0.00" />
+                <nomina12:Percepcion TipoPercepcion="010" Clave="013" Concepto="Premios por puntualidad" ImporteGravado="625.00" ImporteExento="0.00" />
+            </nomina12:Percepciones>
+            <nomina12:Deducciones TotalOtrasDeducciones="179.34" TotalImpuestosRetenidos="1054.75">
+                <nomina12:Deduccion TipoDeduccion="002" Clave="001" Concepto="ISR" Importe="1054.75" />
+                <nomina12:Deduccion TipoDeduccion="001" Clave="012" Concepto="Seguridad social" Importe="179.34" />
+            </nomina12:Deducciones>
+        </nomina12:Nomina>
+    </cfdi:Complemento>
+</cfdi:Comprobante>

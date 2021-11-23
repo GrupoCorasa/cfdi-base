@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Comprobante xmlns="http://www.sat.gob.mx/cfd/2"
+    xmlns:implocal="http://www.sat.gob.mx/implocal"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2" serie="DCBA" folio="81" fecha="2012-03-11T17:08:22" sello="BVSv9G3vQFUcLzRZ0fxDu6XlZt7VHfkpSf440lQk4iYabRGjrEiJ46FxeBWbGlx2xQDNEuJF8OeSmu2vQynLUIHJE2XA/kklRQMnPTiPz4X2JV2kkFwF8pevvwttTThfbIX0NTsCZvbdErbq00X+f9ySOk+Xq2uGdytTv8xSsmERSdtmlABjsRsfi0YTz6tq4HRux9ofYRaJMqUSx97Pv+K04GP74SQmODnxMXchOPO2fEzJ/PpjkXvoUZsFL6YPPFnftV9CjJ8XxO5AxwnMhJJAUM7tuZTcrfn3KlgkaFJKV2JOj6LtUAU/xIUQKDnZvsV6GoiwOvZwAraBsFP3WA==" noAprobacion="448911" anoAprobacion="2011" formaDePago="PAGO EN PARCIALIDADES" noCertificado="30001000000400002463" certificado="MIIFwTCCA6mgAwIBAgIUMzAwMDEwMDAwMDA0MDAwMDI0NjMwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWRpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMTkwNjIwMjA1NTA4WhcNMjMwNjIwMjA1NTA4WjCB6DEmMCQGA1UEAxQdSEVSUkVSSUEgJiBFTEVDVFJJQ09TIFMgREUgQ1YxJjAkBgNVBCkUHUhFUlJFUklBICYgRUxFQ1RSSUNPUyBTIERFIENWMSYwJAYDVQQKFB1IRVJSRVJJQSAmIEVMRUNUUklDT1MgUyBERSBDVjElMCMGA1UELRQcSCZFOTUxMTI4NDY5IC8gWE9KSTc0MDkxOVU0ODEeMBwGA1UEBRMVIC8gWE9KSTc0MDkxOU1RVERNTjAyMScwJQYDVQQLFB5IRVJSRVJJQSAmIEVMRUNUUklDT1MgU0EgREUgQ1YwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDoNWRICH7Ja/IR0sFzGAoveKzFT94BJ4Wlh7MsePe50azvre4j6CYEItQ5jCkxZyYHT23dfONpUWDN7+Bx7j9QjKPwqr+zJjFrla/hD4fj63LeUmofVR7TjeDLLEwCSsn1k3vLae4WBgsV1jNc3M87ZYOHpe0XXLVw/25nSyqQS5l4HTJrw7wQ3NZAXghG38NIOUYJZsE/6K3OAslVoF/YregQ0UqodFLyA6BBMcfll8rjMIWtCy2DxZ0T5QCPX3OccWzB9hHvP5PAjUiOf+FpKHW8WPGEywoC1vM3nvsHXTp2MkUn78U5PK/hmc/7chqaneZHA066AIRs3zGHkHTjAgMBAAGjHTAbMAwGA1UdEwEB/wQCMAAwCwYDVR0PBAQDAgbAMA0GCSqGSIb3DQEBCwUAA4ICAQCsaJpin0RAOsyxBMQRpfTM47k+a1QlHHsP2vEubuINZE+3Hp4b/C1w1gGe8+l8EJcLxQfQ0ovlvKDdYFJLleBCkt9eoFY92keaL77Teq6YxzQ8jArI1WSz75KkljzHYbtm4Oy+hsmpla4L51VnhRfyqehfAgZEDRHytpOPVzxIQnnDx/GI2KVlUBvInOS50dBoCnq5sxzQ+Ha1nsPMvrdTaHBRjto4kOL9SkHvZDVZHWnJ1R7w+1n0zXmDV27BUNsHQNaDG8e+5uGex7d/Bfolf3dU2y4YVFN9DOP8ge0J7ryIuRB7eESwT3aEM/0gec41vMOfVmR2mzNeX0q8czU0xjMH+NKSdgkNFAvoMk2uIsGePkbQDdk3XW1h6f3HGRQ85mkPh/Zt4kqbc0CzFsQMGdj8eixm8jRazSoCdndSDXrDwSTkVaqTuYqRxy89NWNk4dbXXqw4a52DKR1oYR0r9AVjHTfK936tRvNhxQ4KHGjPUi0ttxoCw1fogKwf2MRkTZMO0EZrEnODKl3CMoi4IXuWpNYY6MhUCjLRWJF/mOclkpCzNpyNbwJiGTshTEDvfqS1PsIuXgjIzbCa3seRzP6yxsd0CfEI7lUxMvYT6r0wqRXsymO6mOywWQKRFnrZmzD1zSMRap7vhED+plAxUgouQFbfv1NDkqAfF57FFA==" condicionesDePago="Factura a Crédito" subTotal="250.00" descuento="150.00" motivoDescuento="Cliente de confianza" TipoCambio="1.00" total="124.00" tipoDeComprobante="ingreso" metodoDePago="Transferencia Electrónica" LugarExpedicion="Hermosillo, Sonora, México" NumCtaPago="1587" xsi:schemaLocation="http://www.sat.gob.mx/cfd/2 http://www.sat.gob.mx/sitio_internet/cfd/2/cfdv22.xsd http://www.sat.gob.mx/implocal http://www.sat.gob.mx/sitio_internet/cfd/implocal/implocal.xsd">
+    <Emisor rfc="COA0106136Z4" nombre="Comercializadora Ortega y Accionistas, S.A. de C.V.">
+        <DomicilioFiscal calle="Leandro P. Gaxiola" noExterior="6" noInterior="6" colonia="Olivares" localidad="Hermosillo" referencia="Casa de dos pisos" municipio="Hermosillo" estado="Sonora" pais="México" codigoPostal="83180"/>
+        <ExpedidoEn calle="Leandro P. Gaxiola" noExterior="6" noInterior="6" colonia="Olivares" localidad="Hermosillo" referencia="Casa de dos pisos" municipio="Hermosillo" estado="Sonora" pais="México" codigoPostal="83180"/>
+        <RegimenFiscal Regimen="Régimen General de Ley Persona Moral"/>
+    </Emisor>
+    <Receptor rfc="H&amp;E951128469" nombre="Herreria &amp; Electricos S.A. de C.V.">
+        <Domicilio calle="Calle conocida" noExterior="1" noInterior="2" colonia="Colonia Centro" localidad="Hermosillo" referencia="Carpa verde" municipio="Hermosillo" estado="Sonora" pais="México" codigoPostal="83000"/>
+    </Receptor>
+    <Conceptos>
+        <Concepto cantidad="1.00" unidad="Servicio" noIdentificacion="01" descripcion="Asesoria Fiscal y administrativa" valorUnitario="150.00" importe="150.00"/>
+        <Concepto cantidad="2.00" unidad="Servicio" noIdentificacion="02" descripcion="Asesoria Fiscal y administrativa 2" valorUnitario="50.00" importe="100.00"/>
+    </Conceptos>
+    <Impuestos totalImpuestosTrasladados="16.00">
+        <Retenciones>
+            <Retencion impuesto="IVA" importe="4.00"/>
+        </Retenciones>
+        <Traslados>
+            <Traslado impuesto="IVA" tasa="16.00" importe="16.00"/>
+        </Traslados>
+    </Impuestos>
+    <Complemento>
+        <implocal:ImpuestosLocales version="1.0" TotaldeRetenciones="4.00" TotaldeTraslados="16.00">
+            <implocal:RetencionesLocales ImpLocRetenido="IVA RET 4%" TasadeRetencion="4" Importe="4.000000"/>
+            <implocal:TrasladosLocales ImpLocTrasladado="IVA TRAS 16%" TasadeTraslado="16" Importe="16"/>
+        </implocal:ImpuestosLocales>
+    </Complemento>
+</Comprobante>

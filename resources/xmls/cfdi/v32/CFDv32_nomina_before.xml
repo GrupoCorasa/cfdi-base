@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante version="3.2" serie="NOM" folio="312" fecha="2016-10-13T14:52:36" formaDePago="Pago en una sola exhibición" subTotal="4325.77" descuento="436.61" motivoDescuento="Deducciones nómina" TipoCambio="1.00" Moneda="MXN" total="3513.58" tipoDeComprobante="egreso" metodoDePago="03" LugarExpedicion="Hermosillo, Sonora, México" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd http://www.sat.gob.mx/nomina http://www.sat.gob.mx/sitio_internet/cfd/nomina/nomina11.xsd" xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:nomina="http://www.sat.gob.mx/nomina" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <cfdi:Emisor rfc="COA0106136Z4" nombre="Comercializadora Ortega y Accionistas, S.A. de C.V.">
+        <cfdi:DomicilioFiscal calle="Leandro P. Gaxiola" noExterior="6" noInterior="6" colonia="Olivares" localidad="Hermosillo" referencia="Casa de dos pisos" municipio="Hermosillo" estado="Sonora" pais="México" codigoPostal="83180"/>
+        <cfdi:ExpedidoEn calle="Leandro P. Gaxiola" noExterior="6" noInterior="6" colonia="Olivares" localidad="Hermosillo" referencia="Casa de dos pisos" municipio="Hermosillo" estado="Sonora" pais="México" codigoPostal="83180"/>
+        <cfdi:RegimenFiscal Regimen="Régimen General de Ley Persona Moral"/>
+    </cfdi:Emisor>
+    <cfdi:Receptor rfc="OEGH910609BZ6" nombre="Heriberto Ortega Gonzalez">
+        <cfdi:Domicilio estado="Sonora" pais="México"/>
+    </cfdi:Receptor>
+    <cfdi:Conceptos>
+        <cfdi:Concepto cantidad="1.00" unidad="Servicio" descripcion="Pago de nómina" valorUnitario="4325" importe="4325"/>
+    </cfdi:Conceptos>
+    <cfdi:Impuestos totalImpuestosRetenidos="375.58">
+        <cfdi:Retenciones>
+            <cfdi:Retencion impuesto="ISR" importe="375.58"/>
+        </cfdi:Retenciones>
+    </cfdi:Impuestos>
+    <cfdi:Complemento>
+        <nomina:Nomina Version="1.1" RegistroPatronal="E6479648108" NumEmpleado="001" CURP="OEGH910609HNLRNR14" TipoRegimen="02" NumSeguridadSocial="24109129148" FechaPago="2017-02-15" FechaInicialPago="2017-02-01" FechaFinalPago="2017-02-15" NumDiasPagados="15" Departamento="Pruebas" CLABE="002760700569076003" Banco="002" FechaInicioRelLaboral="2017-01-01" Antiguedad="7" Puesto="Developer" TipoContrato="01" TipoJornada="01" PeriodicidadPago="04" SalarioBaseCotApor="293.73" RiesgoPuesto="2" SalarioDiarioIntegrado="293.73">
+            <nomina:Percepciones TotalGravado="4165.56" TotalExento="160.21">
+                <nomina:Percepcion TipoPercepcion="001" Clave="001" Concepto="Sueldo Quincenal de Prueba" ImporteGravado="4005.35" ImporteExento="0"/>
+                <nomina:Percepcion TipoPercepcion="010" Clave="006" Concepto="Premio por Asistencia" ImporteGravado="160.21" ImporteExento="0"/>
+                <nomina:Percepcion TipoPercepcion="005" Clave="007" Concepto="Fondo de Ahorro" ImporteGravado="0" ImporteExento="160.21"/>
+            </nomina:Percepciones>
+            <nomina:Deducciones TotalGravado="812.19" TotalExento="0">
+                <nomina:Deduccion TipoDeduccion="002" Clave="011" Concepto="Retencion ISR" ImporteGravado="375.58" ImporteExento="0"/>
+                <nomina:Deduccion TipoDeduccion="001" Clave="012" Concepto="Descuento IMSS" ImporteGravado="116.18" ImporteExento="0"/>
+                <nomina:Deduccion TipoDeduccion="004" Clave="016" Concepto="Aportación Fondo de Ahorro" ImporteGravado="320.43" ImporteExento="0"/>
+            </nomina:Deducciones>
+        </nomina:Nomina>
+    </cfdi:Complemento>
+</cfdi:Comprobante>

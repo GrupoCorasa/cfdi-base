@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante version="3.2" serie="NOM" folio="312" fecha="2016-10-13T14:52:36" sello="HjVl83EMqc/OWFOjfuLguUSz7xqAHwDciIsiYoOKwob0ly57fXnS+OQcbZ3IBLgqfkw8uNDBThQMCY5t7HMj4sGHE1BuzmzXH416oK+hVHowaE+ptWHdj7URAQZt6x7LePUI7BFnMdPcKlouMlXHZ+mNxrO4CZfPkYm5WBNBLeLD48UmQGzkSSNdJSrDC+ZoxJzewfVuPrPKd8E8hXUi3lAFJi8MhwCJELx6byVzQjXTChKqmqlzRDjcc8SXIE5DS44d7uvO57iBVa9xyEeI7BmdwnWfCC7KKqm8wwxTYqaQChTeXvKQxPamdALP9s0ppOweEvERQxYxVAxy8bOTwA==" formaDePago="Pago en una sola exhibición" noCertificado="30001000000400002463" certificado="MIIFwTCCA6mgAwIBAgIUMzAwMDEwMDAwMDA0MDAwMDI0NjMwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWRpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMTkwNjIwMjA1NTA4WhcNMjMwNjIwMjA1NTA4WjCB6DEmMCQGA1UEAxQdSEVSUkVSSUEgJiBFTEVDVFJJQ09TIFMgREUgQ1YxJjAkBgNVBCkUHUhFUlJFUklBICYgRUxFQ1RSSUNPUyBTIERFIENWMSYwJAYDVQQKFB1IRVJSRVJJQSAmIEVMRUNUUklDT1MgUyBERSBDVjElMCMGA1UELRQcSCZFOTUxMTI4NDY5IC8gWE9KSTc0MDkxOVU0ODEeMBwGA1UEBRMVIC8gWE9KSTc0MDkxOU1RVERNTjAyMScwJQYDVQQLFB5IRVJSRVJJQSAmIEVMRUNUUklDT1MgU0EgREUgQ1YwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDoNWRICH7Ja/IR0sFzGAoveKzFT94BJ4Wlh7MsePe50azvre4j6CYEItQ5jCkxZyYHT23dfONpUWDN7+Bx7j9QjKPwqr+zJjFrla/hD4fj63LeUmofVR7TjeDLLEwCSsn1k3vLae4WBgsV1jNc3M87ZYOHpe0XXLVw/25nSyqQS5l4HTJrw7wQ3NZAXghG38NIOUYJZsE/6K3OAslVoF/YregQ0UqodFLyA6BBMcfll8rjMIWtCy2DxZ0T5QCPX3OccWzB9hHvP5PAjUiOf+FpKHW8WPGEywoC1vM3nvsHXTp2MkUn78U5PK/hmc/7chqaneZHA066AIRs3zGHkHTjAgMBAAGjHTAbMAwGA1UdEwEB/wQCMAAwCwYDVR0PBAQDAgbAMA0GCSqGSIb3DQEBCwUAA4ICAQCsaJpin0RAOsyxBMQRpfTM47k+a1QlHHsP2vEubuINZE+3Hp4b/C1w1gGe8+l8EJcLxQfQ0ovlvKDdYFJLleBCkt9eoFY92keaL77Teq6YxzQ8jArI1WSz75KkljzHYbtm4Oy+hsmpla4L51VnhRfyqehfAgZEDRHytpOPVzxIQnnDx/GI2KVlUBvInOS50dBoCnq5sxzQ+Ha1nsPMvrdTaHBRjto4kOL9SkHvZDVZHWnJ1R7w+1n0zXmDV27BUNsHQNaDG8e+5uGex7d/Bfolf3dU2y4YVFN9DOP8ge0J7ryIuRB7eESwT3aEM/0gec41vMOfVmR2mzNeX0q8czU0xjMH+NKSdgkNFAvoMk2uIsGePkbQDdk3XW1h6f3HGRQ85mkPh/Zt4kqbc0CzFsQMGdj8eixm8jRazSoCdndSDXrDwSTkVaqTuYqRxy89NWNk4dbXXqw4a52DKR1oYR0r9AVjHTfK936tRvNhxQ4KHGjPUi0ttxoCw1fogKwf2MRkTZMO0EZrEnODKl3CMoi4IXuWpNYY6MhUCjLRWJF/mOclkpCzNpyNbwJiGTshTEDvfqS1PsIuXgjIzbCa3seRzP6yxsd0CfEI7lUxMvYT6r0wqRXsymO6mOywWQKRFnrZmzD1zSMRap7vhED+plAxUgouQFbfv1NDkqAfF57FFA==" subTotal="4325.77" descuento="436.61" motivoDescuento="Deducciones nómina" TipoCambio="1.00" Moneda="MXN" total="3513.58" tipoDeComprobante="egreso" metodoDePago="03" LugarExpedicion="Hermosillo, Sonora, México" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd http://www.sat.gob.mx/nomina http://www.sat.gob.mx/sitio_internet/cfd/nomina/nomina11.xsd" xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:nomina="http://www.sat.gob.mx/nomina" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <cfdi:Emisor rfc="COA0106136Z4" nombre="Comercializadora Ortega y Accionistas, S.A. de C.V.">
+        <cfdi:DomicilioFiscal calle="Leandro P. Gaxiola" noExterior="6" noInterior="6" colonia="Olivares" localidad="Hermosillo" referencia="Casa de dos pisos" municipio="Hermosillo" estado="Sonora" pais="México" codigoPostal="83180"/>
+        <cfdi:ExpedidoEn calle="Leandro P. Gaxiola" noExterior="6" noInterior="6" colonia="Olivares" localidad="Hermosillo" referencia="Casa de dos pisos" municipio="Hermosillo" estado="Sonora" pais="México" codigoPostal="83180"/>
+        <cfdi:RegimenFiscal Regimen="Régimen General de Ley Persona Moral"/>
+    </cfdi:Emisor>
+    <cfdi:Receptor rfc="OEGH910609BZ6" nombre="Heriberto Ortega Gonzalez">
+        <cfdi:Domicilio estado="Sonora" pais="México"/>
+    </cfdi:Receptor>
+    <cfdi:Conceptos>
+        <cfdi:Concepto cantidad="1.00" unidad="Servicio" descripcion="Pago de nómina" valorUnitario="4325" importe="4325"/>
+    </cfdi:Conceptos>
+    <cfdi:Impuestos totalImpuestosRetenidos="375.58">
+        <cfdi:Retenciones>
+            <cfdi:Retencion impuesto="ISR" importe="375.58"/>
+        </cfdi:Retenciones>
+    </cfdi:Impuestos>
+    <cfdi:Complemento>
+        <nomina:Nomina Version="1.1" RegistroPatronal="E6479648108" NumEmpleado="001" CURP="OEGH910609HNLRNR14" TipoRegimen="02" NumSeguridadSocial="24109129148" FechaPago="2017-02-15" FechaInicialPago="2017-02-01" FechaFinalPago="2017-02-15" NumDiasPagados="15" Departamento="Pruebas" CLABE="002760700569076003" Banco="002" FechaInicioRelLaboral="2017-01-01" Antiguedad="7" Puesto="Developer" TipoContrato="01" TipoJornada="01" PeriodicidadPago="04" SalarioBaseCotApor="293.73" RiesgoPuesto="2" SalarioDiarioIntegrado="293.73">
+            <nomina:Percepciones TotalGravado="4165.56" TotalExento="160.21">
+                <nomina:Percepcion TipoPercepcion="001" Clave="001" Concepto="Sueldo Quincenal de Prueba" ImporteGravado="4005.35" ImporteExento="0"/>
+                <nomina:Percepcion TipoPercepcion="010" Clave="006" Concepto="Premio por Asistencia" ImporteGravado="160.21" ImporteExento="0"/>
+                <nomina:Percepcion TipoPercepcion="005" Clave="007" Concepto="Fondo de Ahorro" ImporteGravado="0" ImporteExento="160.21"/>
+            </nomina:Percepciones>
+            <nomina:Deducciones TotalGravado="812.19" TotalExento="0">
+                <nomina:Deduccion TipoDeduccion="002" Clave="011" Concepto="Retencion ISR" ImporteGravado="375.58" ImporteExento="0"/>
+                <nomina:Deduccion TipoDeduccion="001" Clave="012" Concepto="Descuento IMSS" ImporteGravado="116.18" ImporteExento="0"/>
+                <nomina:Deduccion TipoDeduccion="004" Clave="016" Concepto="Aportación Fondo de Ahorro" ImporteGravado="320.43" ImporteExento="0"/>
+            </nomina:Deducciones>
+        </nomina:Nomina>
+    </cfdi:Complemento>
+</cfdi:Comprobante>

@@ -1,0 +1,465 @@
+void downloadSatResouce(List<String> downloads, String url, String baseUrl, String basePath) {
+    String filePath = url.replace(baseUrl, basePath + (url.endsWith('.xslt') ? 'xslt/' : 'xsd/'))
+    if (url.find('/cfd/[0-9]{1}/') == null) {
+        //if url contain cfd version change 'common' dir
+        filePath = filePath.replaceAll('/cfd/', '/common/')
+    }
+    download {
+        src url
+        dest filePath
+        overwrite true
+    }
+    File file = new File(filePath)
+    downloads.add(filePath.replace('src/main/resources', ''))
+
+    String regexFilter = url.endsWith('.xsd') ?
+            '(?<=schemaLocation=\")(.*?)(?=\")' : //regex to find schema location
+            '(?<=xsl:include href=\")(.*?)(?=\")' //regex to find xslt includes
+    String content = file.getText('UTF-8')
+    content.findAll(regexFilter)
+            .each { newUrlResource ->
+                downloadSatResouce(downloads, newUrlResource, baseUrl, basePath) //make recursive with all schema locations or xslt includes
+                if (newUrlResource.endsWith('.xslt') && !newUrlResource.contains('cadenaoriginal')) {
+                    //also download xsd files of every xslt
+                    downloadSatResouce(downloads, newUrlResource.replace('.xslt', '.xsd'), baseUrl, basePath.replace('/xslt/', '/xsd/'))
+                }
+                String newUrlName = newUrlResource.substring(newUrlResource.lastIndexOf('/') + 1)
+                String localPath = downloads.find { value -> value.endsWith(newUrlName) }
+                if (localPath.endsWith('.xsd')) {
+                    String relativePath = "./" + new File("$rootDir/$filePath").parentFile.relativePath(new File("$rootDir/src/main/resources$localPath"))
+                    content = content.replace(newUrlResource, relativePath) //replace value with local file
+                } else if (localPath.endsWith('.xslt')) {
+                    content = content.replace(newUrlResource, localPath) //replace value with local file
+                }
+            }
+    //some values of this file cant fit into a java class (max 64kb per method)
+    if (url.endsWith('catCFDI.xsd')) {
+        //remove colonia, codigo postal and claveprodserv because max java size
+        content = content.replaceAll("(.*?)<xs:enumeration value=\"([0-9]{4,5}|[0-9]{8})\"\\/>(\\r\\n|\\r|\\n)", "")
+        //add regex validation to colonias
+        content = content.replaceAll("(?<=<xs:simpleType name=\"c_Colonia\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:simpleType>)", """
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+            <xs:pattern value="[0-9]{4}"/>
+        </xs:restriction>
+    """)
+        //add regex validation to codigo postal
+        content = content.replaceAll("(?<=<xs:simpleType name=\"c_CodigoPostal\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:simpleType>)", """
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+            <xs:pattern value="[0-9]{5}"/>
+        </xs:restriction>
+    """)
+        //add regex validation to claveprodserv
+        content = content.replaceAll("(?<=<xs:simpleType name=\"c_ClaveProdServ\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:simpleType>)", """
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+            <xs:pattern value="[0-9]{8}"/>
+        </xs:restriction>
+    """)
+    }
+    if (!url.endsWith('catCFDI.xsd') && !url.endsWith('cfdv2.xsd') && !url.endsWith('cfdv22.xsd')
+            && !url.endsWith('cfdv3.xsd') && !url.endsWith('TimbreFiscalDigital.xsd') && !url.endsWith('cfdv32.xsd')
+            && !url.endsWith('cfdv33.xsd') && !url.endsWith('TimbreFiscalDigitalv11.xsd')) {
+        //*****MONEDA*****
+        content = content.replaceAll("<xs:attribute name=\"MonedaDR\" use=\"required\" type=\"catCFDI:c_Moneda\">", "<xs:attribute name=\"MonedaDR\" use=\"required\">")
+        content = content.replaceAll("(?<=<xs:attribute name=\"MonedaDR\" use=\"required\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:attribute>)", """
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:pattern value="[A-Z]{3}"/>
+</xs:restriction>
+</xs:simpleType>
+""")
+        content = content.replaceAll("<xs:attribute name=\"MonedaP\" use=\"required\" type=\"catCFDI:c_Moneda\">", "<xs:attribute name=\"MonedaP\" use=\"required\">")
+        content = content.replaceAll("(?<=<xs:attribute name=\"MonedaP\" use=\"required\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:attribute>)", """
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:pattern value="[A-Z]{3}"/>
+</xs:restriction>
+</xs:simpleType>
+""")
+        //*****METODODEPAGO*****
+        content = content.replaceAll("<xs:attribute name=\"MetodoDePagoDR\" use=\"required\" type=\"catCFDI:c_MetodoPago\">", "<xs:attribute name=\"MetodoDePagoDR\" use=\"required\">")
+        content = content.replaceAll("(?<=<xs:attribute name=\"MetodoDePagoDR\" use=\"required\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:attribute>)", """
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:whiteSpace value="collapse"/>
+<xs:enumeration value="PUE"/>
+<xs:enumeration value="PPD"/>
+</xs:restriction>
+</xs:simpleType>
+""")
+        //*****FORMADEPAGO*****
+        content = content.replaceAll("<xs:attribute name=\"FormaDePagoP\" use=\"required\" type=\"catCFDI:c_FormaPago\">", "<xs:attribute name=\"FormaDePagoP\" use=\"required\">")
+        content = content.replaceAll("(?<=<xs:attribute name=\"FormaDePagoP\" use=\"required\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:attribute>)", """
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:whiteSpace value="collapse"/>
+<xs:enumeration value="01"/>
+<xs:enumeration value="02"/>
+<xs:enumeration value="03"/>
+<xs:enumeration value="04"/>
+<xs:enumeration value="05"/>
+<xs:enumeration value="06"/>
+<xs:enumeration value="08"/>
+<xs:enumeration value="12"/>
+<xs:enumeration value="13"/>
+<xs:enumeration value="14"/>
+<xs:enumeration value="15"/>
+<xs:enumeration value="17"/>
+<xs:enumeration value="23"/>
+<xs:enumeration value="24"/>
+<xs:enumeration value="25"/>
+<xs:enumeration value="26"/>
+<xs:enumeration value="27"/>
+<xs:enumeration value="28"/>
+<xs:enumeration value="29"/>
+<xs:enumeration value="30"/>
+<xs:enumeration value="31"/>
+<xs:enumeration value="99"/>
+</xs:restriction>
+</xs:simpleType>
+""")
+        //*****TIPOFACTOR*****
+        content = content.replaceAll("<xs:attribute name=\"TipoFactor\" use=\"required\" type=\"catCFDI:c_TipoFactor\">", "<xs:attribute name=\"TipoFactor\" use=\"required\">")
+        content = content.replaceAll("(?<=<xs:attribute name=\"TipoFactor\" use=\"required\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:attribute>)", """
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:whiteSpace value="collapse"/>
+<xs:enumeration value="Tasa"/>
+<xs:enumeration value="Cuota"/>
+<xs:enumeration value="Exento"/>
+</xs:restriction>
+</xs:simpleType>
+""")
+        //*****IMPUESTO*****
+        content = content.replaceAll("<xs:attribute name=\"Impuesto\" use=\"required\" type=\"catCFDI:c_Impuesto\">", "<xs:attribute name=\"Impuesto\" use=\"required\">")
+        content = content.replaceAll("<xs:attribute name=\"Impuesto\" use=\"required\" type=\"catCFDI:c_Impuesto\" >", "<xs:attribute name=\"Impuesto\" use=\"required\">")
+        content = content.replaceAll("(?<=<xs:attribute name=\"Impuesto\" use=\"required\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:attribute>)", """
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:whiteSpace value="collapse"/>
+<xs:enumeration value="001"/>
+<xs:enumeration value="002"/>
+<xs:enumeration value="003"/>
+</xs:restriction>
+</xs:simpleType>
+""")
+    }
+//some values of this file cant fit into a java class (max 64kb per method)
+    if (url.endsWith('tdCFDI.xsd')) {
+        //set base tipe to string
+        content = content.replaceAll("(?<=<xs:simpleType name=\"t_CuentaBancaria\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:simpleType>)", """
+    <xs:annotation>
+      <xs:documentation>Tipo definido para expresar la cuenta bancarizada.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse"/>
+      <xs:pattern value="[0-9]{10,18}"/>
+    </xs:restriction>
+  """)
+    }
+    //Remove some catalogos on complementos / Two classes have the same XML type name
+    if (url.endsWith('catComExt.xsd') || url.endsWith('ComercioExterior10.xsd')) {
+        //remove colonia, codigo postal and claveprodserv because max java size
+        content = content.replaceAll("(.*?)<xs:enumeration value=\"([0-9]{8}|[0-9]{10})\"\\/>(\\r\\n|\\r|\\n)", "")
+        //add regex validation to colonias
+        content = content.replaceAll("(?<=<xs:simpleType name=\"c_FraccionArancelaria\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:simpleType>)", """
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse"/>
+      <xs:pattern value="[0-9]{8,10}"/>
+    </xs:restriction>
+  """)
+    }
+//xsd had bad type, in some fields need to be string to be "02" instead "2"
+    if (url.endsWith('nomina11.xsd')) {
+        content = content.replaceAll("(?<=<xs:attribute name=\"TipoPercepcion\" use=\"required\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:attribute>)", """
+\t\t\t\t\t\t\t\t\t\t<xs:annotation>
+\t\t\t\t\t\t\t\t\t\t\t<xs:documentation>Clave agrupadora. Clasifica la percepción conforme al catálogo publicado en el portal del SAT en internet</xs:documentation>
+\t\t\t\t\t\t\t\t\t\t</xs:annotation>
+\t\t\t\t\t\t\t\t\t\t<xs:simpleType>
+\t\t\t\t\t\t\t\t\t\t\t<xs:restriction base="xs:string">
+\t\t\t\t\t\t\t\t\t\t\t\t<xs:pattern value="[0-9]{3}"/>
+\t\t\t\t\t\t\t\t\t\t\t</xs:restriction>
+\t\t\t\t\t\t\t\t\t\t</xs:simpleType>
+\t\t\t\t\t\t\t\t\t""")
+        content = content.replaceAll("(?<=<xs:attribute name=\"TipoDeduccion\" use=\"required\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:attribute>)", """
+\t\t\t\t\t\t\t\t\t\t<xs:annotation>
+\t\t\t\t\t\t\t\t\t\t\t<xs:documentation>Clave agrupadora. Clasifica la deducción conforme al catálogo publicado en el portal del SAT en internet</xs:documentation>
+\t\t\t\t\t\t\t\t\t\t</xs:annotation>
+\t\t\t\t\t\t\t\t\t\t<xs:simpleType>
+\t\t\t\t\t\t\t\t\t\t\t<xs:restriction base="xs:string">
+\t\t\t\t\t\t\t\t\t\t\t\t<xs:pattern value="[0-9]{3}"/>
+\t\t\t\t\t\t\t\t\t\t\t</xs:restriction>
+\t\t\t\t\t\t\t\t\t\t</xs:simpleType>
+\t\t\t\t\t\t\t\t\t""")
+        content = content.replace("<xs:attribute name=\"TipoIncapacidad\" type=\"xs:int\" use=\"required\">", "<xs:attribute name=\"TipoIncapacidad\" type=\"xs:string\" use=\"required\">")
+        content = content.replaceAll("(?<=<xs:attribute name=\"TipoRegimen\" use=\"required\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:attribute>)", """
+\t\t\t\t<xs:annotation>
+\t\t\t\t\t<xs:documentation>Atributo requerido para la expresión de la clave del régimen por el cual se tiene contratado al trabajador, conforme al catálogo publicado en el portal del SAT en internet</xs:documentation>
+\t\t\t\t</xs:annotation>
+\t\t\t\t<xs:simpleType>
+\t\t\t\t\t<xs:restriction base="xs:string">
+\t\t\t\t\t</xs:restriction>
+\t\t\t\t</xs:simpleType>
+\t\t\t""")
+        content = content.replaceAll("(?<=<xs:attribute name=\"Banco\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:attribute>)", """
+\t\t\t\t<xs:annotation>
+\t\t\t\t\t<xs:documentation>Atributo opcional para la expresión del Banco conforme al catálogo, donde se realiza un depósito de nómina</xs:documentation>
+\t\t\t\t</xs:annotation>
+\t\t\t\t<xs:simpleType>
+\t\t\t\t\t<xs:restriction base="xs:string">
+\t\t\t\t\t\t<xs:pattern value="[0-9]{3}"/>
+\t\t\t\t\t</xs:restriction>
+\t\t\t\t</xs:simpleType>
+\t\t\t""")
+        content = content.replaceAll("(?<=<xs:simpleType name=\"t_Clabe\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:simpleType>)", """
+\t\t<xs:annotation>
+\t\t\t<xs:documentation>Tipo definido para expresar la CLABE interbancaria</xs:documentation>
+\t\t</xs:annotation>
+\t\t<xs:restriction base="xs:string">
+\t\t\t<xs:pattern value="[0-9]{18}"/>
+\t\t</xs:restriction>
+\t""")
+    }
+//some values of this file cant fit into a java class (max 64kb per method)
+    if (url.endsWith('catCartaPorte.xsd')) {
+        //remove estaciones because max java size
+        content = content.replaceAll("(.*?)<xs:enumeration value=\"(PM|EA|EF)([0-9]{3,4})\"\\/>(\\r\\n|\\r|\\n)", "")
+        //add regex validation
+        String[] contentSplit = content.split("<xs:simpleType name=\"c_Estaciones\">")
+        String continueContent = contentSplit[1].split("<xs:simpleType name=\"c_ClaveUnidadPeso\">")[1]
+        content = contentSplit[0] + """<xs:simpleType name="c_Estaciones">
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+            <xs:pattern value="[a-zA-Z0-9\\\\.]{3,12}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="c_ClaveUnidadPeso">""" + continueContent
+
+        content = content.replaceAll("(.*?)<xs:enumeration value=\"[0-9]{8}\"\\/>(\\r\\n|\\r|\\n)", "")
+        //add regex validation
+        content = content.replaceAll("(?<=<xs:simpleType name=\"c_ClaveProdServCP\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:simpleType>)", """
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+            <xs:pattern value="[0-9]{8}"/>
+        </xs:restriction>
+        """)
+        //remove materialPeligroso because max java size
+        contentSplit = content.split("<xs:simpleType name=\"c_MaterialPeligroso\">")
+        continueContent = contentSplit[1].split("<xs:simpleType name=\"c_TipoEmbalaje\">")[1]
+        content = contentSplit[0] + """<xs:simpleType name="c_MaterialPeligroso">
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+            <xs:pattern value="M[0-9]{4}|[0-9]{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="c_TipoEmbalaje">""" + continueContent
+    }
+    file.setText(content, 'UTF-8')
+}
+
+static void replaceXsd(String filePath, List<String> downloads) {
+    //Need to order, first tipoDatos and catalogos
+    Comparator comparator = { a, b -> (a.contains('/catalogos/') || a.contains('/tipoDatos/')) ? -1 : 1 };
+    //Add into the cfd/cfdi version class all xsd schemas
+    List<String> imports = downloads
+            .findAll { value -> value.endsWith('.xsd') }
+            .collect { value -> '"' + value + '"' }
+            .unique()
+    imports.sort(comparator)
+    File file = new File(filePath)
+    String content = file.getText('UTF-8')
+            .replaceAll(
+                    '(?<=private final String\\[] XSD = new String\\[]\\{)((.|\\n)*?)(?=\\};)',
+                    '\n            ' + imports.join(',\n            ') + '\n    '
+            )
+    file.setText(content, 'UTF-8')
+}
+
+static void replaceXslt(String filePath, String cadenaOriginal) {
+    //Add into the cfd/cfdi version class the cadena original xslt
+    File file = new File(filePath)
+    String content = file.getText('UTF-8')
+            .replaceAll(
+                    '(?<=private final String XSLT = \")((.|\\n)*?)(?=\";)',
+                    cadenaOriginal
+            )
+    file.setText(content, 'UTF-8')
+}
+
+tasks.register("satResources") {
+    group = 'build'
+    description = 'Download xsd and xslt resources'
+
+    doLast {
+        //Create list with all version and schema definition to download
+        Map<String, List<String>> map = new HashMap<>()
+        map.put(
+                'src/main/java/mx/grupocorasa/sat/cfd/CFDv20.java',
+                [
+                        'http://www.sat.gob.mx/sitio_internet/cfd/2/cadenaoriginal_2_0/cadenaoriginal_2_0.xslt',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/2/cfdv2.xsd'
+                ]
+        )
+        map.put(
+                'src/main/java/mx/grupocorasa/sat/cfd/CFDv22.java',
+                [
+                        'http://www.sat.gob.mx/sitio_internet/cfd/2/cadenaoriginal_2_2/cadenaoriginal_2_2.xslt',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/2/cfdv22.xsd'
+                ]
+        )
+        map.put(
+                'src/main/java/mx/grupocorasa/sat/cfdi/CFDv30.java',
+                [
+                        'http://www.sat.gob.mx/sitio_internet/cfd/3/cadenaoriginal_3_0/cadenaoriginal_3_0.xslt',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv3.xsd',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/cadenaoriginal_TFD_1_0.xslt',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigital.xsd'
+                ]
+        )
+        map.put(
+                'src/main/java/mx/grupocorasa/sat/cfdi/CFDv32.java',
+                [
+                        'http://www.sat.gob.mx/sitio_internet/cfd/3/cadenaoriginal_3_2/cadenaoriginal_3_2.xslt',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/cadenaoriginal_TFD_1_0.xslt',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigital.xsd'
+                ]
+        )
+        map.put(
+                'src/main/java/mx/grupocorasa/sat/cfdi/CFDv33.java',
+                [
+                        'http://www.sat.gob.mx/sitio_internet/cfd/3/cadenaoriginal_3_3/cadenaoriginal_3_3.xslt',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/cadenaoriginal_TFD_1_1.xslt',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd'
+                ]
+        )
+        List<String> allDownloads = new ArrayList<>()
+        map.each { Class, urls ->
+            List<String> localDownloads = new ArrayList<>()
+            urls.each { url ->
+                downloadSatResouce(
+                        localDownloads,
+                        url,
+                        'http://www.sat.gob.mx/sitio_internet/',
+                        'src/main/resources/'
+                )
+            }
+            replaceXsd(Class, localDownloads)
+            replaceXslt(
+                    Class,
+                    urls
+                            .find { value -> value.endsWith(".xslt") }
+                            .replace('http://www.sat.gob.mx/sitio_internet/', '/xslt/')
+            )
+            allDownloads.addAll(localDownloads)
+        }
+        //Create all xjc bindings into build.gradle
+        Map<String, String> namespaceMap = new HashMap<>()
+        String bindingFileContent = "xjcGeneration {\n" +
+                "\tdefaultAdditionalXjcOptions = ['encoding': 'UTF-8']\n" +
+                "\tschemas{\n"
+        allDownloads.unique().findAll { filePath -> filePath.endsWith('.xsd') }
+                .each { filePath ->
+                    String packageName = filePath
+                            .substring(1, filePath.lastIndexOf('/'))
+                            .replace('/', '.')
+                            .replace('xsd', 'mx.grupocorasa.sat')
+                            .replace('.2', '._2')
+                            .replace('.3', '._3')
+                    String version = new File("${rootDir}/src/main/resources/${filePath.substring(1)}").getText('UTF-8').find('(?<=xs:attribute name="(V|v)ersion")((.)*?)(?=>)')
+                    if (version != null) {
+                        version = version.find('(?<=fixed=")((.)*?)(?=")').replace(".", "")
+                    }
+                    if (version != null) {
+                        packageName = packageName.replaceAll('\\d+$', '')
+                        packageName += version
+                    }
+                    bindingFileContent += "\t\t" + packageName.replace('.', '_').replace('__', '_') + "{\n" +
+                            "\t\t\tbindingFile = 'src/main/resources/bind.xml'\n" +
+                            "\t\t\tschemaRootDir = 'src/main/resources'\n" +
+                            "\t\t\tschemaFile = '" + filePath.substring(1) + "'\n" +
+                            "\t\t\tjavaPackageName = '" + packageName + "'\n" +
+                            "\t\t}\n"
+                    if (packageName.contains(".common.")) namespaceMap.put(packageName, filePath.substring(1));
+                }
+        bindingFileContent += '\t}\n}'
+
+        File file = new File('build.gradle')
+        String content = file.getText('UTF-8')
+        int first_index = content.indexOf('//START OF XJC-GEN') + ('//START OF XJC-GEN'.length())
+        int last_index = content.indexOf('//END OF XJC-GEN')
+        content = content.substring(0, first_index) + "\n" + bindingFileContent + "\n" + content.substring(last_index)
+        file.setText(content, 'UTF-8')
+
+        String mapString = ''
+        namespaceMap.forEach { pkg, xsd ->
+            String xsdContent = new File('src/main/resources/' + xsd).getText('UTF-8')
+            String matcher = (xsdContent.substring(0, 500) =~ '(?<=targetNamespace=")((.)*?)(?=")').findAll()[0][0]
+            mapString = mapString + '\n\t\tnamespaceMap.put("' + pkg + '", "' + matcher + '");'
+        }
+        file = new File('src/main/java/mx/grupocorasa/sat/common/CfdCommon.java')
+        content = file.getText('UTF-8')
+        first_index = content.indexOf('Map<String, String> namespaceMap = new HashMap<>();') + ('Map<String, String> namespaceMap = new HashMap<>();'.length())
+        last_index = content.indexOf('return namespaceMap;')
+        content = content.substring(0, first_index) + mapString + "\n\t\t" + content.substring(last_index)
+        file.setText(content, 'UTF-8')
+    }
+}
+
+tasks.register("cleanSatResources") {
+    group = 'build'
+    description = 'Clean xsd and xslt resources'
+
+    doLast {
+        List<String> genFolders = [
+                "${rootDir}/src/main/resources/xsd/",
+                "${rootDir}/src/main/resources/xslt/"
+        ]
+        genFolders.each {
+            if (new File(it).exists()) {
+                delete it
+            }
+        }
+
+        List<String> cfds = [
+                'src/main/java/mx/grupocorasa/sat/cfd/CFDv20.java',
+                'src/main/java/mx/grupocorasa/sat/cfd/CFDv22.java',
+                'src/main/java/mx/grupocorasa/sat/cfdi/CFDv30.java',
+                'src/main/java/mx/grupocorasa/sat/cfdi/CFDv32.java',
+                'src/main/java/mx/grupocorasa/sat/cfdi/CFDv33.java'
+        ]
+
+        cfds.each { f ->
+            File file = new File(f)
+            if (file.exists()) {
+                String content = file.getText('UTF-8')
+                String[] xsltSplit = content.split("private final String XSLT = \"")
+                String continued = xsltSplit[1].substring(xsltSplit[1].indexOf("\""))
+                content = xsltSplit[0] + "private final String XSLT = \"" + continued
+                String[] xsdSplit = content.split("private final String\\[] XSD = new String\\[]\\{")
+                continued = xsdSplit[1].substring(xsdSplit[1].indexOf("};"))
+                content = xsdSplit[0] + "private final String[] XSD = new String[]{" + continued
+                file.setText(content, 'UTF-8')
+            }
+        }
+
+        String startToken = '//START OF XJC-GEN'
+        File file = new File('build.gradle')
+        String content = file.getText('UTF-8')
+        int first_index = content.indexOf(startToken) + (startToken.length())
+        int last_index = content.indexOf('//END OF XJC-GEN')
+        content = content.substring(0, first_index) + "\n" + content.substring(last_index)
+        file.setText(content, 'UTF-8')
+
+        startToken = 'Map<String, String> namespaceMap = new HashMap<>();'
+        file = new File('src/main/java/mx/grupocorasa/sat/common/CfdCommon.java')
+        content = file.getText('UTF-8')
+        first_index = content.indexOf(startToken) + (startToken.length())
+        last_index = content.indexOf('return namespaceMap;')
+        content = content.substring(0, first_index) + "\n\t\t" + content.substring(last_index)
+        file.setText(content, 'UTF-8')
+    }
+}

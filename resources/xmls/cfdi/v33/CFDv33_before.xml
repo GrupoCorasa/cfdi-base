@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd" Version="3.3" Serie="A" Folio="167ABC" Fecha="2017-10-30T09:09:23" SubTotal="2269400" Moneda="MXN" Total="1436012.00" TipoDeComprobante="I" FormaPago="01" MetodoPago="PUE" CondicionesDePago="CONDICIONES" Descuento="0.00" TipoCambio="1" LugarExpedicion="45079">
+    <cfdi:CfdiRelacionados TipoRelacion="01">
+        <cfdi:CfdiRelacionado UUID="A39DA66B-52CA-49E3-879B-5C05185B0EF7" />
+    </cfdi:CfdiRelacionados>
+    <cfdi:Emisor Rfc="LAHH850905BZ4" Nombre="HORACIO LLANOS" RegimenFiscal="608" />
+    <cfdi:Receptor Rfc="HEPR930322977" Nombre="RAFAEL ALEJANDRO HERNÁNDEZ PALACIOS" UsoCFDI="G01" />
+    <cfdi:Conceptos>
+        <cfdi:Concepto ClaveProdServ="01010101" ClaveUnidad="F52" NoIdentificacion="00001" Cantidad="1.5" Unidad="TONELADA" Descripcion="ACERO" ValorUnitario="1500000" Importe="2250000">
+            <cfdi:Impuestos>
+                <cfdi:Traslados>
+                    <cfdi:Traslado Base="2250000" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="360000" />
+                </cfdi:Traslados>
+                <cfdi:Retenciones>
+                    <cfdi:Retencion Base="2250000" Impuesto="003" TipoFactor="Tasa" TasaOCuota="0.530000" Importe="1192500" />
+                </cfdi:Retenciones>
+            </cfdi:Impuestos>
+            <cfdi:CuentaPredial Numero="51888" />
+        </cfdi:Concepto>
+        <cfdi:Concepto ClaveProdServ="01010101" ClaveUnidad="F52" NoIdentificacion="00002" Cantidad="1.6" Unidad="TONELADA" Descripcion="ALUMINIO" ValorUnitario="1500" Importe="2400">
+            <cfdi:Impuestos>
+                <cfdi:Traslados>
+                    <cfdi:Traslado Base="2400" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="384" />
+                </cfdi:Traslados>
+                <cfdi:Retenciones>
+                    <cfdi:Retencion Base="2400" Impuesto="003" TipoFactor="Tasa" TasaOCuota="0.530000" Importe="1272" />
+                </cfdi:Retenciones>
+            </cfdi:Impuestos>
+            <cfdi:InformacionAduanera NumeroPedimento="15  48  3009  0001234" />
+        </cfdi:Concepto>
+        <cfdi:Concepto ClaveProdServ="01010101" ClaveUnidad="F52" NoIdentificacion="00003" Cantidad="1.7" Unidad="TONELADA" Descripcion="ZAMAC" ValorUnitario="10000" Importe="17000">
+            <cfdi:Impuestos>
+                <cfdi:Traslados>
+                    <cfdi:Traslado Base="17000" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="2720" />
+                </cfdi:Traslados>
+                <cfdi:Retenciones>
+                    <cfdi:Retencion Base="17000" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="2720" />
+                </cfdi:Retenciones>
+            </cfdi:Impuestos>
+            <cfdi:Parte ClaveProdServ="01010101" NoIdentificacion="055155" Cantidad="1.0" Descripcion="PARTE EJEMPLO" Unidad="UNIDAD" ValorUnitario="1.00" Importe="1.00">
+                <cfdi:InformacionAduanera NumeroPedimento="15  48  3009  0002777" />
+            </cfdi:Parte>
+        </cfdi:Concepto>
+    </cfdi:Conceptos>
+    <cfdi:Impuestos TotalImpuestosRetenidos="1196492" TotalImpuestosTrasladados="363104">
+        <cfdi:Retenciones>
+            <cfdi:Retencion Impuesto="002" Importe="2720" />
+            <cfdi:Retencion Impuesto="003" Importe="1193772" />
+        </cfdi:Retenciones>
+        <cfdi:Traslados>
+            <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="363104" />
+        </cfdi:Traslados>
+    </cfdi:Impuestos>
+</cfdi:Comprobante>

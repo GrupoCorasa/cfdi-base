@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Comprobante xmlns="http://www.sat.gob.mx/cfd/2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" tipoDeComprobante="ingreso" metodoDePago="Tarjeta de Crédito" total="2320.00" motivoDescuento="Por pronto pago" descuento="50.00" subTotal="2050.00" condicionesDePago="Factura a Crédito" noCertificado="" formaDePago="UNA SOLA EXHIBICIÓN" anoAprobacion="2008" noAprobacion="49" sello="" fecha="2011-04-03T14:11:36" folio="12" serie="ABCD" version="2.0">
+    <Emisor nombre="Comercializadora Ortega y Accionistas, S.A. de C.V." rfc="COA0106136Z4">
+        <DomicilioFiscal codigoPostal="83180" pais="México" estado="Sonora" municipio="Hermosillo" referencia="Casa de dos pisos" localidad="Hermosillo" colonia="Olivares" noInterior="6" noExterior="6" calle="Leandro P. Gaxiola"/>
+        <ExpedidoEn codigoPostal="83180" pais="México" estado="Sonora" municipio="Hermosillo" referencia="Casa de dos pisos" localidad="Hermosillo" colonia="Olivares" noInterior="6" noExterior="6" calle="Leandro P. Gaxiola"/>
+    </Emisor>
+    <Receptor nombre="Herreria &amp; Electricos S.A. de C.V." rfc="H&amp;E951128469">
+        <Domicilio codigoPostal="83000" pais="México" estado="Sonora" municipio="Hermosillo" referencia="Carpa verde" localidad="Hermosillo" colonia="Colonia Centro" noInterior="2" noExterior="1" calle="Calle conocida"/>
+    </Receptor>
+    <Conceptos>
+        <Concepto importe="1000.00" valorUnitario="1000.00" descripcion="Asesoria Fiscal y administrativa" noIdentificacion="01" unidad="Servicio" cantidad="1.00"/>
+        <Concepto importe="1000.00" valorUnitario="500.00" descripcion="Asesoria Fiscal y administrativa 2" noIdentificacion="02" unidad="Servicio" cantidad="2.00"/>
+    </Conceptos>
+    <Impuestos totalImpuestosTrasladados="320.00">
+        <Traslados>
+            <Traslado importe="320.00" tasa="16.00" impuesto="IVA"/>
+        </Traslados>
+    </Impuestos>
+</Comprobante>

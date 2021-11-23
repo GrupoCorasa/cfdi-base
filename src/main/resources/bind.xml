@@ -1,0 +1,6 @@
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+               xmlns:inheritance="http://jaxb2-commons.dev.java.net/basic/inheritance">
+    <jaxb:bindings>
+        <jaxb:globalBindings typesafeEnumMaxMembers="100000" typesafeEnumMemberName="generateName"/>
+    </jaxb:bindings>
+</jaxb:bindings>

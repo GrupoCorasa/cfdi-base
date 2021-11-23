@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pago10="http://www.sat.gob.mx/Pagos" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/Pagos http://www.sat.gob.mx/sitio_internet/cfd/Pagos/Pagos10.xsd" Version="3.3" Serie="Z" Folio="2134ASD" Fecha="2017-10-30T09:00:00" SubTotal="0" Total="0" Moneda="XXX" TipoDeComprobante="P" LugarExpedicion="06300">
+    <cfdi:Emisor Rfc="SFE0807172W8" Nombre="Ana Laura Ledesma Jimenez" RegimenFiscal="601" />
+    <cfdi:Receptor Rfc="CPV810615PP5" Nombre="Daniel Hernandez Cisneros" UsoCFDI="P01" />
+    <cfdi:Conceptos>
+        <cfdi:Concepto ClaveProdServ="84111506" Cantidad="1" ClaveUnidad="ACT" Descripcion="Pago" ValorUnitario="0" Importe="0" />
+    </cfdi:Conceptos>
+    <cfdi:Complemento>
+        <pago10:Pagos Version="1.0">
+            <pago10:Pago FechaPago="2017-03-22T09:00:00" FormaDePagoP="06" MonedaP="MXN" Monto="10000" RfcEmisorCtaOrd="XEXX010101000" NomBancoOrdExt="BANK OF TOKY" CtaOrdenante="1234567890">
+                <pago10:DoctoRelacionado IdDocumento="970e4f32-0fe0-11e7-93ae-92361f002671" MonedaDR="MXN" MetodoDePagoDR="PPD" NumParcialidad="1" ImpSaldoAnt="10000" ImpPagado="5000" ImpSaldoInsoluto="5000" />
+                <pago10:DoctoRelacionado IdDocumento="970e5496-0fe0-11e7-93ae-92361f002672" MonedaDR="USD" TipoCambioDR="20.00" MetodoDePagoDR="PPD" NumParcialidad="2" ImpSaldoAnt="250.00" ImpPagado="250.00" ImpSaldoInsoluto="0.00" />
+            </pago10:Pago>
+        </pago10:Pagos>
+    </cfdi:Complemento>
+</cfdi:Comprobante>

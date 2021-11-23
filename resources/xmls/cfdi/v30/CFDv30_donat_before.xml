@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante tipoDeComprobante="ingreso" metodoDePago="Tarjeta de Crédito" total="2320.00"
+                  motivoDescuento="Por pronto pago" descuento="50.00" subTotal="2050.00"
+                  condicionesDePago="Factura a Crédito" formaDePago="UNA SOLA EXHIBICIÓN" fecha="2011-04-03T14:11:36"
+                  folio="12" serie="ABCD" version="3.0"
+                  xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv3.xsd http://www.sat.gob.mx/donat http://www.sat.gob.mx/sitio_internet/cfd/donat/donat.xsd"
+                  xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:donat="http://www.sat.gob.mx/donat"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <cfdi:Emisor nombre="Comercializadora Ortega y Accionistas, S.A. de C.V." rfc="COA0106136Z4">
+        <cfdi:DomicilioFiscal codigoPostal="83180" pais="México" estado="Sonora" municipio="Hermosillo"
+                              referencia="Casa de dos pisos" localidad="Hermosillo" colonia="Olivares" noInterior="6"
+                              noExterior="6" calle="Leandro P. Gaxiola"/>
+        <cfdi:ExpedidoEn codigoPostal="83180" pais="México" estado="Sonora" municipio="Hermosillo"
+                         referencia="Casa de dos pisos" localidad="Hermosillo" colonia="Olivares" noInterior="6"
+                         noExterior="6" calle="Leandro P. Gaxiola"/>
+    </cfdi:Emisor>
+    <cfdi:Receptor nombre="Herreria &amp; Electricos S.A. de C.V." rfc="H&amp;E951128469">
+        <cfdi:Domicilio codigoPostal="83000" pais="México" estado="Sonora" municipio="Hermosillo"
+                        referencia="Carpa verde" localidad="Hermosillo" colonia="Colonia Centro" noInterior="2"
+                        noExterior="1" calle="Calle conocida"/>
+    </cfdi:Receptor>
+    <cfdi:Conceptos>
+        <cfdi:Concepto importe="1000.00" valorUnitario="1000.00" descripcion="Asesoria Fiscal y administrativa"
+                       noIdentificacion="01" unidad="Servicio" cantidad="1.00"/>
+        <cfdi:Concepto importe="1000.00" valorUnitario="500.00" descripcion="Asesoria Fiscal y administrativa 2"
+                       noIdentificacion="02" unidad="Servicio" cantidad="2.00"/>
+    </cfdi:Conceptos>
+    <cfdi:Impuestos totalImpuestosTrasladados="320.00">
+        <cfdi:Traslados>
+            <cfdi:Traslado importe="320.00" tasa="16.00" impuesto="IVA"/>
+        </cfdi:Traslados>
+    </cfdi:Impuestos>
+    <cfdi:Complemento>
+        <donat:Donatarias
+                leyenda="Este comprobante ampara un donativo, el cual será destinado por la donataria a los fines propios de su objeto social. En el caso de que los bienes donados hayan sido deducidos previamente para los efectos del impuesto sobre la renta, este donativo no es deducible. La reproducción no autorizada de este comprobante constituye un delito en los términos de las disposiciones fiscales."
+                fechaAutorizacion="2011-04-03" noAutorizacion="prueba de donatarias 01" version="1.0"/>
+    </cfdi:Complemento>
+</cfdi:Comprobante>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante version="3.0" serie="ABCD" folio="12" fecha="2011-04-03T14:11:36"
+                  formaDePago="PAGO EN UNA SOLA EXHIBICIÓN" condicionesDePago="Factura de Contado" subTotal="2050.00"
+                  descuento="50.00" motivoDescuento="Por pronto pago" total="2320.00" metodoDePago="Tarjeta de Débito"
+                  tipoDeComprobante="ingreso"
+                  xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv3.xsd"
+                  xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <cfdi:Emisor rfc="COA0106136Z4" nombre="Comercializadora Ortega y Accionistas, S.A. de C.V.">
+        <cfdi:DomicilioFiscal calle="Leandro P. Gaxiola" noExterior="6" noInterior="6" colonia="Olivares"
+                              localidad="Hermosillo" referencia="Casa de dos pisos" municipio="Hermosillo"
+                              estado="Sonora" pais="México" codigoPostal="83180"/>
+        <cfdi:ExpedidoEn calle="Leandro P. Gaxiola" noExterior="6" noInterior="6" colonia="Olivares"
+                         localidad="Hermosillo" referencia="Casa de dos pisos" municipio="Hermosillo" estado="Sonora"
+                         pais="México" codigoPostal="83180"/>
+    </cfdi:Emisor>
+    <cfdi:Receptor rfc="H&amp;E951128469" nombre="Herreria &amp; Electricos S.A. de C.V.">
+        <cfdi:Domicilio calle="Calle conocida" noExterior="1" noInterior="2" colonia="Colonia Centro"
+                        localidad="Hermosillo" referencia="Carpa verde" municipio="Hermosillo" estado="Sonora"
+                        pais="México" codigoPostal="83000"/>
+    </cfdi:Receptor>
+    <cfdi:Conceptos>
+        <cfdi:Concepto cantidad="1.00" unidad="Servicio" noIdentificacion="01"
+                       descripcion="Asesoria Fiscal y administrativa" valorUnitario="1000.00" importe="1000.00"/>
+        <cfdi:Concepto cantidad="2.00" unidad="Servicio" noIdentificacion="02"
+                       descripcion="Asesoria Fiscal y administrativa 2" valorUnitario="500.00" importe="1000.00"/>
+    </cfdi:Conceptos>
+    <cfdi:Impuestos totalImpuestosTrasladados="320.00">
+        <cfdi:Traslados>
+            <cfdi:Traslado impuesto="IVA" tasa="16.00" importe="320.00"/>
+        </cfdi:Traslados>
+    </cfdi:Impuestos>
+</cfdi:Comprobante>
