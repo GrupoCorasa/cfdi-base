@@ -5,26 +5,18 @@ import mx.grupocorasa.sat.cfd._30.ObjectFactory;
 import mx.grupocorasa.sat.cfd._30.TUbicacion;
 import mx.grupocorasa.sat.cfd._30.TUbicacionFiscal;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeConstants;
-import javax.xml.datatype.DatatypeFactory;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class ExampleCFDv3Factory {
 
     private static ExampleCFDv3Factory instance;
 
-    private ObjectFactory of;
-    private DatatypeFactory datatypeFactory;
+    private final ObjectFactory of;
 
     private ExampleCFDv3Factory() {
-        try {
-            of = new ObjectFactory();
-            datatypeFactory = DatatypeFactory.newInstance();
-        } catch (DatatypeConfigurationException e) {
-            e.printStackTrace();
-        }
+        of = new ObjectFactory();
     }
 
     public static ExampleCFDv3Factory getInstance() {
@@ -39,7 +31,7 @@ public class ExampleCFDv3Factory {
         comp.setVersion("3.0");
         comp.setSerie("ABCD");
         comp.setFolio("12");
-        comp.setFecha(datatypeFactory.newXMLGregorianCalendar(2011, 4, 3, 14, 11, 36, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
+        comp.setFecha(LocalDateTime.of(2011, 4, 3, 14, 11, 36));
 //        comp.setSello();
         comp.setFormaDePago("PAGO EN UNA SOLA EXHIBICIÓN");
 //        comp.setNoCertificado();

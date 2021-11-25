@@ -1,11 +1,12 @@
 package mx.grupocorasa.sat.factory.common;
 
-import mx.grupocorasa.sat.common.nomina12.*;
+import mx.grupocorasa.sat.common.catalogos.CEstado;
+import mx.grupocorasa.sat.common.catalogos.Nomina.*;
+import mx.grupocorasa.sat.common.nomina12.Nomina;
+import mx.grupocorasa.sat.common.nomina12.ObjectFactory;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeConstants;
-import javax.xml.datatype.DatatypeFactory;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -15,16 +16,10 @@ public class ExampleNomina12Factory {
 
     private static ExampleNomina12Factory instance;
 
-    private ObjectFactory of;
-    private DatatypeFactory datatypeFactory;
+    private final ObjectFactory of;
 
     private ExampleNomina12Factory() {
-        try {
-            of = new ObjectFactory();
-            datatypeFactory = DatatypeFactory.newInstance();
-        } catch (DatatypeConfigurationException e) {
-            e.printStackTrace();
-        }
+        of = new ObjectFactory();
     }
 
     public static ExampleNomina12Factory getInstance() {
@@ -38,9 +33,9 @@ public class ExampleNomina12Factory {
         Nomina nomina = of.createNomina();
         nomina.setVersion("1.2");
         nomina.setTipoNomina(CTipoNomina.O);
-        nomina.setFechaPago(datatypeFactory.newXMLGregorianCalendar(2020, 2, 15, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
-        nomina.setFechaInicialPago(datatypeFactory.newXMLGregorianCalendar(2020, 2, 1, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
-        nomina.setFechaFinalPago(datatypeFactory.newXMLGregorianCalendar(2020, 2, 15, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
+        nomina.setFechaPago(LocalDate.of(2020, 2, 15));
+        nomina.setFechaInicialPago(LocalDate.of(2020, 2, 1));
+        nomina.setFechaFinalPago(LocalDate.of(2020, 2, 15));
         nomina.setNumDiasPagados(new BigDecimal("15"));
         nomina.setPercepciones(createPercepciones());
         if (nomina.getPercepciones().getTotalSueldos() != null || nomina.getPercepciones().getTotalSeparacionIndemnizacion() != null || nomina.getPercepciones().getTotalJubilacionPensionRetiro() != null) {
@@ -217,7 +212,7 @@ public class ExampleNomina12Factory {
         Nomina.Receptor receptor = of.createNominaReceptor();
         receptor.setCurp("OEGH910609HNLRNR14");
         receptor.setNumSeguridadSocial("24109129148");
-        receptor.setFechaInicioRelLaboral(datatypeFactory.newXMLGregorianCalendar(2017, 1, 1, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
+        receptor.setFechaInicioRelLaboral(LocalDate.of(2017, 1, 1));
         receptor.setAntigüedad("P11Y7M14D");
         receptor.setTipoContrato(CTipoContrato.VALUE_1);
         receptor.setSindicalizado("No");

@@ -1,28 +1,22 @@
 package mx.grupocorasa.sat.factory.cfd;
 
-import mx.grupocorasa.sat.cfd._33.*;
+import mx.grupocorasa.sat.cfd._33.Comprobante;
+import mx.grupocorasa.sat.cfd._33.ObjectFactory;
+import mx.grupocorasa.sat.common.catalogos.*;
 import mx.grupocorasa.sat.common.nomina12.Nomina;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeConstants;
-import javax.xml.datatype.DatatypeFactory;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class ExampleCFDv33Factory {
 
     private static ExampleCFDv33Factory instance;
 
-    private ObjectFactory of;
-    private DatatypeFactory datatypeFactory;
+    private final ObjectFactory of;
 
     private ExampleCFDv33Factory() {
-        try {
-            of = new ObjectFactory();
-            datatypeFactory = DatatypeFactory.newInstance();
-        } catch (DatatypeConfigurationException e) {
-            e.printStackTrace();
-        }
+        of = new ObjectFactory();
     }
 
     public static ExampleCFDv33Factory getInstance() {
@@ -37,7 +31,7 @@ public class ExampleCFDv33Factory {
         comp.setVersion("3.3");
         comp.setSerie("FFF");
         comp.setFolio("12345");
-        comp.setFecha(datatypeFactory.newXMLGregorianCalendar(2021, 1, 1, 14, 54, 56, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
+        comp.setFecha(LocalDateTime.of(2021, 1, 1, 14, 54, 56));
 //        comp.setSello();
         comp.setFormaPago(CFormaPago.VALUE_8);
         comp.setNoCertificado("30001000000400002463");
@@ -65,7 +59,7 @@ public class ExampleCFDv33Factory {
         comp.setVersion("3.3");
         comp.setSerie("NNN");
         comp.setFolio("54321");
-        comp.setFecha(datatypeFactory.newXMLGregorianCalendar(2021, 1, 1, 14, 54, 56, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
+        comp.setFecha(LocalDateTime.of(2021, 1, 1, 14, 54, 56));
 //        comp.setSello();
         comp.setFormaPago(CFormaPago.VALUE_22);
 //        comp.setNoCertificado();
@@ -90,7 +84,7 @@ public class ExampleCFDv33Factory {
         comp.setVersion("3.3");
         comp.setSerie("PPP");
         comp.setFolio("34152");
-        comp.setFecha(datatypeFactory.newXMLGregorianCalendar(2021, 3, 11, 14, 54, 56, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
+        comp.setFecha(LocalDateTime.of(2021, 3, 11, 14, 54, 56));
 //        comp.setSello();
 //        comp.setNoCertificado();
 //        comp.setCertificado();

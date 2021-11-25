@@ -3,25 +3,17 @@ package mx.grupocorasa.sat.factory.common;
 import mx.grupocorasa.sat.common.nomina11.Nomina;
 import mx.grupocorasa.sat.common.nomina11.ObjectFactory;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeConstants;
-import javax.xml.datatype.DatatypeFactory;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class ExampleNomina11Factory {
 
     private static ExampleNomina11Factory instance;
 
-    private ObjectFactory of;
-    private DatatypeFactory datatypeFactory;
+    private final ObjectFactory of;
 
     private ExampleNomina11Factory() {
-        try {
-            of = new ObjectFactory();
-            datatypeFactory = DatatypeFactory.newInstance();
-        } catch (DatatypeConfigurationException e) {
-            e.printStackTrace();
-        }
+        of = new ObjectFactory();
     }
 
     public static ExampleNomina11Factory getInstance() {
@@ -39,14 +31,14 @@ public class ExampleNomina11Factory {
         nomina.setCURP("OEGH910609HNLRNR14");
         nomina.setTipoRegimen("02");
         nomina.setNumSeguridadSocial("24109129148");
-        nomina.setFechaPago(datatypeFactory.newXMLGregorianCalendar(2017, 2, 15, 16, 0, 0, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
-        nomina.setFechaInicialPago(datatypeFactory.newXMLGregorianCalendar(2017, 2, 1, 8, 0, 0, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
-        nomina.setFechaFinalPago(datatypeFactory.newXMLGregorianCalendar(2017, 2, 15, 16, 0, 0, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
+        nomina.setFechaPago(LocalDate.of(2017, 2, 15));
+        nomina.setFechaInicialPago(LocalDate.of(2017, 2, 1));
+        nomina.setFechaFinalPago(LocalDate.of(2017, 2, 15));
         nomina.setNumDiasPagados(new BigDecimal("15"));
         nomina.setDepartamento("Pruebas");
         nomina.setCLABE("002760700569076003");
         nomina.setBanco("002");
-        nomina.setFechaInicioRelLaboral(datatypeFactory.newXMLGregorianCalendar(2017, 1, 1, 8, 0, 0, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
+        nomina.setFechaInicioRelLaboral(LocalDate.of(2017, 1, 1));
         nomina.setAntiguedad(7);
         nomina.setPuesto("Developer");
         nomina.setTipoContrato("01");

@@ -5,27 +5,19 @@ import mx.grupocorasa.sat.cfd._22.ObjectFactory;
 import mx.grupocorasa.sat.cfd._22.TUbicacion;
 import mx.grupocorasa.sat.cfd._22.TUbicacionFiscal;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeConstants;
-import javax.xml.datatype.DatatypeFactory;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class ExampleCFDv22Factory {
 
     private static ExampleCFDv22Factory instance;
 
-    private ObjectFactory of;
-    private DatatypeFactory datatypeFactory;
+    private final ObjectFactory of;
 
     private ExampleCFDv22Factory() {
-        try {
-            of = new ObjectFactory();
-            datatypeFactory = DatatypeFactory.newInstance();
-        } catch (DatatypeConfigurationException e) {
-            e.printStackTrace();
-        }
+        of = new ObjectFactory();
     }
 
     public static ExampleCFDv22Factory getInstance() {
@@ -40,7 +32,7 @@ public class ExampleCFDv22Factory {
         comp.setVersion("2.2");
         comp.setSerie("DCBA");
         comp.setFolio("81");
-        comp.setFecha(datatypeFactory.newXMLGregorianCalendar(2012, 3, 11, 17, 8, 22, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
+        comp.setFecha(LocalDateTime.of(2012, 3, 11, 17, 8, 22));
 //        comp.setSello();
         comp.setNoAprobacion(new BigInteger("448911"));
         comp.setAnoAprobacion(new BigInteger("2011"));

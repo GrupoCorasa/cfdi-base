@@ -1,27 +1,22 @@
 package mx.grupocorasa.sat.factory.common;
 
-import mx.grupocorasa.sat.common.Pagos10.*;
+import mx.grupocorasa.sat.common.Pagos10.ObjectFactory;
+import mx.grupocorasa.sat.common.Pagos10.Pagos;
+import mx.grupocorasa.sat.common.catalogos.*;
+import mx.grupocorasa.sat.common.catalogos.Pagos.CTipoCadenaPago;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeConstants;
-import javax.xml.datatype.DatatypeFactory;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.time.LocalDateTime;
 
 public class ExampleComplementoPagoFactory {
 
     private static ExampleComplementoPagoFactory instance;
 
-    private ObjectFactory of;
-    private DatatypeFactory datatypeFactory;
+    private final ObjectFactory of;
 
     private ExampleComplementoPagoFactory() {
-        try {
-            of = new ObjectFactory();
-            datatypeFactory = DatatypeFactory.newInstance();
-        } catch (DatatypeConfigurationException e) {
-            e.printStackTrace();
-        }
+        of = new ObjectFactory();
     }
 
     public static ExampleComplementoPagoFactory getInstance() {
@@ -41,9 +36,9 @@ public class ExampleComplementoPagoFactory {
 
     private Pagos.Pago createPago1() {
         Pagos.Pago pago = of.createPagosPago();
-        pago.setFechaPago(datatypeFactory.newXMLGregorianCalendar(2020, 1, 1, 13, 42, 56, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
-        pago.setFormaDePagoP(CFormaPago.VALUE_4.value());
-        pago.setMonedaP(CMoneda.MXN.value());
+        pago.setFechaPago(LocalDateTime.of(2020, 1, 1, 13, 42, 56));
+        pago.setFormaDePagoP(CFormaPago.VALUE_4);
+        pago.setMonedaP(CMoneda.MXN);
         pago.setTipoCambioP(BigDecimal.ONE);
         pago.setMonto(new BigDecimal("3000"));
         pago.setNumOperacion("ABC123");
@@ -60,9 +55,9 @@ public class ExampleComplementoPagoFactory {
         doc1.setIdDocumento("8c6edff3-f9d0-4187-8574-4e199bac8730");
         doc1.setSerie("AAA");
         doc1.setFolio("987");
-        doc1.setMonedaDR(CMoneda.MXN.value());
+        doc1.setMonedaDR(CMoneda.MXN);
         doc1.setTipoCambioDR(BigDecimal.ONE);
-        doc1.setMetodoDePagoDR(CMetodoPago.PPD.value());
+        doc1.setMetodoDePagoDR(CMetodoPago.PPD);
         doc1.setNumParcialidad(BigInteger.ONE);
         doc1.setImpSaldoAnt(new BigDecimal("1500"));
         doc1.setImpPagado(new BigDecimal("1500"));
@@ -72,9 +67,9 @@ public class ExampleComplementoPagoFactory {
         doc2.setIdDocumento("153e2c1a-9901-4fc2-aa92-54bf6add80c4");
         doc2.setSerie("AAA");
         doc2.setFolio("988");
-        doc2.setMonedaDR(CMoneda.MXN.value());
+        doc2.setMonedaDR(CMoneda.MXN);
         doc2.setTipoCambioDR(BigDecimal.ONE);
-        doc2.setMetodoDePagoDR(CMetodoPago.PPD.value());
+        doc2.setMetodoDePagoDR(CMetodoPago.PPD);
         doc2.setNumParcialidad(BigInteger.ONE);
         doc2.setImpSaldoAnt(new BigDecimal("1000"));
         doc2.setImpPagado(new BigDecimal("1000"));
@@ -84,9 +79,9 @@ public class ExampleComplementoPagoFactory {
         doc3.setIdDocumento("47bdcbab-97be-4195-a674-043e33970121");
         doc3.setSerie("AAA");
         doc3.setFolio("989");
-        doc3.setMonedaDR(CMoneda.MXN.value());
+        doc3.setMonedaDR(CMoneda.MXN);
         doc3.setTipoCambioDR(BigDecimal.ONE);
-        doc3.setMetodoDePagoDR(CMetodoPago.PPD.value());
+        doc3.setMetodoDePagoDR(CMetodoPago.PPD);
         doc3.setNumParcialidad(BigInteger.ONE);
         doc3.setImpSaldoAnt(new BigDecimal("500"));
         doc3.setImpPagado(new BigDecimal("500"));
@@ -97,14 +92,14 @@ public class ExampleComplementoPagoFactory {
         Pagos.Pago.Impuestos.Retenciones retenciones = of.createPagosPagoImpuestosRetenciones();
         Pagos.Pago.Impuestos.Retenciones.Retencion retencion = of.createPagosPagoImpuestosRetencionesRetencion();
         retencion.setImporte(new BigDecimal("123"));
-        retencion.setImpuesto(CImpuesto.VALUE_2.value());
+        retencion.setImpuesto(CImpuesto.VALUE_2);
         retenciones.getRetencion().add(retencion);
         impuesto.setRetenciones(retenciones);
         impuesto.setTotalImpuestosTrasladados(new BigDecimal("123"));
         Pagos.Pago.Impuestos.Traslados trasladados = of.createPagosPagoImpuestosTraslados();
         Pagos.Pago.Impuestos.Traslados.Traslado traslado = of.createPagosPagoImpuestosTrasladosTraslado();
-        traslado.setImpuesto(CImpuesto.VALUE_2.value());
-        traslado.setTipoFactor(CTipoFactor.TASA.value());
+        traslado.setImpuesto(CImpuesto.VALUE_2);
+        traslado.setTipoFactor(CTipoFactor.TASA);
         traslado.setTasaOCuota(new BigDecimal("0.16"));
         traslado.setImporte(new BigDecimal("123"));
         trasladados.getTraslado().add(traslado);
@@ -115,9 +110,9 @@ public class ExampleComplementoPagoFactory {
 
     private Pagos.Pago createPago2() {
         Pagos.Pago pago = of.createPagosPago();
-        pago.setFechaPago(datatypeFactory.newXMLGregorianCalendar(2020, 2, 1, 13, 42, 56, DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED));
-        pago.setFormaDePagoP(CFormaPago.VALUE_3.value());
-        pago.setMonedaP(CMoneda.MXN.value());
+        pago.setFechaPago(LocalDateTime.of(2020, 2, 1, 13, 42, 56));
+        pago.setFormaDePagoP(CFormaPago.VALUE_3);
+        pago.setMonedaP(CMoneda.MXN);
         pago.setTipoCambioP(BigDecimal.ONE);
         pago.setMonto(new BigDecimal("2000"));
         pago.setNumOperacion("ABC321");
@@ -134,9 +129,9 @@ public class ExampleComplementoPagoFactory {
         doc1.setIdDocumento("0121a674-97be-4195-cbab-043e339747bd");
         doc1.setSerie("BBB");
         doc1.setFolio("987");
-        doc1.setMonedaDR(CMoneda.MXN.value());
+        doc1.setMonedaDR(CMoneda.MXN);
         doc1.setTipoCambioDR(BigDecimal.ONE);
-        doc1.setMetodoDePagoDR(CMetodoPago.PPD.value());
+        doc1.setMetodoDePagoDR(CMetodoPago.PPD);
         doc1.setNumParcialidad(BigInteger.ONE);
         doc1.setImpSaldoAnt(new BigDecimal("1500"));
         doc1.setImpPagado(new BigDecimal("1500"));
@@ -146,9 +141,9 @@ public class ExampleComplementoPagoFactory {
         doc2.setIdDocumento("80c42c1a-9901-4fc2-aa92-54bf6add153e");
         doc2.setSerie("BBB");
         doc2.setFolio("989");
-        doc2.setMonedaDR(CMoneda.MXN.value());
+        doc2.setMonedaDR(CMoneda.MXN);
         doc2.setTipoCambioDR(BigDecimal.ONE);
-        doc2.setMetodoDePagoDR(CMetodoPago.PPD.value());
+        doc2.setMetodoDePagoDR(CMetodoPago.PPD);
         doc2.setNumParcialidad(BigInteger.ONE);
         doc2.setImpSaldoAnt(new BigDecimal("500"));
         doc2.setImpPagado(new BigDecimal("500"));
