@@ -24,21 +24,21 @@ public final class CFDv22 extends CFDv2 {
     private final String BASE_CONTEXT = "mx.grupocorasa.sat.cfd._22";
     private final List<String> schemaLocations = Stream.of("http://www.sat.gob.mx/cfd/2 http://www.sat.gob.mx/sitio_internet/cfd/2/cfdv22.xsd").collect(Collectors.toList());
     private final String[] XSD = new String[]{
-            "/xsd/common/ecc/ecc.xsd",
-            "/xsd/common/psgecfd/psgecfd.xsd",
-            "/xsd/common/donat/donat11.xsd",
-            "/xsd/common/divisas/divisas.xsd",
-            "/xsd/common/ecb/ecb.xsd",
-            "/xsd/common/detallista/detallista.xsd",
-            "/xsd/common/implocal/implocal.xsd",
-            "/xsd/common/terceros/terceros11.xsd",
-            "/xsd/common/iedu/iedu.xsd",
-            "/xsd/common/ventavehiculos/ventavehiculos.xsd",
-            "/xsd/common/pfic/pfic.xsd",
+            "/xsd/cfd/2/cfdv22.xsd",
             "/xsd/common/TuristaPasajeroExtranjero/TuristaPasajeroExtranjero.xsd",
+            "/xsd/common/detallista/detallista.xsd",
+            "/xsd/common/divisas/divisas.xsd",
+            "/xsd/common/donat/donat11.xsd",
+            "/xsd/common/ecb/ecb.xsd",
+            "/xsd/common/ecc/ecc.xsd",
+            "/xsd/common/iedu/iedu.xsd",
+            "/xsd/common/implocal/implocal.xsd",
             "/xsd/common/leyendasFiscales/leyendasFisc.xsd",
+            "/xsd/common/pfic/pfic.xsd",
             "/xsd/common/psgcfdsp/psgcfdsp.xsd",
-            "/xsd/cfd/2/cfdv22.xsd"
+            "/xsd/common/psgecfd/psgecfd.xsd",
+            "/xsd/common/terceros/terceros11.xsd",
+            "/xsd/common/ventavehiculos/ventavehiculos.xsd"
     };
     private final Comprobante document;
     private final JAXBContext context;

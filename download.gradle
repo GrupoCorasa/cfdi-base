@@ -275,7 +275,21 @@ void downloadSatResouce(List<String> downloads, String url, String baseUrl, Stri
 
 static void replaceXsd(String filePath, List<String> downloads) {
     //Need to order, first tipoDatos and catalogos
-    Comparator comparator = { a, b -> (a.contains('/catalogos/') || a.contains('/tipoDatos/')) ? -1 : 1 };
+    Comparator<String> comparator = { a, b ->
+        if ((a.contains('/catalogos/') || a.contains('/tipoDatos/'))) {
+            if (b.contains('/catalogos/') || b.contains('/tipoDatos/')) {
+                return a <=> b
+            } else {
+                return -1
+            }
+        } else {
+            if (b.contains('/catalogos/') || b.contains('/tipoDatos/')) {
+                return 1
+            } else {
+                return a <=> b
+            }
+        }
+    }
     //Add into the cfd/cfdi version class all xsd schemas
     List<String> imports = downloads
             .findAll { value -> value.endsWith('.xsd') }

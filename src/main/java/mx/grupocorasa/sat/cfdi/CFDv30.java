@@ -24,16 +24,16 @@ public final class CFDv30 extends CFDv3 {
     private final String BASE_CONTEXT = "mx.grupocorasa.sat.cfd._30";
     private final List<String> schemaLocations = Stream.of("http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv3.xsd").collect(Collectors.toList());
     private final String[] XSD = new String[]{
-            "/xsd/common/ecc/ecc.xsd",
-            "/xsd/common/donat/donat.xsd",
-            "/xsd/common/divisas/divisas.xsd",
-            "/xsd/common/ecb/ecb.xsd",
-            "/xsd/common/detallista/detallista.xsd",
-            "/xsd/common/implocal/implocal.xsd",
-            "/xsd/common/terceros/terceros.xsd",
-            "/xsd/common/iedu/iedu.xsd",
             "/xsd/cfd/3/cfdv3.xsd",
-            "/xsd/common/TimbreFiscalDigital/TimbreFiscalDigital.xsd"
+            "/xsd/common/TimbreFiscalDigital/TimbreFiscalDigital.xsd",
+            "/xsd/common/detallista/detallista.xsd",
+            "/xsd/common/divisas/divisas.xsd",
+            "/xsd/common/donat/donat.xsd",
+            "/xsd/common/ecb/ecb.xsd",
+            "/xsd/common/ecc/ecc.xsd",
+            "/xsd/common/iedu/iedu.xsd",
+            "/xsd/common/implocal/implocal.xsd",
+            "/xsd/common/terceros/terceros.xsd"
     };
     private final Comprobante document;
     private final JAXBContext context;
