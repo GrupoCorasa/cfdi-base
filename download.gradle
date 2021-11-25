@@ -1,5 +1,10 @@
 void downloadSatResouce(List<String> downloads, String url, String baseUrl, String basePath) {
     String filePath = url.replace(baseUrl, basePath + (url.endsWith('.xslt') ? 'xslt/' : 'xsd/'))
+    if (url.equalsIgnoreCase("http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/CartaPorte20.xslt")) {
+        filePath = "src/main/resources/xslt/common/CartaPorte20/CartaPorte20.xslt"
+    } else if (url.equalsIgnoreCase("http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte20.xsd")) {
+        filePath = "src/main/resources/xsd/common/CartaPorte20/CartaPorte20.xsd"
+    }
     if (url.find('/cfd/[0-9]{1}/') == null) {
         //if url contain cfd version change 'common' dir
         filePath = filePath.replaceAll('/cfd/', '/common/')
@@ -16,12 +21,21 @@ void downloadSatResouce(List<String> downloads, String url, String baseUrl, Stri
             '(?<=schemaLocation=\")(.*?)(?=\")' : //regex to find schema location
             '(?<=xsl:include href=\")(.*?)(?=\")' //regex to find xslt includes
     String content = file.getText('UTF-8')
+    if (filePath.endsWith("cadenaoriginal_3_3.xslt") && !content.contains("CartaPorte20.xslt")) {
+        content = content.replace("<xsl:include href=\"http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte.xslt\"/>",
+                "<xsl:include href=\"http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte.xslt\"/>\n" +
+                        "  <xsl:include href=\"http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/CartaPorte20.xslt\"/>")
+    }
     content.findAll(regexFilter)
             .each { newUrlResource ->
                 downloadSatResouce(downloads, newUrlResource, baseUrl, basePath) //make recursive with all schema locations or xslt includes
                 if (newUrlResource.endsWith('.xslt') && !newUrlResource.contains('cadenaoriginal')) {
                     //also download xsd files of every xslt
-                    downloadSatResouce(downloads, newUrlResource.replace('.xslt', '.xsd'), baseUrl, basePath.replace('/xslt/', '/xsd/'))
+                    if (newUrlResource.equalsIgnoreCase("http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/CartaPorte20.xslt")) {
+                        downloadSatResouce(downloads, "http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte20.xsd", baseUrl, basePath.replace('/xslt/', '/xsd/'))
+                    } else {
+                        downloadSatResouce(downloads, newUrlResource.replace('.xslt', '.xsd'), baseUrl, basePath.replace('/xslt/', '/xsd/'))
+                    }
                 }
                 String newUrlName = newUrlResource.substring(newUrlResource.lastIndexOf('/') + 1)
                 String localPath = downloads.find { value -> value.endsWith(newUrlName) }
@@ -397,7 +411,8 @@ tasks.register("satResources") {
         String mapString = ''
         namespaceMap.forEach { pkg, xsd ->
             String xsdContent = new File('src/main/resources/' + xsd).getText('UTF-8')
-            String matcher = (xsdContent.substring(0, 500) =~ '(?<=targetNamespace=")((.)*?)(?=")').findAll()[0][0]
+            int start_index = xsdContent.indexOf("targetNamespace")
+            String matcher = (xsdContent.substring(start_index, start_index + 150) =~ '(?<=targetNamespace=")((.)*?)(?=")').findAll()[0][0]
             mapString = mapString + '\n\t\tnamespaceMap.put("' + pkg + '", "' + matcher + '");'
         }
         file = new File('src/main/java/mx/grupocorasa/sat/common/CfdCommon.java')

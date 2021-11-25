@@ -355,6 +355,12 @@ xjcGeneration {
             schemaFile = 'xsd/common/catalogos/CartaPorte/catCartaPorte.xsd'
             javaPackageName = 'mx.grupocorasa.sat.common.catalogos.CartaPorte'
         }
+        mx_grupocorasa_sat_common_CartaPorte20 {
+            bindingFile = 'src/main/resources/bind.xml'
+            schemaRootDir = 'src/main/resources'
+            schemaFile = 'xsd/common/CartaPorte20/CartaPorte20.xsd'
+            javaPackageName = 'mx.grupocorasa.sat.common.CartaPorte20'
+        }
         mx_grupocorasa_sat_cfd_33 {
             bindingFile = 'src/main/resources/bind.xml'
             schemaRootDir = 'src/main/resources'

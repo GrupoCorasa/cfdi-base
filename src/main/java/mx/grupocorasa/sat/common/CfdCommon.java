@@ -251,6 +251,7 @@ public abstract class CfdCommon implements CfdInterface {
         namespaceMap.put("mx.grupocorasa.sat.common.detallista", "http://www.sat.gob.mx/detallista");
         namespaceMap.put("mx.grupocorasa.sat.common.catalogos", "http://www.sat.gob.mx/sitio_internet/cfd/catalogos");
         namespaceMap.put("mx.grupocorasa.sat.common.spei", "http://www.sat.gob.mx/spei");
+        namespaceMap.put("mx.grupocorasa.sat.common.CartaPorte20", "http://www.sat.gob.mx/CartaPorte20");
         namespaceMap.put("mx.grupocorasa.sat.common.ecb10", "http://www.sat.gob.mx/ecb");
         namespaceMap.put("mx.grupocorasa.sat.common.pfic10", "http://www.sat.gob.mx/pfic");
         namespaceMap.put("mx.grupocorasa.sat.common.arteantiguedades10", "http://www.sat.gob.mx/arteantiguedades");
