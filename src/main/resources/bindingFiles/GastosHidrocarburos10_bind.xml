@@ -1,0 +1,25 @@
+<jaxb:bindings version="2.1"
+    xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+    xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <jaxb:bindings>
+        <jaxb:globalBindings typesafeEnumMaxMembers="100000" typesafeEnumMemberName="generateName">
+            <xjc:javaType name="java.time.LocalDateTime" xmlType="xs:dateTime" adapter="mx.grupocorasa.sat.util.DateTimeAdapter"/>
+            <xjc:javaType name="java.time.LocalDate" xmlType="xs:date" adapter="mx.grupocorasa.sat.util.DateAdapter"/>
+        </jaxb:globalBindings>
+    </jaxb:bindings>
+	<jaxb:bindings>
+        <jaxb:bindings schemaLocation="../xsd/common/catalogos/hidrocarburos/catHidrocarburos.xsd" node="/xs:schema">
+            <jaxb:schemaBindings>
+                <jaxb:package name="mx.grupocorasa.sat.common.catalogos.hidrocarburos"/>
+            </jaxb:schemaBindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
+	<jaxb:bindings>
+        <jaxb:bindings schemaLocation="../xsd/common/GastosHidrocarburos10/GastosHidrocarburos10.xsd" node="/xs:schema">
+            <jaxb:schemaBindings>
+                <jaxb:package name="mx.grupocorasa.sat.common.GastosHidrocarburos10"/>
+            </jaxb:schemaBindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
+</jaxb:bindings>

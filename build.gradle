@@ -20,358 +20,299 @@ xjcGeneration {
     defaultAdditionalXjcOptions = ['encoding': 'UTF-8']
     schemas {
         mx_grupocorasa_sat_common_ecc {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/ecc_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/ecc/ecc.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.ecc'
         }
         mx_grupocorasa_sat_common_psgecfd {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/psgecfd_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/psgecfd/psgecfd.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.psgecfd'
         }
         mx_grupocorasa_sat_common_donat11 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/donat11_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/donat/donat11.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.donat11'
         }
         mx_grupocorasa_sat_common_divisas10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/divisas_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/divisas/divisas.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.divisas10'
         }
         mx_grupocorasa_sat_common_ecb10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/ecb_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/ecb/ecb.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.ecb10'
         }
         mx_grupocorasa_sat_common_detallista {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/detallista_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/detallista/detallista.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.detallista'
         }
         mx_grupocorasa_sat_common_implocal10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/implocal_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/implocal/implocal.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.implocal10'
         }
         mx_grupocorasa_sat_common_terceros11 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/terceros11_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/terceros/terceros11.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.terceros11'
         }
         mx_grupocorasa_sat_common_iedu10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/iedu_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/iedu/iedu.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.iedu10'
         }
         mx_grupocorasa_sat_common_ventavehiculos11 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/ventavehiculos11_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/ventavehiculos/ventavehiculos11.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.ventavehiculos11'
         }
         mx_grupocorasa_sat_common_pfic10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/pfic_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/pfic/pfic.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.pfic10'
         }
         mx_grupocorasa_sat_common_TuristaPasajeroExtranjero10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/TuristaPasajeroExtranjero_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/TuristaPasajeroExtranjero/TuristaPasajeroExtranjero.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.TuristaPasajeroExtranjero10'
         }
         mx_grupocorasa_sat_common_leyendasFiscales10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/leyendasFisc_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/leyendasFiscales/leyendasFisc.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.leyendasFiscales10'
         }
         mx_grupocorasa_sat_common_spei {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/spei_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/spei/spei.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.spei'
         }
         mx_grupocorasa_sat_common_nomina11 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/nomina11_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/nomina/nomina11.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.nomina11'
         }
         mx_grupocorasa_sat_common_cfdiregistrofiscal10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/cfdiregistrofiscal_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/cfdiregistrofiscal/cfdiregistrofiscal.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.cfdiregistrofiscal10'
         }
         mx_grupocorasa_sat_common_pagoenespecie10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/pagoenespecie_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/pagoenespecie/pagoenespecie.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.pagoenespecie10'
         }
         mx_grupocorasa_sat_common_consumodecombustibles10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/consumodecombustibles_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/consumodecombustibles/consumodecombustibles.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.consumodecombustibles10'
         }
         mx_grupocorasa_sat_common_valesdedespensa10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/valesdedespensa_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/valesdedespensa/valesdedespensa.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.valesdedespensa10'
         }
         mx_grupocorasa_sat_common_aerolineas10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/aerolineas_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/aerolineas/aerolineas.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.aerolineas10'
         }
         mx_grupocorasa_sat_common_notariospublicos10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/notariospublicos_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/notariospublicos/notariospublicos.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.notariospublicos10'
         }
         mx_grupocorasa_sat_common_vehiculousado10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/vehiculousado_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/vehiculousado/vehiculousado.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.vehiculousado10'
         }
         mx_grupocorasa_sat_common_servicioparcialconstruccion10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/servicioparcialconstruccion_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/servicioparcialconstruccion/servicioparcialconstruccion.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.servicioparcialconstruccion10'
         }
         mx_grupocorasa_sat_common_certificadodestruccion10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/certificadodedestruccion_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/certificadodestruccion/certificadodedestruccion.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.certificadodestruccion10'
         }
         mx_grupocorasa_sat_common_renovacionysustitucionvehiculos10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/renovacionysustitucionvehiculos_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/renovacionysustitucionvehiculos/renovacionysustitucionvehiculos.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.renovacionysustitucionvehiculos10'
         }
         mx_grupocorasa_sat_common_arteantiguedades10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/obrasarteantiguedades_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/arteantiguedades/obrasarteantiguedades.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.arteantiguedades10'
         }
         mx_grupocorasa_sat_common_acreditamiento10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/AcreditamientoIEPS10_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/acreditamiento/AcreditamientoIEPS10.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.acreditamiento10'
         }
         mx_grupocorasa_sat_common_EstadoDeCuentaCombustible11 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/ecc11_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/EstadoDeCuentaCombustible/ecc11.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.EstadoDeCuentaCombustible11'
         }
         mx_grupocorasa_sat_common_ComercioExterior10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/ComercioExterior10_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/ComercioExterior/ComercioExterior10.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.ComercioExterior10'
         }
         mx_grupocorasa_sat_common_ine10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/ine10_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/ine/ine10.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.ine10'
         }
         mx_grupocorasa_sat_common_ine11 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/ine11_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/ine/ine11.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.ine11'
         }
         mx_grupocorasa_sat_common_nomina12 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/nomina12_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/nomina/nomina12.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.nomina12'
         }
         mx_grupocorasa_sat_common_catalogos {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/catCFDI_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/catalogos/catCFDI.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.catalogos'
         }
         mx_grupocorasa_sat_common_tipoDatos_tdCFDI {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/tdCFDI_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/tipoDatos/tdCFDI/tdCFDI.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.tipoDatos.tdCFDI'
         }
         mx_grupocorasa_sat_common_catalogos_Nomina {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/catNomina_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/catalogos/Nomina/catNomina.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.catalogos.Nomina'
         }
         mx_grupocorasa_sat_common_ComercioExterior11 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/ComercioExterior11_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/ComercioExterior11/ComercioExterior11.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.ComercioExterior11'
         }
         mx_grupocorasa_sat_common_catalogos_ComExt {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/catComExt_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/catalogos/ComExt/catComExt.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.catalogos.ComExt'
         }
         mx_grupocorasa_sat_cfd_32 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/cfdv32_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/cfd/3/cfdv32.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.cfd._32'
         }
         mx_grupocorasa_sat_common_TimbreFiscalDigital10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/TimbreFiscalDigital_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/TimbreFiscalDigital/TimbreFiscalDigital.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.TimbreFiscalDigital10'
         }
         mx_grupocorasa_sat_common_ventavehiculos10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/ventavehiculos_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/ventavehiculos/ventavehiculos.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.ventavehiculos10'
         }
         mx_grupocorasa_sat_common_psgcfdsp10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/psgcfdsp_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/psgcfdsp/psgcfdsp.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.psgcfdsp10'
         }
         mx_grupocorasa_sat_cfd_22 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/cfdv22_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/cfd/2/cfdv22.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.cfd._22'
         }
         mx_grupocorasa_sat_common_donat10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/donat_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/donat/donat.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.donat10'
         }
         mx_grupocorasa_sat_common_terceros10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/terceros_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/terceros/terceros.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.terceros10'
         }
         mx_grupocorasa_sat_cfd_20 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/cfdv2_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/cfd/2/cfdv2.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.cfd._20'
         }
         mx_grupocorasa_sat_cfd_30 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/cfdv3_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/cfd/3/cfdv3.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.cfd._30'
         }
         mx_grupocorasa_sat_common_Pagos10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/Pagos10_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/Pagos/Pagos10.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.Pagos10'
         }
         mx_grupocorasa_sat_common_catalogos_Pagos {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/catPagos_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/catalogos/Pagos/catPagos.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.catalogos.Pagos'
         }
         mx_grupocorasa_sat_common_EstadoDeCuentaCombustible12 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/ecc12_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/EstadoDeCuentaCombustible/ecc12.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.EstadoDeCuentaCombustible12'
         }
         mx_grupocorasa_sat_common_catalogos_Combustible {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/catCombustible_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/catalogos/Combustible/catCombustible.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.catalogos.Combustible'
         }
         mx_grupocorasa_sat_common_consumodecombustibles11 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/consumodeCombustibles11_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/consumodecombustibles/consumodeCombustibles11.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.consumodecombustibles11'
         }
         mx_grupocorasa_sat_common_GastosHidrocarburos10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/GastosHidrocarburos10_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/GastosHidrocarburos10/GastosHidrocarburos10.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.GastosHidrocarburos10'
         }
         mx_grupocorasa_sat_common_catalogos_hidrocarburos {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/catHidrocarburos_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/catalogos/hidrocarburos/catHidrocarburos.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.catalogos.hidrocarburos'
         }
         mx_grupocorasa_sat_common_IngresosHidrocarburos10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/IngresosHidrocarburos_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/IngresosHidrocarburos10/IngresosHidrocarburos.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.IngresosHidrocarburos10'
         }
         mx_grupocorasa_sat_common_CartaPorte10 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/CartaPorte_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/CartaPorte/CartaPorte.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.CartaPorte10'
         }
         mx_grupocorasa_sat_common_catalogos_CartaPorte {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/catCartaPorte_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/catalogos/CartaPorte/catCartaPorte.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.catalogos.CartaPorte'
         }
         mx_grupocorasa_sat_common_CartaPorte20 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/CartaPorte20_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/CartaPorte20/CartaPorte20.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.CartaPorte20'
         }
         mx_grupocorasa_sat_cfd_33 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/cfdv33_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/cfd/3/cfdv33.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.cfd._33'
         }
         mx_grupocorasa_sat_common_TimbreFiscalDigital11 {
-            bindingFile = 'src/main/resources/bind.xml'
+            bindingFile = 'src/main/resources/bindingFiles/TimbreFiscalDigitalv11_bind.xml'
             schemaRootDir = 'src/main/resources'
             schemaFile = 'xsd/common/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd'
-            javaPackageName = 'mx.grupocorasa.sat.common.TimbreFiscalDigital11'
         }
     }
 }
