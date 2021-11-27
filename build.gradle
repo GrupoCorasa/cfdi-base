@@ -2,9 +2,32 @@ plugins {
     id 'java'
     id "de.undercouch.download" version "4.0.4"
     id "com.github.edeandrea.xjc-generation" version "1.6"
+    id "maven-publish"
+    id "co.uzzu.dotenv.gradle" version "1.2.0"
 }
 
 apply from: 'download.gradle'
+
+group 'mx.grupocorasa.cfdibase'
+version '3.3.0'
+
+publishing {
+    repositories {
+        maven {
+            name = "cfdi-base"
+            url = uri("https://maven.pkg.github.com/grupocorasa/cfdi-base")
+            credentials {
+                username = env.USERNAME.value
+                password = env.GP_TOKEN.value
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -318,9 +341,6 @@ xjcGeneration {
 }
 //END OF XJC-GEN
 //***DO NOT EDIT*** TO HERE
-
-group 'mx.grupocorasa.cfdibase'
-version '3.3.0'
 
 sourceCompatibility = JavaVersion.VERSION_11
 

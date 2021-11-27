@@ -17,7 +17,7 @@ tmp/
 *.bak
 *.swp
 *~.nib
-local.properties
+.env
 .settings/
 .loadpath
 .recommenders
@@ -234,3 +234,6 @@ gradle-app.setting
 ### SatResources
 src/main/resources/xsd/
 src/main/resources/xslt/
+
+### GitHub Publish variables
+.env
