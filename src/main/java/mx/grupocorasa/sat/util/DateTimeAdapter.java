@@ -16,7 +16,7 @@ public class DateTimeAdapter extends XmlAdapter<String, LocalDateTime> {
 
     @Override
     public LocalDateTime unmarshal(String v) {
-        if (v == null || v.isEmpty() || v.isBlank()) return null;
+        if (v == null || v.isEmpty()) return null;
         return LocalDateTime.parse(v, CUSTOM_FORMAT_STRING);
     }
 

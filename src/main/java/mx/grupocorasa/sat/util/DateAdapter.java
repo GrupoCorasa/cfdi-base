@@ -10,11 +10,13 @@ public class DateAdapter extends XmlAdapter<String, LocalDate> {
 
     @Override
     public String marshal(LocalDate v) {
+        if (v == null) return null;
         return v.format(CUSTOM_FORMAT_STRING);
     }
 
     @Override
     public LocalDate unmarshal(String v) {
+        if (v == null || v.isEmpty()) return null;
         return LocalDate.parse(v, CUSTOM_FORMAT_STRING);
     }
 
