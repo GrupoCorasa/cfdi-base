@@ -1,5 +1,6 @@
 package mx.grupocorasa.sat.common;
 
+import com.google.common.io.ByteStreams;
 import com.google.common.reflect.ClassPath;
 import mx.grupocorasa.sat.security.KeyLoaderEnumeration;
 import mx.grupocorasa.sat.security.factory.KeyLoaderFactory;
@@ -197,7 +198,7 @@ public abstract class CfdCommon implements CfdInterface {
 
     //Funciona en conjunto con: verificar(InputStream in)
     byte[] getOriginalBytes(InputStream in) throws IOException, TransformerException {
-        try (ByteArrayOutputStream baos = new ByteArrayOutputStream(); in) {
+        try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
             Source source = new StreamSource(in);
             Result out = new StreamResult(baos);
             TransformerFactory factory = tf;
@@ -304,9 +305,10 @@ public abstract class CfdCommon implements CfdInterface {
 
     @SuppressWarnings("UnstableApiUsage")
     protected JAXBContext getFileContext(InputStream in) throws IOException, JAXBException {
-        final List<String> contexts = new ArrayList<>(List.of(getBaseContext()));
+        final List<String> contexts = new ArrayList<>();
+        contexts.add(getBaseContext());
         final ClassLoader loader = Thread.currentThread().getContextClassLoader();
-        final String xml = new String(in.readAllBytes(), StandardCharsets.UTF_8);
+        final String xml = new String(ByteStreams.toByteArray(in), StandardCharsets.UTF_8);
         Map<String, String> namespaceMap = getFileNamespaceMap();
         for (final ClassPath.ClassInfo info : ClassPath.from(loader).getTopLevelClasses()) {
             if (info.getName().startsWith("mx.grupocorasa.sat.common.")

@@ -9,7 +9,7 @@ plugins {
 apply from: 'download.gradle'
 
 group 'mx.grupocorasa.cfdibase'
-version '3.3.1'
+version '3.3.2'
 
 publishing {
     repositories {
@@ -342,7 +342,7 @@ xjcGeneration {
 //END OF XJC-GEN
 //***DO NOT EDIT*** TO HERE
 
-sourceCompatibility = JavaVersion.VERSION_11
+sourceCompatibility = JavaVersion.VERSION_1_8
 
 sourceSets {
     main {
@@ -358,7 +358,7 @@ repositories {
 
 dependencies {
     testImplementation group: 'junit', name: 'junit', version: '4.12'
-    implementation "com.google.guava:guava:29.0-jre"
+    implementation 'com.google.guava:guava:31.0.1-jre'
     implementation 'ca.juliusdavies:not-yet-commons-ssl:0.3.11'
     xjc "javax.xml.bind:jaxb-api:$jaxbVersion"
     implementation "javax.xml.bind:jaxb-api:$jaxbVersion"

@@ -16,6 +16,7 @@ import org.junit.Test;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
 
@@ -220,7 +221,7 @@ public final class CFDv32Test {
         TimbreFiscalDigital tfd = ExampleTimbreFiscal10Factory.getInstance().createTimbreFiscal();
         c.getComplemento().getAny().add(tfd);
         CFDv32 cfd = new CFDv32(c);
-        String cfdi_tfd = Files.readString(Path.of("resources/xmls/cfdi/v32/CFDv32_tfd.xml")).replaceAll("(\\r\\n|\\r|\\n)", "");
+        String cfdi_tfd = new String(Files.readAllBytes(Paths.get("resources/xmls/cfdi/v32/CFDv32_tfd.xml"))).replaceAll("(\\r\\n|\\r|\\n)", "");
         try (OutputStream outputStream = new ByteArrayOutputStream()) {
             cfd.validar(null);
             cfd.verificar();
