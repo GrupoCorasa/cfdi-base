@@ -21,11 +21,6 @@ void downloadSatResouce(List<String> downloads, String url, String baseUrl, Stri
             '(?<=schemaLocation=\")(.*?)(?=\")' : //regex to find schema location
             '(?<=xsl:include href=\")(.*?)(?=\")' //regex to find xslt includes
     String content = file.getText('UTF-8')
-    if (filePath.endsWith("cadenaoriginal_3_3.xslt") && !content.contains("CartaPorte20.xslt")) {
-        content = content.replace("<xsl:include href=\"http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte.xslt\"/>",
-                "<xsl:include href=\"http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte.xslt\"/>\n" +
-                        "  <xsl:include href=\"http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/CartaPorte20.xslt\"/>")
-    }
     content.findAll(regexFilter)
             .each { newUrlResource ->
                 downloadSatResouce(downloads, newUrlResource, baseUrl, basePath) //make recursive with all schema locations or xslt includes
