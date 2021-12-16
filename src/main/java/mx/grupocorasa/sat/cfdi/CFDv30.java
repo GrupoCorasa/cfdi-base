@@ -13,6 +13,7 @@ import java.io.InputStream;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,14 +39,18 @@ public final class CFDv30 extends CFDv3 {
     private final Comprobante document;
     private final JAXBContext context;
 
-    public CFDv30(InputStream in) throws Exception {
+    public CFDv30(InputStream in, String... contexts) throws Exception {
         this.document = (Comprobante) load(in);
-        this.context = getContext(document);
+        this.context = getContext(document, contexts);
     }
 
-    public CFDv30(Comprobante comprobante) throws Exception {
-        this.context = getContext(comprobante);
+    public CFDv30(Comprobante comprobante, String... contexts) throws Exception {
+        this.context = getContext(comprobante, contexts);
         this.document = copy(comprobante);
+    }
+
+    public static Comprobante newComprobante(InputStream in) throws Exception {
+        return new CFDv30(in).document;
     }
 
     @Override
@@ -120,8 +125,10 @@ public final class CFDv30 extends CFDv3 {
         return contexts;
     }
 
-    private JAXBContext getContext(Comprobante comprobante) throws Exception {
+    private JAXBContext getContext(Comprobante comprobante, String[] addendas) throws Exception {
         final List<String> contexts = getComprobanteContexts(comprobante);
+        if (addendas != null && addendas.length > 0)
+            contexts.addAll(Arrays.asList(addendas));
         contexts.add(0, BASE_CONTEXT);
         if (!contextMap.containsKey(contexts)) {
             JAXBContext context = JAXBContext.newInstance(JOINER.join(contexts));
@@ -145,10 +152,6 @@ public final class CFDv30 extends CFDv3 {
         m.marshal(comprobante, doc);
         Unmarshaller u = context.createUnmarshaller();
         return (Comprobante) u.unmarshal(doc);
-    }
-
-    public static Comprobante newComprobante(InputStream in) throws Exception {
-        return new CFDv30(in).document;
     }
 
 }
