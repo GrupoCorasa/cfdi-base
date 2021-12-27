@@ -1,5 +1,9 @@
-void downloadSatResouce(List<String> downloads, String url, String baseUrl, String basePath) {
+void downloadSatResouce(List<String> downloads, String url, String basePath) {
+    String baseUrl = url.contains('http://www.sat.gob.mx/sitio_internet') ? 'http://www.sat.gob.mx/sitio_internet/' : 'https://raw.githubusercontent.com/GrupoCorasa/cfdi-base-sat-resources/main/'
     String filePath = url.replace(baseUrl, basePath + (url.endsWith('.xslt') ? 'xslt/' : 'xsd/'))
+    if (url.equalsIgnoreCase('http://www.sat.gob.mx/sitio_internet/cfd/catalogos/catCFDI.xsd')) {
+        url = 'https://raw.githubusercontent.com/GrupoCorasa/cfdi-base-sat-resources/main/cfd/catalogos/catCFDI.xsd'
+    }
     if (url.equalsIgnoreCase("http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/CartaPorte20.xslt")) {
         filePath = "src/main/resources/xslt/common/CartaPorte20/CartaPorte20.xslt"
     } else if (url.equalsIgnoreCase("http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte20.xsd")) {
@@ -23,13 +27,13 @@ void downloadSatResouce(List<String> downloads, String url, String baseUrl, Stri
     String content = file.getText('UTF-8')
     content.findAll(regexFilter)
             .each { newUrlResource ->
-                downloadSatResouce(downloads, newUrlResource, baseUrl, basePath) //make recursive with all schema locations or xslt includes
+                downloadSatResouce(downloads, newUrlResource, basePath)
                 if (newUrlResource.endsWith('.xslt') && !newUrlResource.contains('cadenaoriginal')) {
                     //also download xsd files of every xslt
                     if (newUrlResource.equalsIgnoreCase("http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/CartaPorte20.xslt")) {
-                        downloadSatResouce(downloads, "http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte20.xsd", baseUrl, basePath.replace('/xslt/', '/xsd/'))
+                        downloadSatResouce(downloads, "http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte20.xsd", basePath.replace('/xslt/', '/xsd/'))
                     } else {
-                        downloadSatResouce(downloads, newUrlResource.replace('.xslt', '.xsd'), baseUrl, basePath.replace('/xslt/', '/xsd/'))
+                        downloadSatResouce(downloads, newUrlResource.replace('.xslt', '.xsd'), basePath.replace('/xslt/', '/xsd/'))
                     }
                 }
                 String newUrlName = newUrlResource.substring(newUrlResource.lastIndexOf('/') + 1)
@@ -177,6 +181,7 @@ void downloadSatResouce(List<String> downloads, String url, String baseUrl, Stri
     </xs:simpleType>
     <xs:simpleType name="c_TipoEmbalaje">""" + continueContent
     }
+    content = content.replaceAll("xmlType=\"xs:int\"", "xmlType=\"xs:integer\"")
     file.setText(content, 'UTF-8')
 }
 
@@ -245,7 +250,7 @@ tasks.register("satResources") {
                 ]
         )
         map.put(
-                'src/main/java/mx/grupocorasa/sat/cfdi/CFDv30.java',
+                'src/main/java/mx/grupocorasa/sat/cfdi/v3/CFDv30.java',
                 [
                         'http://www.sat.gob.mx/sitio_internet/cfd/3/cadenaoriginal_3_0/cadenaoriginal_3_0.xslt',
                         'http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv3.xsd',
@@ -254,7 +259,7 @@ tasks.register("satResources") {
                 ]
         )
         map.put(
-                'src/main/java/mx/grupocorasa/sat/cfdi/CFDv32.java',
+                'src/main/java/mx/grupocorasa/sat/cfdi/v3/CFDv32.java',
                 [
                         'http://www.sat.gob.mx/sitio_internet/cfd/3/cadenaoriginal_3_2/cadenaoriginal_3_2.xslt',
                         'http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd',
@@ -263,10 +268,19 @@ tasks.register("satResources") {
                 ]
         )
         map.put(
-                'src/main/java/mx/grupocorasa/sat/cfdi/CFDv33.java',
+                'src/main/java/mx/grupocorasa/sat/cfdi/v3/CFDv33.java',
                 [
                         'http://www.sat.gob.mx/sitio_internet/cfd/3/cadenaoriginal_3_3/cadenaoriginal_3_3.xslt',
                         'http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/cadenaoriginal_TFD_1_1.xslt',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd'
+                ]
+        )
+        map.put(
+                'src/main/java/mx/grupocorasa/sat/cfdi/v4/CFDv40.java',
+                [
+                        'https://raw.githubusercontent.com/GrupoCorasa/cfdi-base-sat-resources/main/cfd/4/cadenaoriginal_4_0/cadenaoriginal_4_0.xslt',
+                        'https://raw.githubusercontent.com/GrupoCorasa/cfdi-base-sat-resources/main/cfd/4/cfdv40.xsd',
                         'http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/cadenaoriginal_TFD_1_1.xslt',
                         'http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd'
                 ]
@@ -278,7 +292,6 @@ tasks.register("satResources") {
                 downloadSatResouce(
                         localDownloads,
                         url,
-                        'http://www.sat.gob.mx/sitio_internet/',
                         'src/main/resources/'
                 )
             }
@@ -288,6 +301,7 @@ tasks.register("satResources") {
                     urls
                             .find { value -> value.endsWith(".xslt") }
                             .replace('http://www.sat.gob.mx/sitio_internet/', '/xslt/')
+                            .replace('https://raw.githubusercontent.com/GrupoCorasa/cfdi-base-sat-resources/main/', '/xslt/')
             )
             allDownloads.addAll(localDownloads)
         }
@@ -308,6 +322,7 @@ tasks.register("satResources") {
                             .replace('xsd', 'mx.grupocorasa.sat')
                             .replace('.2', '._2')
                             .replace('.3', '._3')
+                            .replace('.4', '._4')
                     String version = new File("${rootDir}/src/main/resources/${filePath.substring(1)}").getText('UTF-8').find('(?<=xs:attribute name="(V|v)ersion")((.)*?)(?=>)')
                     if (version != null) {
                         version = version.find('(?<=fixed=")((.)*?)(?=")').replace(".", "")
@@ -402,9 +417,10 @@ tasks.register("cleanSatResources") {
         List<String> cfds = [
                 'src/main/java/mx/grupocorasa/sat/cfd/CFDv20.java',
                 'src/main/java/mx/grupocorasa/sat/cfd/CFDv22.java',
-                'src/main/java/mx/grupocorasa/sat/cfdi/CFDv30.java',
-                'src/main/java/mx/grupocorasa/sat/cfdi/CFDv32.java',
-                'src/main/java/mx/grupocorasa/sat/cfdi/CFDv33.java'
+                'src/main/java/mx/grupocorasa/sat/cfdi/v3/CFDv30.java',
+                'src/main/java/mx/grupocorasa/sat/cfdi/v3/CFDv32.java',
+                'src/main/java/mx/grupocorasa/sat/cfdi/v3/CFDv33.java',
+                'src/main/java/mx/grupocorasa/sat/cfdi/v4/CFDv40.java'
         ]
 
         cfds.each { f ->
