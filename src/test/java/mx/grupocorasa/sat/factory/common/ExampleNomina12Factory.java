@@ -101,9 +101,9 @@ public class ExampleNomina12Factory {
         accionesOTitulos.setPrecioAlOtorgarse(new BigDecimal("0.99"));
         per4.setAccionesOTitulos(accionesOTitulos);
         Nomina.Percepciones.Percepcion.HorasExtra horasExtra = of.createNominaPercepcionesPercepcionHorasExtra();
-        horasExtra.setDias(1);
+        horasExtra.setDias(new Integer("1"));
         horasExtra.setTipoHoras(CTipoHoras.VALUE_2);
-        horasExtra.setHorasExtra(4);
+        horasExtra.setHorasExtra(new Integer("4"));
         horasExtra.setImportePagado(BigDecimal.ZERO);
         per4.getHorasExtra().add(horasExtra);
         percepciones.getPercepcion().add(per4);
@@ -116,7 +116,7 @@ public class ExampleNomina12Factory {
         percepciones.setJubilacionPensionRetiro(jubilacionPensionRetiro);
         Nomina.Percepciones.SeparacionIndemnizacion separacionIndemnizacion = of.createNominaPercepcionesSeparacionIndemnizacion();
         separacionIndemnizacion.setTotalPagado(new BigDecimal("0.01"));
-        separacionIndemnizacion.setNumAñosServicio(4);
+        separacionIndemnizacion.setNumAñosServicio(new Integer("4"));
         separacionIndemnizacion.setUltimoSueldoMensOrd(new BigDecimal("0.02"));
         separacionIndemnizacion.setIngresoAcumulable(new BigDecimal("0.03"));
         separacionIndemnizacion.setIngresoNoAcumulable(new BigDecimal("0.04"));
@@ -244,12 +244,12 @@ public class ExampleNomina12Factory {
     private Nomina.Incapacidades createIncapacidades() {
         Nomina.Incapacidades incapacidades = of.createNominaIncapacidades();
         Nomina.Incapacidades.Incapacidad inc1 = of.createNominaIncapacidadesIncapacidad();
-        inc1.setDiasIncapacidad(11);
+        inc1.setDiasIncapacidad(new Integer("11"));
         inc1.setTipoIncapacidad(CTipoIncapacidad.VALUE_4);
         inc1.setImporteMonetario(new BigDecimal("0.01"));
         incapacidades.getIncapacidad().add(inc1);
         Nomina.Incapacidades.Incapacidad inc2 = of.createNominaIncapacidadesIncapacidad();
-        inc2.setDiasIncapacidad(20);
+        inc2.setDiasIncapacidad(new Integer("20"));
         inc2.setTipoIncapacidad(CTipoIncapacidad.VALUE_1);
         inc2.setImporteMonetario(new BigDecimal("0.02"));
         incapacidades.getIncapacidad().add(inc2);

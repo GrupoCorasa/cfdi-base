@@ -58,7 +58,7 @@ public class ExampleComplementoPagoFactory {
         doc1.setMonedaDR(CMoneda.MXN);
         doc1.setTipoCambioDR(BigDecimal.ONE);
         doc1.setMetodoDePagoDR(CMetodoPago.PPD);
-        doc1.setNumParcialidad(BigInteger.ONE);
+        doc1.setNumParcialidad(new BigInteger("1"));
         doc1.setImpSaldoAnt(new BigDecimal("1500"));
         doc1.setImpPagado(new BigDecimal("1500"));
         doc1.setImpSaldoInsoluto(BigDecimal.ZERO);
@@ -70,7 +70,7 @@ public class ExampleComplementoPagoFactory {
         doc2.setMonedaDR(CMoneda.MXN);
         doc2.setTipoCambioDR(BigDecimal.ONE);
         doc2.setMetodoDePagoDR(CMetodoPago.PPD);
-        doc2.setNumParcialidad(BigInteger.ONE);
+        doc2.setNumParcialidad(new BigInteger("1"));
         doc2.setImpSaldoAnt(new BigDecimal("1000"));
         doc2.setImpPagado(new BigDecimal("1000"));
         doc2.setImpSaldoInsoluto(BigDecimal.ZERO);
@@ -82,7 +82,7 @@ public class ExampleComplementoPagoFactory {
         doc3.setMonedaDR(CMoneda.MXN);
         doc3.setTipoCambioDR(BigDecimal.ONE);
         doc3.setMetodoDePagoDR(CMetodoPago.PPD);
-        doc3.setNumParcialidad(BigInteger.ONE);
+        doc3.setNumParcialidad(new BigInteger("1"));
         doc3.setImpSaldoAnt(new BigDecimal("500"));
         doc3.setImpPagado(new BigDecimal("500"));
         doc3.setImpSaldoInsoluto(BigDecimal.ZERO);
@@ -132,7 +132,7 @@ public class ExampleComplementoPagoFactory {
         doc1.setMonedaDR(CMoneda.MXN);
         doc1.setTipoCambioDR(BigDecimal.ONE);
         doc1.setMetodoDePagoDR(CMetodoPago.PPD);
-        doc1.setNumParcialidad(BigInteger.ONE);
+        doc1.setNumParcialidad(new BigInteger("1"));
         doc1.setImpSaldoAnt(new BigDecimal("1500"));
         doc1.setImpPagado(new BigDecimal("1500"));
         doc1.setImpSaldoInsoluto(BigDecimal.ZERO);
@@ -144,7 +144,7 @@ public class ExampleComplementoPagoFactory {
         doc2.setMonedaDR(CMoneda.MXN);
         doc2.setTipoCambioDR(BigDecimal.ONE);
         doc2.setMetodoDePagoDR(CMetodoPago.PPD);
-        doc2.setNumParcialidad(BigInteger.ONE);
+        doc2.setNumParcialidad(new BigInteger("1"));
         doc2.setImpSaldoAnt(new BigDecimal("500"));
         doc2.setImpPagado(new BigDecimal("500"));
         doc2.setImpSaldoInsoluto(BigDecimal.ZERO);

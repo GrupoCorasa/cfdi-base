@@ -39,13 +39,13 @@ public class ExampleNomina11Factory {
         nomina.setCLABE("002760700569076003");
         nomina.setBanco("002");
         nomina.setFechaInicioRelLaboral(LocalDate.of(2017, 1, 1));
-        nomina.setAntiguedad(7);
+        nomina.setAntiguedad(new Integer("7"));
         nomina.setPuesto("Developer");
         nomina.setTipoContrato("01");
         nomina.setTipoJornada("01");
         nomina.setPeriodicidadPago("04");
         nomina.setSalarioBaseCotApor(new BigDecimal("293.73"));
-        nomina.setRiesgoPuesto(2);
+        nomina.setRiesgoPuesto(new Integer("2"));
         nomina.setSalarioDiarioIntegrado(new BigDecimal("293.73"));
         nomina.setPercepciones(createPercepciones());
         nomina.setDeducciones(createDeducciones());
