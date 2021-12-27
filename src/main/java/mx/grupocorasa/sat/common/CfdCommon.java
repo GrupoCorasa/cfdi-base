@@ -204,8 +204,6 @@ public abstract class CfdCommon implements CfdInterface {
             TransformerFactory factory = tf;
             if (factory == null) {
                 factory = TransformerFactory.newInstance();
-                factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
-                factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "");
                 factory.setURIResolver(new URIResolverImpl());
             }
             Transformer transformer = factory.newTransformer(new StreamSource(getClass().getResourceAsStream(getXSLT())));
@@ -221,8 +219,6 @@ public abstract class CfdCommon implements CfdInterface {
             TransformerFactory factory = tf;
             if (factory == null) {
                 factory = TransformerFactory.newInstance();
-                factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
-                factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "");
                 factory.setURIResolver(new URIResolverImpl());
             }
             Transformer transformer = factory.newTransformer(new StreamSource(getClass().getResourceAsStream(getXSLT())));
