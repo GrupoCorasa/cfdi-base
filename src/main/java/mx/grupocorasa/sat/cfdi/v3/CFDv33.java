@@ -1,6 +1,6 @@
-package mx.grupocorasa.sat.cfdi;
+package mx.grupocorasa.sat.cfdi.v3;
 
-import mx.grupocorasa.sat.cfd._32.Comprobante;
+import mx.grupocorasa.sat.cfd._33.Comprobante;
 import org.w3c.dom.Document;
 
 import javax.xml.bind.JAXBContext;
@@ -19,47 +19,50 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public final class CFDv32 extends CFDv3 {
+public final class CFDv33 extends CFDv3 {
 
-    private final String XSLT = "/xslt/cfd/3/cadenaoriginal_3_2/cadenaoriginal_3_2.xslt";
-    private final String BASE_CONTEXT = "mx.grupocorasa.sat.cfd._32";
-    private final List<String> schemaLocations = Stream.of("http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd").collect(Collectors.toList());
+    private final String XSLT = "/xslt/cfd/3/cadenaoriginal_3_3/cadenaoriginal_3_3.xslt";
+    private final String BASE_CONTEXT = "mx.grupocorasa.sat.cfd._33";
+    private final List<String> schemaLocations = Stream.of("http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd").collect(Collectors.toList());
     private final String[] XSD = new String[]{
+            "/xsd/common/catalogos/CartaPorte/catCartaPorte.xsd",
             "/xsd/common/catalogos/ComExt/catComExt.xsd",
+            "/xsd/common/catalogos/Combustible/catCombustible.xsd",
             "/xsd/common/catalogos/Nomina/catNomina.xsd",
+            "/xsd/common/catalogos/Pagos/catPagos.xsd",
             "/xsd/common/catalogos/catCFDI.xsd",
+            "/xsd/common/catalogos/hidrocarburos/catHidrocarburos.xsd",
             "/xsd/common/tipoDatos/tdCFDI/tdCFDI.xsd",
-            "/xsd/cfd/3/cfdv32.xsd",
-            "/xsd/common/ComercioExterior/ComercioExterior10.xsd",
+            "/xsd/cfd/3/cfdv33.xsd",
+            "/xsd/common/CartaPorte/CartaPorte.xsd",
+            "/xsd/common/CartaPorte20/CartaPorte20.xsd",
             "/xsd/common/ComercioExterior11/ComercioExterior11.xsd",
             "/xsd/common/EstadoDeCuentaCombustible/ecc11.xsd",
-            "/xsd/common/TimbreFiscalDigital/TimbreFiscalDigital.xsd",
+            "/xsd/common/EstadoDeCuentaCombustible/ecc12.xsd",
+            "/xsd/common/GastosHidrocarburos10/GastosHidrocarburos10.xsd",
+            "/xsd/common/IngresosHidrocarburos10/IngresosHidrocarburos.xsd",
+            "/xsd/common/Pagos/Pagos10.xsd",
+            "/xsd/common/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd",
             "/xsd/common/TuristaPasajeroExtranjero/TuristaPasajeroExtranjero.xsd",
-            "/xsd/common/acreditamiento/AcreditamientoIEPS10.xsd",
             "/xsd/common/aerolineas/aerolineas.xsd",
             "/xsd/common/arteantiguedades/obrasarteantiguedades.xsd",
             "/xsd/common/certificadodestruccion/certificadodedestruccion.xsd",
             "/xsd/common/cfdiregistrofiscal/cfdiregistrofiscal.xsd",
+            "/xsd/common/consumodecombustibles/consumodeCombustibles11.xsd",
             "/xsd/common/consumodecombustibles/consumodecombustibles.xsd",
             "/xsd/common/detallista/detallista.xsd",
             "/xsd/common/divisas/divisas.xsd",
             "/xsd/common/donat/donat11.xsd",
-            "/xsd/common/ecb/ecb.xsd",
-            "/xsd/common/ecc/ecc.xsd",
             "/xsd/common/iedu/iedu.xsd",
             "/xsd/common/implocal/implocal.xsd",
-            "/xsd/common/ine/ine10.xsd",
             "/xsd/common/ine/ine11.xsd",
             "/xsd/common/leyendasFiscales/leyendasFisc.xsd",
-            "/xsd/common/nomina/nomina11.xsd",
             "/xsd/common/nomina/nomina12.xsd",
             "/xsd/common/notariospublicos/notariospublicos.xsd",
             "/xsd/common/pagoenespecie/pagoenespecie.xsd",
             "/xsd/common/pfic/pfic.xsd",
-            "/xsd/common/psgecfd/psgecfd.xsd",
             "/xsd/common/renovacionysustitucionvehiculos/renovacionysustitucionvehiculos.xsd",
             "/xsd/common/servicioparcialconstruccion/servicioparcialconstruccion.xsd",
-            "/xsd/common/spei/spei.xsd",
             "/xsd/common/terceros/terceros11.xsd",
             "/xsd/common/valesdedespensa/valesdedespensa.xsd",
             "/xsd/common/vehiculousado/vehiculousado.xsd",
@@ -68,18 +71,18 @@ public final class CFDv32 extends CFDv3 {
     private final Comprobante document;
     private final JAXBContext context;
 
-    public CFDv32(InputStream in, String... contexts) throws Exception {
+    public CFDv33(InputStream in, String... contexts) throws Exception {
         this.document = (Comprobante) load(in);
         this.context = getContext(document, contexts);
     }
 
-    public CFDv32(Comprobante comprobante, String... contexts) throws Exception {
+    public CFDv33(Comprobante comprobante, String... contexts) throws Exception {
         this.context = getContext(comprobante, contexts);
         this.document = copy(comprobante);
     }
 
     public static Comprobante newComprobante(InputStream in) throws Exception {
-        return new CFDv32(in).document;
+        return new CFDv33(in).document;
     }
 
     @Override
@@ -139,16 +142,23 @@ public final class CFDv32 extends CFDv3 {
 
     @Override
     public void sellar(PrivateKey key, X509Certificate cert) throws Exception {
-        document.setSello(getSignature(key));
         document.setCertificado(Base64.getEncoder().encodeToString(cert.getEncoded()));
         document.setNoCertificado(new String(cert.getSerialNumber().toByteArray()));
+        document.setSello(getSignature(key));
+    }
+
+    @Override
+    protected String getDigestAlgorithm() {
+        return "SHA256withRSA";
     }
 
     private List<String> getComprobanteContexts(Comprobante comprobante) throws IOException {
         final List<String> contexts = new ArrayList<>();
-        if (comprobante != null && comprobante.getComplemento() != null && comprobante.getComplemento().getAny() != null && !comprobante.getComplemento().getAny().isEmpty()) {
-            for (Object c : comprobante.getComplemento().getAny()) {
-                defineComprobanteContext(c, contexts);
+        if (comprobante != null && comprobante.getComplemento() != null && !comprobante.getComplemento().isEmpty()) {
+            for (Comprobante.Complemento complemento : comprobante.getComplemento()) {
+                for (Object c : complemento.getAny()) {
+                    defineComprobanteContext(c, contexts);
+                }
             }
         }
         return contexts;
@@ -182,5 +192,4 @@ public final class CFDv32 extends CFDv3 {
         Unmarshaller u = context.createUnmarshaller();
         return (Comprobante) u.unmarshal(doc);
     }
-
 }

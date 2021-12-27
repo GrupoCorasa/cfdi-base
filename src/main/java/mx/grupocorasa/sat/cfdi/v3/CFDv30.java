@@ -1,4 +1,4 @@
-package mx.grupocorasa.sat.cfdi;
+package mx.grupocorasa.sat.cfdi.v3;
 
 import mx.grupocorasa.sat.cfd._30.Comprobante;
 import org.w3c.dom.Document;

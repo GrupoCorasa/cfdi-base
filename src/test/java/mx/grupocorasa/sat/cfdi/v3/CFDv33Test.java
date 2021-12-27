@@ -1,4 +1,4 @@
-package mx.grupocorasa.sat.cfdi;
+package mx.grupocorasa.sat.cfdi.v3;
 
 import mx.grupocorasa.sat.cfd._33.Comprobante;
 import mx.grupocorasa.sat.common.Pagos10.Pagos;

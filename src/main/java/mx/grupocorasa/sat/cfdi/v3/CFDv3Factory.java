@@ -1,4 +1,4 @@
-package mx.grupocorasa.sat.cfdi;
+package mx.grupocorasa.sat.cfdi.v3;
 
 import com.google.common.io.ByteStreams;
 import mx.grupocorasa.sat.common.CFDFactory;

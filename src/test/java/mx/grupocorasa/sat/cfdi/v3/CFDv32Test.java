@@ -1,4 +1,4 @@
-package mx.grupocorasa.sat.cfdi;
+package mx.grupocorasa.sat.cfdi.v3;
 
 import mx.grupocorasa.sat.cfd._32.Comprobante;
 import mx.grupocorasa.sat.common.TimbreFiscalDigital10.TimbreFiscalDigital;
@@ -15,7 +15,6 @@ import org.junit.Test;
 
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
@@ -44,7 +43,7 @@ public final class CFDv32Test {
         try (ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
             cfd.guardar(byteArrayOutputStream, false);
             String comprobante = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><cfdi:Comprobante version=\"3.2\" serie=\"DCBA\" folio=\"81\" fecha=\"2015-03-11T17:08:22\" formaDePago=\"Pago en una sola exhibición\" condicionesDePago=\"Factura a Crédito\" subTotal=\"1681.04\" descuento=\"323.28\" motivoDescuento=\"Por acuerdo mutuo\" TipoCambio=\"1.00\" Moneda=\"MXN\" total=\"1575.00\" tipoDeComprobante=\"ingreso\" metodoDePago=\"Transferencia Electrónica\" LugarExpedicion=\"Hermosillo, Sonora, México\" NumCtaPago=\"1587\" xsi:schemaLocation=\"http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd\" xmlns:cfdi=\"http://www.sat.gob.mx/cfd/3\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><cfdi:Emisor rfc=\"COA0106136Z4\" nombre=\"Comercializadora Ortega y Accionistas, S.A. de C.V.\"><cfdi:DomicilioFiscal calle=\"Leandro P. Gaxiola\" noExterior=\"6\" noInterior=\"6\" colonia=\"Olivares\" localidad=\"Hermosillo\" referencia=\"Casa de dos pisos\" municipio=\"Hermosillo\" estado=\"Sonora\" pais=\"México\" codigoPostal=\"83180\"/><cfdi:ExpedidoEn calle=\"Leandro P. Gaxiola\" noExterior=\"6\" noInterior=\"6\" colonia=\"Olivares\" localidad=\"Hermosillo\" referencia=\"Casa de dos pisos\" municipio=\"Hermosillo\" estado=\"Sonora\" pais=\"México\" codigoPostal=\"83180\"/><cfdi:RegimenFiscal Regimen=\"Régimen General de Ley Persona Moral\"/></cfdi:Emisor><cfdi:Receptor rfc=\"H&amp;E951128469\" nombre=\"Herreria &amp; Electricos S.A. de C.V.\"><cfdi:Domicilio calle=\"Calle conocida\" noExterior=\"1\" noInterior=\"2\" colonia=\"Colonia Centro\" localidad=\"Hermosillo\" referencia=\"Carpa verde\" municipio=\"Hermosillo\" estado=\"Sonora\" pais=\"México\" codigoPostal=\"83000\"/></cfdi:Receptor><cfdi:Conceptos><cfdi:Concepto cantidad=\"1.00\" unidad=\"Servicio\" noIdentificacion=\"01\" descripcion=\"Asesoria Fiscal y administrativa\" valorUnitario=\"1681.04\" importe=\"1681.04\"/></cfdi:Conceptos><cfdi:Impuestos totalImpuestosTrasladados=\"217.24\"><cfdi:Traslados><cfdi:Traslado impuesto=\"IVA\" tasa=\"16.00\" importe=\"217.24\"/></cfdi:Traslados></cfdi:Impuestos></cfdi:Comprobante>";
-            Assert.assertEquals(comprobante, new String(byteArrayOutputStream.toByteArray()));
+            Assert.assertEquals(comprobante, byteArrayOutputStream.toString());
         }
     }
 

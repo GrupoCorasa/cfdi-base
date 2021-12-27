@@ -1,4 +1,4 @@
-package mx.grupocorasa.sat.cfdi;
+package mx.grupocorasa.sat.cfdi.v3;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;

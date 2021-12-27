@@ -1,4 +1,4 @@
-package mx.grupocorasa.sat.cfdi;
+package mx.grupocorasa.sat.cfdi.v3;
 
 import mx.grupocorasa.sat.cfd._30.Comprobante;
 import mx.grupocorasa.sat.common.TimbreFiscalDigital10.TimbreFiscalDigital;
@@ -15,7 +15,6 @@ import org.junit.Test;
 
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
