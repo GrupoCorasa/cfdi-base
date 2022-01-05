@@ -121,14 +121,10 @@ public abstract class CfdCommon implements CfdInterface {
                         .filter(xsd -> !xsd.contains("/catalogo/") && !xsd.contains("/catalogos/"))
                         .findAny().ifPresent(value -> nsUrl[0] = value.replace("/xsd/common", "http://www.sat.gob.mx/sitio_internet/cfd"));
                 if (!getLocalPrefixes().containsKey(nsURI)) {
-                    String lc_ns = nsURI.substring(nsURI.lastIndexOf("/") + 1).toLowerCase();
-                    if (lc_ns.contains("timbrefiscaldigital")) {
-                        addNamespace(nsURI, "tfd");
-                    } else if (lc_ns.contains("pagos")) {
-                        addNamespace(nsURI, "pago10");
-                    } else {
-                        addNamespace(nsURI, nsURI.substring(nsURI.lastIndexOf("/") + 1));
-                    }
+                    getFileNamespaceMap().entrySet().stream()
+                            .filter(entry -> entry.getValue().equalsIgnoreCase(nsURI))
+                            .findFirst()
+                            .ifPresent(entry -> addNamespace(nsURI, entry.getKey().split(":")[0]));
                 }
                 if (!contexts.contains(info.getName().substring(0, info.getName().lastIndexOf(".")))) {
                     contexts.add(info.getName().substring(0, info.getName().lastIndexOf(".")));
@@ -241,61 +237,51 @@ public abstract class CfdCommon implements CfdInterface {
     //***DO NOT EDIT*** FROM HERE
     private Map<String, String> getFileNamespaceMap() {
         Map<String, String> namespaceMap = new HashMap<>();
-        namespaceMap.put("mx.grupocorasa.sat.common.ecc", "http://www.sat.gob.mx/ecc");
-        namespaceMap.put("mx.grupocorasa.sat.common.valesdedespensa10", "http://www.sat.gob.mx/valesdedespensa");
-        namespaceMap.put("mx.grupocorasa.sat.common.vehiculousado10", "http://www.sat.gob.mx/vehiculousado");
-        namespaceMap.put("mx.grupocorasa.sat.common.psgecfd", "http://www.sat.gob.mx/psgecfd");
-        namespaceMap.put("mx.grupocorasa.sat.common.detallista", "http://www.sat.gob.mx/detallista");
-        namespaceMap.put("mx.grupocorasa.sat.common.catalogos", "http://www.sat.gob.mx/sitio_internet/cfd/catalogos");
-        namespaceMap.put("mx.grupocorasa.sat.common.spei", "http://www.sat.gob.mx/spei");
-        namespaceMap.put("mx.grupocorasa.sat.common.CartaPorte20", "http://www.sat.gob.mx/CartaPorte20");
-        namespaceMap.put("mx.grupocorasa.sat.common.ecb10", "http://www.sat.gob.mx/ecb");
-        namespaceMap.put("mx.grupocorasa.sat.common.pfic10", "http://www.sat.gob.mx/pfic");
-        namespaceMap.put("mx.grupocorasa.sat.common.arteantiguedades10", "http://www.sat.gob.mx/arteantiguedades");
-        namespaceMap.put("mx.grupocorasa.sat.common.catalogos.Nomina", "http://www.sat.gob.mx/sitio_internet/cfd/catalogos/Nomina");
-        namespaceMap.put("mx.grupocorasa.sat.common.catalogos.hidrocarburos", "http://www.sat.gob.mx/sitio_internet/cfd/catalogos/hidrocarburos");
-        namespaceMap.put("mx.grupocorasa.sat.common.implocal10", "http://www.sat.gob.mx/implocal");
-        namespaceMap.put("mx.grupocorasa.sat.common.renovacionysustitucionvehiculos10", "http://www.sat.gob.mx/renovacionysustitucionvehiculos");
-        namespaceMap.put("mx.grupocorasa.sat.common.servicioparcialconstruccion10", "http://www.sat.gob.mx/servicioparcialconstruccion");
-        namespaceMap.put("mx.grupocorasa.sat.common.TuristaPasajeroExtranjero10", "http://www.sat.gob.mx/TuristaPasajeroExtranjero");
-        namespaceMap.put("mx.grupocorasa.sat.common.catalogos.Pagos", "http://www.sat.gob.mx/sitio_internet/cfd/catalogos/Pagos");
-        namespaceMap.put("mx.grupocorasa.sat.common.aerolineas10", "http://www.sat.gob.mx/aerolineas");
-        namespaceMap.put("mx.grupocorasa.sat.common.iedu10", "http://www.sat.gob.mx/iedu");
-        namespaceMap.put("mx.grupocorasa.sat.common.Pagos20", "http://www.sat.gob.mx/Pagos20");
-        namespaceMap.put("mx.grupocorasa.sat.common.notariospublicos10", "http://www.sat.gob.mx/notariospublicos");
-        namespaceMap.put("mx.grupocorasa.sat.common.donat10", "http://www.sat.gob.mx/donat");
-        namespaceMap.put("mx.grupocorasa.sat.common.divisas10", "http://www.sat.gob.mx/divisas");
-        namespaceMap.put("mx.grupocorasa.sat.common.pagoenespecie10", "http://www.sat.gob.mx/pagoenespecie");
-        namespaceMap.put("mx.grupocorasa.sat.common.donat11", "http://www.sat.gob.mx/donat");
-        namespaceMap.put("mx.grupocorasa.sat.common.tipoDatos.tdCFDI", "http://www.sat.gob.mx/sitio_internet/cfd/tipoDatos/tdCFDI");
-        namespaceMap.put("mx.grupocorasa.sat.common.GastosHidrocarburos10", "http://www.sat.gob.mx/GastosHidrocarburos10");
-        namespaceMap.put("mx.grupocorasa.sat.common.certificadodestruccion10", "http://www.sat.gob.mx/certificadodestruccion");
-        namespaceMap.put("mx.grupocorasa.sat.common.catalogos.ComExt", "http://www.sat.gob.mx/sitio_internet/cfd/catalogos/ComExt");
-        namespaceMap.put("mx.grupocorasa.sat.common.IngresosHidrocarburos10", "http://www.sat.gob.mx/IngresosHidrocarburos10");
-        namespaceMap.put("mx.grupocorasa.sat.common.Pagos10", "http://www.sat.gob.mx/Pagos");
-        namespaceMap.put("mx.grupocorasa.sat.common.TimbreFiscalDigital11", "http://www.sat.gob.mx/TimbreFiscalDigital");
-        namespaceMap.put("mx.grupocorasa.sat.common.TimbreFiscalDigital10", "http://www.sat.gob.mx/TimbreFiscalDigital");
-        namespaceMap.put("mx.grupocorasa.sat.common.catalogos.CartaPorte", "http://www.sat.gob.mx/sitio_internet/cfd/catalogos/CartaPorte");
-        namespaceMap.put("mx.grupocorasa.sat.common.terceros11", "http://www.sat.gob.mx/terceros");
-        namespaceMap.put("mx.grupocorasa.sat.common.terceros10", "http://www.sat.gob.mx/terceros");
-        namespaceMap.put("mx.grupocorasa.sat.common.ventavehiculos10", "http://www.sat.gob.mx/ventavehiculos");
-        namespaceMap.put("mx.grupocorasa.sat.common.ventavehiculos11", "http://www.sat.gob.mx/ventavehiculos");
-        namespaceMap.put("mx.grupocorasa.sat.common.leyendasFiscales10", "http://www.sat.gob.mx/leyendasFiscales");
-        namespaceMap.put("mx.grupocorasa.sat.common.ComercioExterior10", "http://www.sat.gob.mx/ComercioExterior");
-        namespaceMap.put("mx.grupocorasa.sat.common.ComercioExterior11", "http://www.sat.gob.mx/ComercioExterior11");
-        namespaceMap.put("mx.grupocorasa.sat.common.catalogos.Combustible", "http://www.sat.gob.mx/sitio_internet/cfd/catalogos/Combustible");
-        namespaceMap.put("mx.grupocorasa.sat.common.CartaPorte10", "http://www.sat.gob.mx/CartaPorte");
-        namespaceMap.put("mx.grupocorasa.sat.common.ine10", "http://www.sat.gob.mx/ine");
-        namespaceMap.put("mx.grupocorasa.sat.common.cfdiregistrofiscal10", "http://www.sat.gob.mx/registrofiscal");
-        namespaceMap.put("mx.grupocorasa.sat.common.ine11", "http://www.sat.gob.mx/ine");
-        namespaceMap.put("mx.grupocorasa.sat.common.EstadoDeCuentaCombustible12", "http://www.sat.gob.mx/EstadoDeCuentaCombustible12");
-        namespaceMap.put("mx.grupocorasa.sat.common.EstadoDeCuentaCombustible11", "http://www.sat.gob.mx/EstadoDeCuentaCombustible");
-        namespaceMap.put("mx.grupocorasa.sat.common.nomina11", "http://www.sat.gob.mx/nomina");
-        namespaceMap.put("mx.grupocorasa.sat.common.nomina12", "http://www.sat.gob.mx/nomina12");
-        namespaceMap.put("mx.grupocorasa.sat.common.psgcfdsp10", "http://www.sat.gob.mx/psgcfdsp");
-        namespaceMap.put("mx.grupocorasa.sat.common.acreditamiento10", "http://www.sat.gob.mx/acreditamiento");
-        namespaceMap.put("mx.grupocorasa.sat.common.consumodecombustibles11", "http://www.sat.gob.mx/ConsumoDeCombustibles11");
-        namespaceMap.put("mx.grupocorasa.sat.common.consumodecombustibles10", "http://www.sat.gob.mx/consumodecombustibles");
+        namespaceMap.put("ecc:mx.grupocorasa.sat.common.ecc", "http://www.sat.gob.mx/ecc");
+        namespaceMap.put("vehiculousado:mx.grupocorasa.sat.common.vehiculousado10", "http://www.sat.gob.mx/vehiculousado");
+        namespaceMap.put("psgecfd:mx.grupocorasa.sat.common.psgecfd", "http://www.sat.gob.mx/psgecfd");
+        namespaceMap.put("catCFDI:mx.grupocorasa.sat.common.catalogos", "http://www.sat.gob.mx/sitio_internet/cfd/catalogos");
+        namespaceMap.put("spei:mx.grupocorasa.sat.common.spei", "http://www.sat.gob.mx/spei");
+        namespaceMap.put("cartaporte20:mx.grupocorasa.sat.common.CartaPorte20", "http://www.sat.gob.mx/CartaPorte20");
+        namespaceMap.put("ecb:mx.grupocorasa.sat.common.ecb10", "http://www.sat.gob.mx/ecb");
+        namespaceMap.put("obrasarte:mx.grupocorasa.sat.common.arteantiguedades10", "http://www.sat.gob.mx/arteantiguedades");
+        namespaceMap.put("catNomina:mx.grupocorasa.sat.common.catalogos.Nomina", "http://www.sat.gob.mx/sitio_internet/cfd/catalogos/Nomina");
+        namespaceMap.put("catCEH:mx.grupocorasa.sat.common.catalogos.hidrocarburos", "http://www.sat.gob.mx/sitio_internet/cfd/catalogos/hidrocarburos");
+        namespaceMap.put("implocal:mx.grupocorasa.sat.common.implocal10", "http://www.sat.gob.mx/implocal");
+        namespaceMap.put("decreto:mx.grupocorasa.sat.common.renovacionysustitucionvehiculos10", "http://www.sat.gob.mx/renovacionysustitucionvehiculos");
+        namespaceMap.put("tpe:mx.grupocorasa.sat.common.TuristaPasajeroExtranjero10", "http://www.sat.gob.mx/TuristaPasajeroExtranjero");
+        namespaceMap.put("catPagos:mx.grupocorasa.sat.common.catalogos.Pagos", "http://www.sat.gob.mx/sitio_internet/cfd/catalogos/Pagos");
+        namespaceMap.put("aerolineas:mx.grupocorasa.sat.common.aerolineas10", "http://www.sat.gob.mx/aerolineas");
+        namespaceMap.put("iedu:mx.grupocorasa.sat.common.iedu10", "http://www.sat.gob.mx/iedu");
+        namespaceMap.put("pago20:mx.grupocorasa.sat.common.Pagos20", "http://www.sat.gob.mx/Pagos20");
+        namespaceMap.put("notariospublicos:mx.grupocorasa.sat.common.notariospublicos10", "http://www.sat.gob.mx/notariospublicos");
+        namespaceMap.put("donat:mx.grupocorasa.sat.common.donat10", "http://www.sat.gob.mx/donat");
+        namespaceMap.put("divisas:mx.grupocorasa.sat.common.divisas10", "http://www.sat.gob.mx/divisas");
+        namespaceMap.put("pagoenespecie:mx.grupocorasa.sat.common.pagoenespecie10", "http://www.sat.gob.mx/pagoenespecie");
+        namespaceMap.put("donat:mx.grupocorasa.sat.common.donat11", "http://www.sat.gob.mx/donat");
+        namespaceMap.put("tdCFDI:mx.grupocorasa.sat.common.tipoDatos.tdCFDI", "http://www.sat.gob.mx/sitio_internet/cfd/tipoDatos/tdCFDI");
+        namespaceMap.put("gceh:mx.grupocorasa.sat.common.GastosHidrocarburos10", "http://www.sat.gob.mx/GastosHidrocarburos10");
+        namespaceMap.put("destruccion:mx.grupocorasa.sat.common.certificadodestruccion10", "http://www.sat.gob.mx/certificadodestruccion");
+        namespaceMap.put("catComExt:mx.grupocorasa.sat.common.catalogos.ComExt", "http://www.sat.gob.mx/sitio_internet/cfd/catalogos/ComExt");
+        namespaceMap.put("ieeh:mx.grupocorasa.sat.common.IngresosHidrocarburos10", "http://www.sat.gob.mx/IngresosHidrocarburos10");
+        namespaceMap.put("pago10:mx.grupocorasa.sat.common.Pagos10", "http://www.sat.gob.mx/Pagos");
+        namespaceMap.put("tfd:mx.grupocorasa.sat.common.TimbreFiscalDigital11", "http://www.sat.gob.mx/TimbreFiscalDigital");
+        namespaceMap.put("tfd:mx.grupocorasa.sat.common.TimbreFiscalDigital10", "http://www.sat.gob.mx/TimbreFiscalDigital");
+        namespaceMap.put("catCartaPorte:mx.grupocorasa.sat.common.catalogos.CartaPorte", "http://www.sat.gob.mx/sitio_internet/cfd/catalogos/CartaPorte");
+        namespaceMap.put("terceros:mx.grupocorasa.sat.common.terceros11", "http://www.sat.gob.mx/terceros");
+        namespaceMap.put("ventavehiculos:mx.grupocorasa.sat.common.ventavehiculos11", "http://www.sat.gob.mx/ventavehiculos");
+        namespaceMap.put("cce:mx.grupocorasa.sat.common.ComercioExterior10", "http://www.sat.gob.mx/ComercioExterior");
+        namespaceMap.put("cce11:mx.grupocorasa.sat.common.ComercioExterior11", "http://www.sat.gob.mx/ComercioExterior11");
+        namespaceMap.put("cartaporte:mx.grupocorasa.sat.common.CartaPorte10", "http://www.sat.gob.mx/CartaPorte");
+        namespaceMap.put("ine:mx.grupocorasa.sat.common.ine10", "http://www.sat.gob.mx/ine");
+        namespaceMap.put("registrofiscal:mx.grupocorasa.sat.common.cfdiregistrofiscal10", "http://www.sat.gob.mx/registrofiscal");
+        namespaceMap.put("ine:mx.grupocorasa.sat.common.ine11", "http://www.sat.gob.mx/ine");
+        namespaceMap.put("ecc12:mx.grupocorasa.sat.common.EstadoDeCuentaCombustible12", "http://www.sat.gob.mx/EstadoDeCuentaCombustible12");
+        namespaceMap.put("ecc11:mx.grupocorasa.sat.common.EstadoDeCuentaCombustible11", "http://www.sat.gob.mx/EstadoDeCuentaCombustible");
+        namespaceMap.put("nomina:mx.grupocorasa.sat.common.nomina11", "http://www.sat.gob.mx/nomina");
+        namespaceMap.put("nomina12:mx.grupocorasa.sat.common.nomina12", "http://www.sat.gob.mx/nomina12");
+        namespaceMap.put("aieps:mx.grupocorasa.sat.common.acreditamiento10", "http://www.sat.gob.mx/acreditamiento");
+        namespaceMap.put("consumodecombustibles11:mx.grupocorasa.sat.common.consumodecombustibles11", "http://www.sat.gob.mx/ConsumoDeCombustibles11");
         return namespaceMap;
     }
     //***DO NOT EDIT*** TO HERE
@@ -309,12 +295,17 @@ public abstract class CfdCommon implements CfdInterface {
         Map<String, String> namespaceMap = getFileNamespaceMap();
         for (final ClassPath.ClassInfo info : ClassPath.from(loader).getTopLevelClasses()) {
             if (info.getName().startsWith("mx.grupocorasa.sat.common.")
-                    && namespaceMap.containsKey(info.getPackageName())
-                    && xml.contains(namespaceMap.get(info.getPackageName()))) {
-                if (namespaceMap.values().stream().filter(v -> v.equalsIgnoreCase(namespaceMap.get(info.getPackageName()))).count() > 1) {
+                    && namespaceMap.keySet().stream().map(k -> k.split(":")[1]).anyMatch(k -> k.equalsIgnoreCase(info.getPackageName()))
+                    && xml.contains(
+                    namespaceMap.entrySet().stream()
+                            .filter(entry -> entry.getKey().split(":")[1].equalsIgnoreCase(info.getPackageName())).map(entry -> entry.getValue()).findAny().orElse(null)
+            )) {
+                if (namespaceMap.keySet().stream().filter(k ->
+                        namespaceMap.get(k.split(":")[0] + ":" + info.getPackageName()) != null
+                ).count() > 1) {
                     int startIndex = xml.indexOf("omplemento>");
                     int endIndex = xml.lastIndexOf("omplemento>");
-                    Matcher versionMatcher = Pattern.compile("(?<=version=\")((.)*?)(?=\")", Pattern.CASE_INSENSITIVE).matcher(xml.substring(startIndex, endIndex));
+                    Matcher versionMatcher = Pattern.compile("(?<=[V|v]ersion=\")((.)*?)(?=\")", Pattern.CASE_INSENSITIVE).matcher(xml.substring(startIndex, endIndex));
                     if (versionMatcher.find()) {
                         String version = versionMatcher.group().replace(".", "");
                         if (!info.getName().contains(version)) continue;

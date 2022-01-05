@@ -386,8 +386,11 @@ tasks.register("satResources") {
         namespaceMap.forEach { pkg, xsd ->
             String xsdContent = new File('src/main/resources/' + xsd).getText('UTF-8')
             int start_index = xsdContent.indexOf("targetNamespace")
-            String matcher = (xsdContent.substring(start_index, start_index + 150) =~ '(?<=targetNamespace=")((.)*?)(?=")').findAll()[0][0]
-            mapString = mapString + '\n\t\tnamespaceMap.put("' + pkg + '", "' + matcher + '");'
+            String nsUrl = (xsdContent.substring(start_index, start_index + 150) =~ '(?<=targetNamespace=")((.)*?)(?=")').findAll()[0][0]
+            String some = (xsdContent.substring(0, 150) =~ '(?<=xmlns:)((.)*?)(?==)').findAll().toString().split('\\[|\\]|,').find { value -> value != null && !value.trim().isEmpty() && !value.trim().equalsIgnoreCase("xs") && !value.trim().equalsIgnoreCase("s") }
+            if (some != null && !some.equalsIgnoreCase("null")) {
+                mapString = mapString + '\n\t\tnamespaceMap.put("' + some + ':' + pkg + '", "' + nsUrl + '");'
+            }
         }
         file = new File('src/main/java/mx/grupocorasa/sat/common/CfdCommon.java')
         content = file.getText('UTF-8')
