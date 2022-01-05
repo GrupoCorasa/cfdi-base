@@ -34,7 +34,7 @@ public final class CFDv40 extends CFDv4 {
             "/xsd/common/catalogos/hidrocarburos/catHidrocarburos.xsd",
             "/xsd/common/tipoDatos/tdCFDI/tdCFDI.xsd",
             "/xsd/cfd/4/cfdv40.xsd",
-            "/xsd/common/CartaPorte20/CartaPorte20.xsd",
+            "/xsd/common/CartaPorte/CartaPorte20.xsd",
             "/xsd/common/ComercioExterior11/ComercioExterior11.xsd",
             "/xsd/common/EstadoDeCuentaCombustible/ecc12.xsd",
             "/xsd/common/GastosHidrocarburos10/GastosHidrocarburos10.xsd",

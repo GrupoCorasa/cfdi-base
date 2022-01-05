@@ -9,7 +9,7 @@ plugins {
 apply from: 'download.gradle'
 
 group 'mx.grupocorasa.cfdibase'
-version '4.0.2'
+version '4.0.4'
 
 publishing {
     repositories {
@@ -270,7 +270,7 @@ xjcGeneration {
         mx_grupocorasa_sat_common_CartaPorte20 {
             bindingFile = 'src/main/resources/bindingFiles/CartaPorte20_bind.xml'
             schemaRootDir = 'src/main/resources'
-            schemaFile = 'xsd/common/CartaPorte20/CartaPorte20.xsd'
+            schemaFile = 'xsd/common/CartaPorte/CartaPorte20.xsd'
         }
         mx_grupocorasa_sat_cfd_33 {
             bindingFile = 'src/main/resources/bindingFiles/cfdv33_bind.xml'

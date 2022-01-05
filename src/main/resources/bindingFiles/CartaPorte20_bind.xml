@@ -30,7 +30,7 @@
         </jaxb:bindings>
     </jaxb:bindings>
 	<jaxb:bindings>
-        <jaxb:bindings schemaLocation="../xsd/common/CartaPorte20/CartaPorte20.xsd" node="/xs:schema">
+        <jaxb:bindings schemaLocation="../xsd/common/CartaPorte/CartaPorte20.xsd" node="/xs:schema">
             <jaxb:schemaBindings>
                 <jaxb:package name="mx.grupocorasa.sat.common.CartaPorte20"/>
             </jaxb:schemaBindings>

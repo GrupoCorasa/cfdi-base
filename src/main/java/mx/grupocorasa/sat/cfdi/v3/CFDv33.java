@@ -35,7 +35,7 @@ public final class CFDv33 extends CFDv3 {
             "/xsd/common/tipoDatos/tdCFDI/tdCFDI.xsd",
             "/xsd/cfd/3/cfdv33.xsd",
             "/xsd/common/CartaPorte/CartaPorte.xsd",
-            "/xsd/common/CartaPorte20/CartaPorte20.xsd",
+            "/xsd/common/CartaPorte/CartaPorte20.xsd",
             "/xsd/common/ComercioExterior11/ComercioExterior11.xsd",
             "/xsd/common/EstadoDeCuentaCombustible/ecc11.xsd",
             "/xsd/common/EstadoDeCuentaCombustible/ecc12.xsd",

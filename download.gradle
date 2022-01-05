@@ -1,11 +1,6 @@
 void downloadSatResouce(List<String> downloads, String url, String basePath) {
     String baseUrl = 'http://www.sat.gob.mx/sitio_internet/'
     String filePath = url.replace(baseUrl, basePath + (url.endsWith('.xslt') ? 'xslt/' : 'xsd/'))
-    if (url.equalsIgnoreCase("http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/CartaPorte20.xslt")) {
-        filePath = "src/main/resources/xslt/common/CartaPorte20/CartaPorte20.xslt"
-    } else if (url.equalsIgnoreCase("http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte20.xsd")) {
-        filePath = "src/main/resources/xsd/common/CartaPorte20/CartaPorte20.xsd"
-    }
     if (url.find('/cfd/[0-9]{1}/') == null) {
         //if url contain cfd version change 'common' dir
         filePath = filePath.replaceAll('/cfd/', '/common/')
@@ -27,11 +22,7 @@ void downloadSatResouce(List<String> downloads, String url, String basePath) {
                 downloadSatResouce(downloads, newUrlResource, basePath)
                 if (newUrlResource.endsWith('.xslt') && !newUrlResource.contains('cadenaoriginal')) {
                     //also download xsd files of every xslt
-                    if (newUrlResource.equalsIgnoreCase("http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/CartaPorte20.xslt")) {
-                        downloadSatResouce(downloads, "http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte20.xsd", basePath.replace('/xslt/', '/xsd/'))
-                    } else {
-                        downloadSatResouce(downloads, newUrlResource.replace('.xslt', '.xsd'), basePath.replace('/xslt/', '/xsd/'))
-                    }
+                    downloadSatResouce(downloads, newUrlResource.replace('.xslt', '.xsd'), basePath.replace('/xslt/', '/xsd/'))
                 }
                 String newUrlName = newUrlResource.substring(newUrlResource.lastIndexOf('/') + 1)
                 String localPath = downloads.find { value -> value.endsWith(newUrlName) }
