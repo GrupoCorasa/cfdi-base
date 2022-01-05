@@ -14,6 +14,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.PrivateKey;
@@ -223,7 +224,7 @@ public final class CFDv30Test {
         TimbreFiscalDigital tfd = ExampleTimbreFiscal10Factory.getInstance().createTimbreFiscal();
         c.getComplemento().getAny().add(tfd);
         CFDv30 cfd = new CFDv30(c);
-        String cfdi_tfd = new String(Files.readAllBytes(Paths.get("resources/xmls/cfdi/v30/CFDv30_tfd.xml"))).replaceAll("(\\r\\n|\\r|\\n)", "");
+        String cfdi_tfd = new String(Files.readAllBytes(Paths.get("resources/xmls/cfdi/v30/CFDv30_tfd.xml")), StandardCharsets.UTF_8).replaceAll("(\\r\\n|\\r|\\n)", "");
         try (OutputStream outputStream = new ByteArrayOutputStream()) {
             cfd.validar(null);
             cfd.verificar();

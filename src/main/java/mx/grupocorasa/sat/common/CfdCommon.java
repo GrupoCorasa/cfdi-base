@@ -94,20 +94,20 @@ public abstract class CfdCommon implements CfdInterface {
         m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, formatted);
         m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, String.join(" ", getSchemaLocation()));
-        try (ByteArrayOutputStream baos = new ByteArrayOutputStream(); Writer writer = new OutputStreamWriter(baos)) {
+        try (ByteArrayOutputStream baos = new ByteArrayOutputStream(); Writer writer = new OutputStreamWriter(baos, StandardCharsets.UTF_8)) {
             writer.write(XML_HEADER);
             m.marshal(getComprobanteDocument(), writer);
             String xml = baos.toString()
                     .replace("xmlns:tfd=\"http://www.sat.gob.mx/TimbreFiscalDigital\" ", "")
                     .replace(" http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigital.xsd", "")
                     .replace("<tfd:TimbreFiscalDigital", "<tfd:TimbreFiscalDigital xsi:schemaLocation=\"http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/TimbreFiscalDigital/TimbreFiscalDigital.xsd\" xmlns:tfd=\"http://www.sat.gob.mx/TimbreFiscalDigital\"");
-            out.write(xml.getBytes());
+            out.write(xml.getBytes(StandardCharsets.UTF_8));
         }
     }
 
     public String getCadenaOriginal() throws Exception {
         byte[] bytes = getOriginalBytes();
-        return new String(bytes);
+        return new String(bytes, StandardCharsets.UTF_8);
     }
 
     private void defineContexts(List<String> contexts, ClassPath.ClassInfo info) {
@@ -210,7 +210,7 @@ public abstract class CfdCommon implements CfdInterface {
 
     private byte[] getOriginalBytes() throws Exception {
         JAXBSource in = getJAXBSource();
-        try (ByteArrayOutputStream baos = new ByteArrayOutputStream(); Writer writer = new OutputStreamWriter(baos)) {
+        try (ByteArrayOutputStream baos = new ByteArrayOutputStream(); Writer writer = new OutputStreamWriter(baos, StandardCharsets.UTF_8)) {
             Result out = new StreamResult(writer);
             TransformerFactory factory = tf;
             if (factory == null) {
