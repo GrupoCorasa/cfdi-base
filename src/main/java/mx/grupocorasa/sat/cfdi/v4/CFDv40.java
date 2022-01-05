@@ -23,7 +23,7 @@ public final class CFDv40 extends CFDv4 {
 
     private final String XSLT = "/xslt/cfd/4/cadenaoriginal_4_0/cadenaoriginal_4_0.xslt";
     private final String BASE_CONTEXT = "mx.grupocorasa.sat.cfd._40";
-    private final List<String> schemaLocations = Stream.of("http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv33.xsd").collect(Collectors.toList());
+    private final List<String> schemaLocations = Stream.of("http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd").collect(Collectors.toList());
     private final String[] XSD = new String[]{
             "/xsd/common/catalogos/CartaPorte/catCartaPorte.xsd",
             "/xsd/common/catalogos/ComExt/catComExt.xsd",

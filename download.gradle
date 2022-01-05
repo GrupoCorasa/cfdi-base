@@ -1,9 +1,6 @@
 void downloadSatResouce(List<String> downloads, String url, String basePath) {
-    String baseUrl = url.contains('http://www.sat.gob.mx/sitio_internet') ? 'http://www.sat.gob.mx/sitio_internet/' : 'https://raw.githubusercontent.com/GrupoCorasa/cfdi-base-sat-resources/main/'
+    String baseUrl = 'http://www.sat.gob.mx/sitio_internet/'
     String filePath = url.replace(baseUrl, basePath + (url.endsWith('.xslt') ? 'xslt/' : 'xsd/'))
-    if (url.equalsIgnoreCase('http://www.sat.gob.mx/sitio_internet/cfd/catalogos/catCFDI.xsd')) {
-        url = 'https://raw.githubusercontent.com/GrupoCorasa/cfdi-base-sat-resources/main/cfd/catalogos/catCFDI.xsd'
-    }
     if (url.equalsIgnoreCase("http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/CartaPorte20.xslt")) {
         filePath = "src/main/resources/xslt/common/CartaPorte20/CartaPorte20.xslt"
     } else if (url.equalsIgnoreCase("http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte20.xsd")) {
@@ -279,8 +276,8 @@ tasks.register("satResources") {
         map.put(
                 'src/main/java/mx/grupocorasa/sat/cfdi/v4/CFDv40.java',
                 [
-                        'https://raw.githubusercontent.com/GrupoCorasa/cfdi-base-sat-resources/main/cfd/4/cadenaoriginal_4_0/cadenaoriginal_4_0.xslt',
-                        'https://raw.githubusercontent.com/GrupoCorasa/cfdi-base-sat-resources/main/cfd/4/cfdv40.xsd',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/4/cadenaoriginal_4_0/cadenaoriginal_4_0.xslt',
+                        'http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd',
                         'http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/cadenaoriginal_TFD_1_1.xslt',
                         'http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd'
                 ]
@@ -301,7 +298,6 @@ tasks.register("satResources") {
                     urls
                             .find { value -> value.endsWith(".xslt") }
                             .replace('http://www.sat.gob.mx/sitio_internet/', '/xslt/')
-                            .replace('https://raw.githubusercontent.com/GrupoCorasa/cfdi-base-sat-resources/main/', '/xslt/')
             )
             allDownloads.addAll(localDownloads)
         }
