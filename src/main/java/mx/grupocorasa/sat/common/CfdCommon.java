@@ -97,7 +97,7 @@ public abstract class CfdCommon implements CfdInterface {
         try (ByteArrayOutputStream baos = new ByteArrayOutputStream(); Writer writer = new OutputStreamWriter(baos, StandardCharsets.UTF_8)) {
             writer.write(XML_HEADER);
             m.marshal(getComprobanteDocument(), writer);
-            String xml = baos.toString()
+            String xml = baos.toString("UTF8")
                     .replace("xmlns:tfd=\"http://www.sat.gob.mx/TimbreFiscalDigital\" ", "")
                     .replace(" http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigital.xsd", "")
                     .replace("<tfd:TimbreFiscalDigital", "<tfd:TimbreFiscalDigital xsi:schemaLocation=\"http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/TimbreFiscalDigital/TimbreFiscalDigital.xsd\" xmlns:tfd=\"http://www.sat.gob.mx/TimbreFiscalDigital\"");
