@@ -69,7 +69,7 @@ public final class CFDv32 extends CFDv3 {
     private final JAXBContext context;
 
     public CFDv32(InputStream in, String... contexts) throws Exception {
-        this.document = (Comprobante) load(in);
+        this.document = (Comprobante) load(in, contexts);
         this.context = getContext(document, contexts);
     }
 

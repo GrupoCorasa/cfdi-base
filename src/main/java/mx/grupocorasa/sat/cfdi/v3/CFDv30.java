@@ -40,7 +40,7 @@ public final class CFDv30 extends CFDv3 {
     private final JAXBContext context;
 
     public CFDv30(InputStream in, String... contexts) throws Exception {
-        this.document = (Comprobante) load(in);
+        this.document = (Comprobante) load(in, contexts);
         this.context = getContext(document, contexts);
     }
 

@@ -47,9 +47,9 @@ public abstract class CfdCommon implements CfdInterface {
         tf.setURIResolver(new URIResolverImpl());
     }
 
-    protected Object load(InputStream in) throws Exception {
+    protected Object load(InputStream in, String[] addendas) throws Exception {
         List<InputStream> copies = StreamUtils.copyStream(in, 2);
-        JAXBContext context = getFileContext(copies.get(0));
+        JAXBContext context = getFileContext(copies.get(0), addendas);
         Unmarshaller u = context.createUnmarshaller();
         try (Reader reader = new InputStreamReader(copies.get(1))) {
             return u.unmarshal(reader);
@@ -287,9 +287,10 @@ public abstract class CfdCommon implements CfdInterface {
     //***DO NOT EDIT*** TO HERE
 
     @SuppressWarnings("UnstableApiUsage")
-    protected JAXBContext getFileContext(InputStream in) throws IOException, JAXBException {
+    protected JAXBContext getFileContext(InputStream in, String[] addendas) throws IOException, JAXBException {
         final List<String> contexts = new ArrayList<>();
         contexts.add(getBaseContext());
+        contexts.addAll(Arrays.asList(addendas));
         final ClassLoader loader = Thread.currentThread().getContextClassLoader();
         final String xml = new String(ByteStreams.toByteArray(in), StandardCharsets.UTF_8);
         Map<String, String> namespaceMap = getFileNamespaceMap();

@@ -45,7 +45,7 @@ public final class CFDv22 extends CFDv2 {
     private final JAXBContext context;
 
     public CFDv22(InputStream in, String... contexts) throws Exception {
-        this.document = (Comprobante) load(in);
+        this.document = (Comprobante) load(in, contexts);
         this.context = getContext(document, contexts);
     }
 
