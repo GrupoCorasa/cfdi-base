@@ -33,6 +33,7 @@ import java.security.cert.X509Certificate;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public abstract class CfdCommon implements CfdInterface {
 
@@ -307,11 +308,19 @@ public abstract class CfdCommon implements CfdInterface {
                     namespaceMap.entrySet().stream()
                             .filter(entry -> entry.getKey().split(":")[1].equalsIgnoreCase(info.getPackageName())).map(entry -> entry.getValue()).findAny().orElse(null)
             )) {
-                if (namespaceMap.keySet().stream().filter(k ->
+                List<String> preList = namespaceMap.keySet().stream().filter(k ->
                         namespaceMap.get(k.split(":")[0] + ":" + info.getPackageName()) != null
-                ).count() > 1) {
-                    int startIndex = xml.indexOf("omplemento>");
-                    int endIndex = xml.lastIndexOf("omplemento>");
+                ).collect(Collectors.toList());
+                if (preList.size() > 1) {
+                    String pre = preList.get(0).split(":")[0];
+                    int startIndex, endIndex;
+                    if (xml.contains("<" + pre) && xml.contains("</" + pre)) {
+                        startIndex = xml.indexOf("<" + pre);
+                        endIndex = xml.lastIndexOf("</" + pre);
+                    } else {
+                        startIndex = xml.indexOf("<" + pre);
+                        endIndex = xml.lastIndexOf("\"/>");
+                    }
                     Matcher versionMatcher = Pattern.compile("(?<=[V|v]ersion=\")((.)*?)(?=\")", Pattern.CASE_INSENSITIVE).matcher(xml.substring(startIndex, endIndex));
                     if (versionMatcher.find()) {
                         String version = versionMatcher.group().replace(".", "");
