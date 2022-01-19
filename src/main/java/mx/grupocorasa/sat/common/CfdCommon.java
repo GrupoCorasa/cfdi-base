@@ -320,6 +320,7 @@ public abstract class CfdCommon implements CfdInterface {
                     } else {
                         startIndex = xml.indexOf("<" + pre);
                         endIndex = xml.lastIndexOf("\"/>");
+                        if (endIndex < startIndex) endIndex = xml.lastIndexOf("</cfdi:Complemento>");
                     }
                     Matcher versionMatcher = Pattern.compile("(?<=[V|v]ersion=\")((.)*?)(?=\")", Pattern.CASE_INSENSITIVE).matcher(xml.substring(startIndex, endIndex));
                     if (versionMatcher.find()) {
