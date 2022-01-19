@@ -19,6 +19,6 @@ public abstract class CFDv4 extends CfdCommon {
 
     @Override
     protected String getDigestAlgorithm() {
-        return "SHA1withRSA";
+        return "SHA256withRSA";
     }
 }
