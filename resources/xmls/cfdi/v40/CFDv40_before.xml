@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  Version="4.0" Serie="FFF"
+                  Folio="12345"
+                  Fecha="2021-01-01T14:54:56"
+                  FormaPago="12"
+                  CondicionesDePago="Crédito a 20 días" SubTotal="2200.00"
+                  Descuento="200.00" Moneda="MXN" TipoCambio="1" Total="2000" TipoDeComprobante="I"
+                  Exportacion="02" MetodoPago="PUE"
+                  LugarExpedicion="83000"
+                  Confirmacion="aB1cD"
+                  xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd">
+    <cfdi:InformacionGlobal Periodicidad="03" Meses="09" Año="2022"/>
+    <cfdi:CfdiRelacionados TipoRelacion="06">
+        <cfdi:CfdiRelacionado UUID="248C01A6-A08C-4821-BFAF-F1D04C0A0DC5"/>
+        <cfdi:CfdiRelacionado UUID="4A3CC52B-4F7A-4FAF-9375-9905D535CB07"/>
+    </cfdi:CfdiRelacionados>
+    <cfdi:CfdiRelacionados TipoRelacion="06">
+        <cfdi:CfdiRelacionado UUID="580A7432-900F-11EC-B909-0242AC120002"/>
+        <cfdi:CfdiRelacionado UUID="223E7412-4F7A-4821-9375-F1D04C0A0DC5"/>
+    </cfdi:CfdiRelacionados>
+    <cfdi:Emisor Rfc="PPL961114GZ1" Nombre="PHARMA PLUS SA DE CV" RegimenFiscal="606" FacAtrAdquirente="0123456789"/>
+    <cfdi:Receptor Rfc="PEPJ8001019Q8" Nombre="JUAN PEREZ PEREZ" DomicilioFiscalReceptor="83000" ResidenciaFiscal="MEX"
+                   NumRegIdTrib="ResidenteExtranjero1" RegimenFiscalReceptor="607" UsoCFDI="D08"/>
+    <cfdi:Conceptos>
+        <cfdi:Concepto ClaveProdServ="10101501" NoIdentificacion="PRU01" Cantidad="1.0" ClaveUnidad="C51"
+                       Unidad="Servicio" Descripcion="Concepto de Prueba 01" ValorUnitario="1100.00" Importe="1100.00"
+                       Descuento="100.00" ObjetoImp="02">
+            <cfdi:Impuestos>
+                <cfdi:Traslados>
+                    <cfdi:Traslado Base="1000.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000"
+                                   Importe="160.00"/>
+                </cfdi:Traslados>
+                <cfdi:Retenciones>
+                    <cfdi:Retencion Base="1000.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000"
+                                    Importe="160.00"/>
+                </cfdi:Retenciones>
+            </cfdi:Impuestos>
+            <cfdi:InformacionAduanera NumeroPedimento="67  52  3924  8060097"/>
+            <cfdi:CuentaPredial Numero="123456"/>
+        </cfdi:Concepto>
+        <cfdi:Concepto ClaveProdServ="10101502" NoIdentificacion="PRU02" Cantidad="1.0" ClaveUnidad="C51"
+                       Unidad="Servicio" Descripcion="Concepto de Prueba 02" ValorUnitario="1100.00" Importe="1100.00"
+                       Descuento="100.00" ObjetoImp="02">
+            <cfdi:Impuestos>
+                <cfdi:Traslados>
+                    <cfdi:Traslado Base="1000.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000"
+                                   Importe="160.00"/>
+                </cfdi:Traslados>
+                <cfdi:Retenciones>
+                    <cfdi:Retencion Base="1000.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000"
+                                    Importe="160.00"/>
+                </cfdi:Retenciones>
+            </cfdi:Impuestos>
+            <cfdi:InformacionAduanera NumeroPedimento="67  52  3924  8060097"/>
+            <cfdi:CuentaPredial Numero="123456"/>
+        </cfdi:Concepto>
+    </cfdi:Conceptos>
+    <cfdi:Impuestos TotalImpuestosRetenidos="160.00" TotalImpuestosTrasladados="160.00">
+        <cfdi:Retenciones>
+            <cfdi:Retencion Impuesto="002" Importe="160.00"/>
+        </cfdi:Retenciones>
+        <cfdi:Traslados>
+            <cfdi:Traslado Base="1000" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.16" Importe="160.00"/>
+        </cfdi:Traslados>
+    </cfdi:Impuestos>
+</cfdi:Comprobante>
