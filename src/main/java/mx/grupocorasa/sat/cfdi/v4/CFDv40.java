@@ -138,9 +138,9 @@ public final class CFDv40 extends CFDv4 {
 
     @Override
     public void sellar(PrivateKey key, X509Certificate cert) throws Exception {
-        document.setSello(getSignature(key));
-        document.setCertificado(Base64.getEncoder().encodeToString(cert.getEncoded()));
         document.setNoCertificado(new String(cert.getSerialNumber().toByteArray()));
+        document.setCertificado(Base64.getEncoder().encodeToString(cert.getEncoded()));
+        document.setSello(getSignature(key));
     }
 
     private List<String> getComprobanteContexts(Comprobante comprobante) throws IOException {

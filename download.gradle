@@ -1,3 +1,34 @@
+String splitMiddle(String content, String startToken, String endToken, String replace) {
+    int first_index = content.indexOf(startToken) + (startToken.length())
+    int last_index = content.substring(first_index).indexOf(endToken) + first_index
+    return content.substring(0, first_index) + replace + content.substring(last_index)
+}
+
+String replaceCatalogoPattern(String content, String catalogo, String pattern, boolean whiteSpaceCollapse, String docAnnotation) {
+    return splitMiddle(content, "<xs:simpleType name=\"$catalogo\">", '</xs:simpleType>',
+            (docAnnotation != null && !docAnnotation.isEmpty()
+                    ? "<xs:annotation><xs:documentation>$docAnnotation</xs:documentation></xs:annotation>"
+                    : "") +
+                    "<xs:restriction base=\"xs:string\">" +
+                    (whiteSpaceCollapse
+                            ? "<xs:whiteSpace value=\"collapse\"/>"
+                            : "") +
+                    "<xs:pattern value=\"$pattern\"/>" +
+                    "</xs:restriction>")
+}
+
+String changeAttributeBase(String content, String attribute, String newBase, String pattern, String docAnnotation) {
+    return splitMiddle(content, "<xs:attribute name=\"$attribute\">", '</xs:attribute>',
+            (docAnnotation != null && !docAnnotation.isEmpty()
+                    ? "<xs:annotation><xs:documentation>$docAnnotation</xs:documentation></xs:annotation>"
+                    : "") +
+                    "<xs:simpleType>" +
+                    "<xs:restriction base=\"$newBase\">" +
+                    "<xs:pattern value=\"$pattern\"/>" +
+                    "</xs:restriction>" +
+                    "</xs:simpleType>")
+}
+
 void downloadSatResouce(List<String> downloads, String url, String basePath) {
     String baseUrl = 'http://www.sat.gob.mx/sitio_internet/'
     String filePath = url.replace(baseUrl, basePath + (url.endsWith('.xslt') ? 'xslt/' : 'xsd/'))
@@ -126,49 +157,15 @@ void downloadSatResouce(List<String> downloads, String url, String basePath) {
 \t\t\t\t\t</xs:restriction>
 \t\t\t\t</xs:simpleType>
 \t\t\t""")
-        content = content.replaceAll("(?<=<xs:simpleType name=\"t_Clabe\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:simpleType>)", """
-\t\t<xs:annotation>
-\t\t\t<xs:documentation>Tipo definido para expresar la CLABE interbancaria</xs:documentation>
-\t\t</xs:annotation>
-\t\t<xs:restriction base="xs:string">
-\t\t\t<xs:pattern value="[0-9]{18}"/>
-\t\t</xs:restriction>
-\t""")
+        content = replaceCatalogoPattern(content, 't_Clabe', '[0-9]{18}', false, 'Tipo definido para expresar la CLABE interbancaria')
     }
-//some values of this file cant fit into a java class (max 64kb per method)
+    //some values of this file cant fit into a java class (max 64kb per method)
     if (url.endsWith('catCartaPorte.xsd')) {
-        //remove estaciones because max java size
-        content = content.replaceAll("(.*?)<xs:enumeration value=\"(PM|EA|EF)([0-9]{3,4})\"\\/>(\\r\\n|\\r|\\n)", "")
-        //add regex validation
-        String[] contentSplit = content.split("<xs:simpleType name=\"c_Estaciones\">")
-        String continueContent = contentSplit[1].split("<xs:simpleType name=\"c_ClaveUnidadPeso\">")[1]
-        content = contentSplit[0] + """<xs:simpleType name="c_Estaciones">
-        <xs:restriction base="xs:string">
-            <xs:whiteSpace value="collapse"/>
-            <xs:pattern value="[a-zA-Z0-9\\\\.]{3,12}"/>
-        </xs:restriction>
-    </xs:simpleType>
-    <xs:simpleType name="c_ClaveUnidadPeso">""" + continueContent
-
-        content = content.replaceAll("(.*?)<xs:enumeration value=\"[0-9]{8}\"\\/>(\\r\\n|\\r|\\n)", "")
-        //add regex validation
-        content = content.replaceAll("(?<=<xs:simpleType name=\"c_ClaveProdServCP\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:simpleType>)", """
-        <xs:restriction base="xs:string">
-            <xs:whiteSpace value="collapse"/>
-            <xs:pattern value="[0-9]{8}"/>
-        </xs:restriction>
-        """)
-        //remove materialPeligroso because max java size
-        contentSplit = content.split("<xs:simpleType name=\"c_MaterialPeligroso\">")
-        continueContent = contentSplit[1].split("<xs:simpleType name=\"c_TipoEmbalaje\">")[1]
-        content = contentSplit[0] + """<xs:simpleType name="c_MaterialPeligroso">
-        <xs:restriction base="xs:string">
-            <xs:whiteSpace value="collapse"/>
-            <xs:pattern value="M[0-9]{4}|[0-9]{4}"/>
-        </xs:restriction>
-    </xs:simpleType>
-    <xs:simpleType name="c_TipoEmbalaje">""" + continueContent
+        content = replaceCatalogoPattern(content, 'c_Estaciones', '[0-9]{8}', true, null)
+        content = replaceCatalogoPattern(content, 'c_ClaveProdServCP', '[0-9]{8}', true, null)
+        content = replaceCatalogoPattern(content, 'c_MaterialPeligroso', 'M[0-9]{4}|[0-9]{4}', true, null)
     }
+
     content = content.replaceAll("xmlType=\"xs:int\"", "xmlType=\"xs:integer\"")
     file.setText(content, 'UTF-8')
 }
