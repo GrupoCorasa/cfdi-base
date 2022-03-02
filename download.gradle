@@ -1,11 +1,16 @@
-String splitMiddle(String content, String startToken, String endToken, String replace) {
+static String splitMiddle(String content, String startToken, String endToken, String middle, String fromString, String toString) {
     int first_index = content.indexOf(startToken) + (startToken.length())
     int last_index = content.substring(first_index).indexOf(endToken) + first_index
-    return content.substring(0, first_index) + replace + content.substring(last_index)
+    String result = content.substring(0, first_index) + middle + content.substring(last_index)
+    if (fromString != null && toString != null) {
+        String piece = result.substring(result.indexOf(startToken), result.indexOf(startToken) + (startToken.length())).replace(fromString, toString)
+        result = result.substring(0, result.indexOf(startToken)) + piece + result.substring(result.indexOf(startToken) + (startToken.length()))
+    }
+    return result
 }
 
-String replaceCatalogoPattern(String content, String catalogo, String pattern, boolean whiteSpaceCollapse, String docAnnotation) {
-    return splitMiddle(content, "<xs:simpleType name=\"$catalogo\">", '</xs:simpleType>',
+static String replaceCatalogoPattern(String content, String catalogo, String pattern, boolean whiteSpaceCollapse, boolean required, String docAnnotation) {
+    return splitMiddle(content, "<xs:simpleType name=\"$catalogo\"" + (required ? " use=\"required\"" : "") + ">", '</xs:simpleType>',
             (docAnnotation != null && !docAnnotation.isEmpty()
                     ? "<xs:annotation><xs:documentation>$docAnnotation</xs:documentation></xs:annotation>"
                     : "") +
@@ -14,19 +19,18 @@ String replaceCatalogoPattern(String content, String catalogo, String pattern, b
                             ? "<xs:whiteSpace value=\"collapse\"/>"
                             : "") +
                     "<xs:pattern value=\"$pattern\"/>" +
-                    "</xs:restriction>")
+                    "</xs:restriction>", null, null)
 }
 
-String changeAttributeBase(String content, String attribute, String newBase, String pattern, String docAnnotation) {
-    return splitMiddle(content, "<xs:attribute name=\"$attribute\">", '</xs:attribute>',
+static String changeAttributeBase(String content, String attribute, String oldRootBase, String newRootBase, String simpleTypeBase, String pattern, boolean required, String docAnnotation) {
+    return splitMiddle(content, "<xs:attribute name=\"$attribute\"" + (oldRootBase != null ? " type=\"$oldRootBase\"" : "") + (required ? " use=\"required\"" : "") + ">", '</xs:attribute>',
             (docAnnotation != null && !docAnnotation.isEmpty()
                     ? "<xs:annotation><xs:documentation>$docAnnotation</xs:documentation></xs:annotation>"
                     : "") +
-                    "<xs:simpleType>" +
-                    "<xs:restriction base=\"$newBase\">" +
-                    "<xs:pattern value=\"$pattern\"/>" +
-                    "</xs:restriction>" +
-                    "</xs:simpleType>")
+                    (simpleTypeBase != null
+                            ? "<xs:simpleType><xs:restriction base=\"$simpleTypeBase\">" + (pattern != null ? "<xs:pattern value=\"$pattern\"/>" : "") + "</xs:restriction></xs:simpleType>"
+                            : ""), oldRootBase, newRootBase
+    )
 }
 
 void downloadSatResouce(List<String> downloads, String url, String basePath) {
@@ -65,108 +69,43 @@ void downloadSatResouce(List<String> downloads, String url, String basePath) {
                 }
             }
     //some values of this file cant fit into a java class (max 64kb per method)
+    //remove colonia, codigo postal and claveprodserv because max java size
     if (url.endsWith('catCFDI.xsd')) {
-        //remove colonia, codigo postal and claveprodserv because max java size
-        content = content.replaceAll("(.*?)<xs:enumeration value=\"([0-9]{4,5}|[0-9]{8})\"\\/>(\\r\\n|\\r|\\n)", "")
-        //add regex validation to colonias
-        content = content.replaceAll("(?<=<xs:simpleType name=\"c_Colonia\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:simpleType>)", """
-        <xs:restriction base="xs:string">
-            <xs:whiteSpace value="collapse"/>
-            <xs:pattern value="[0-9]{4}"/>
-        </xs:restriction>
-    """)
-        //add regex validation to codigo postal
-        content = content.replaceAll("(?<=<xs:simpleType name=\"c_CodigoPostal\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:simpleType>)", """
-        <xs:restriction base="xs:string">
-            <xs:whiteSpace value="collapse"/>
-            <xs:pattern value="[0-9]{5}"/>
-        </xs:restriction>
-    """)
-        //add regex validation to claveprodserv
-        content = content.replaceAll("(?<=<xs:simpleType name=\"c_ClaveProdServ\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:simpleType>)", """
-        <xs:restriction base="xs:string">
-            <xs:whiteSpace value="collapse"/>
-            <xs:pattern value="[0-9]{8}"/>
-        </xs:restriction>
-    """)
+        //... and add regex validation to colonias
+        content = replaceCatalogoPattern(content, 'c_Colonia', '[0-9]{4}', false, false, null)
+        //... and add regex validation to codigo postal
+        content = replaceCatalogoPattern(content, 'c_CodigoPostal', '[0-9]{5}', false, false, null)
+        //... and add regex validation to claveprodserv
+        content = replaceCatalogoPattern(content, 'c_ClaveProdServ', '[0-9]{8}', false, false, null)
     }
-//some values of this file cant fit into a java class (max 64kb per method)
+    //some values of this file cant fit into a java class (max 64kb per method)
     if (url.endsWith('tdCFDI.xsd')) {
         //set base tipe to string
-        content = content.replaceAll("(?<=<xs:simpleType name=\"t_CuentaBancaria\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:simpleType>)", """
-    <xs:annotation>
-      <xs:documentation>Tipo definido para expresar la cuenta bancarizada.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:whiteSpace value="collapse"/>
-      <xs:pattern value="[0-9]{10,18}"/>
-    </xs:restriction>
-  """)
+        content = replaceCatalogoPattern(content, 't_CuentaBancaria', '[0-9]{10,18}', false, false, 'Tipo definido para expresar la cuenta bancarizada')
     }
     //Remove some catalogos on complementos / Two classes have the same XML type name
+    //remove fracción arancelaria because max java size
     if (url.endsWith('catComExt.xsd') || url.endsWith('ComercioExterior10.xsd')) {
-        //remove colonia, codigo postal and claveprodserv because max java size
-        content = content.replaceAll("(.*?)<xs:enumeration value=\"([0-9]{8}|[0-9]{10})\"\\/>(\\r\\n|\\r|\\n)", "")
-        //add regex validation to colonias
-        content = content.replaceAll("(?<=<xs:simpleType name=\"c_FraccionArancelaria\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:simpleType>)", """
-    <xs:restriction base="xs:string">
-      <xs:whiteSpace value="collapse"/>
-      <xs:pattern value="[0-9]{8,10}"/>
-    </xs:restriction>
-  """)
+        //add regex validation to fraccion arancelaria
+        content = replaceCatalogoPattern(content, 'c_FraccionArancelaria', '[0-9]{8,10}', false, false, null)
     }
-//xsd had bad type, in some fields need to be string to be "02" instead "2"
+    //xsd had bad type, in some fields need to be string to be "02" instead "2"
     if (url.endsWith('nomina11.xsd')) {
-        content = content.replaceAll("(?<=<xs:attribute name=\"TipoPercepcion\" use=\"required\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:attribute>)", """
-\t\t\t\t\t\t\t\t\t\t<xs:annotation>
-\t\t\t\t\t\t\t\t\t\t\t<xs:documentation>Clave agrupadora. Clasifica la percepción conforme al catálogo publicado en el portal del SAT en internet</xs:documentation>
-\t\t\t\t\t\t\t\t\t\t</xs:annotation>
-\t\t\t\t\t\t\t\t\t\t<xs:simpleType>
-\t\t\t\t\t\t\t\t\t\t\t<xs:restriction base="xs:string">
-\t\t\t\t\t\t\t\t\t\t\t\t<xs:pattern value="[0-9]{3}"/>
-\t\t\t\t\t\t\t\t\t\t\t</xs:restriction>
-\t\t\t\t\t\t\t\t\t\t</xs:simpleType>
-\t\t\t\t\t\t\t\t\t""")
-        content = content.replaceAll("(?<=<xs:attribute name=\"TipoDeduccion\" use=\"required\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:attribute>)", """
-\t\t\t\t\t\t\t\t\t\t<xs:annotation>
-\t\t\t\t\t\t\t\t\t\t\t<xs:documentation>Clave agrupadora. Clasifica la deducción conforme al catálogo publicado en el portal del SAT en internet</xs:documentation>
-\t\t\t\t\t\t\t\t\t\t</xs:annotation>
-\t\t\t\t\t\t\t\t\t\t<xs:simpleType>
-\t\t\t\t\t\t\t\t\t\t\t<xs:restriction base="xs:string">
-\t\t\t\t\t\t\t\t\t\t\t\t<xs:pattern value="[0-9]{3}"/>
-\t\t\t\t\t\t\t\t\t\t\t</xs:restriction>
-\t\t\t\t\t\t\t\t\t\t</xs:simpleType>
-\t\t\t\t\t\t\t\t\t""")
-        content = content.replace("<xs:attribute name=\"TipoIncapacidad\" type=\"xs:int\" use=\"required\">", "<xs:attribute name=\"TipoIncapacidad\" type=\"xs:string\" use=\"required\">")
-        content = content.replaceAll("(?<=<xs:attribute name=\"TipoRegimen\" use=\"required\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:attribute>)", """
-\t\t\t\t<xs:annotation>
-\t\t\t\t\t<xs:documentation>Atributo requerido para la expresión de la clave del régimen por el cual se tiene contratado al trabajador, conforme al catálogo publicado en el portal del SAT en internet</xs:documentation>
-\t\t\t\t</xs:annotation>
-\t\t\t\t<xs:simpleType>
-\t\t\t\t\t<xs:restriction base="xs:string">
-\t\t\t\t\t</xs:restriction>
-\t\t\t\t</xs:simpleType>
-\t\t\t""")
-        content = content.replaceAll("(?<=<xs:attribute name=\"Banco\">)((.|(\\r\\n|\\r|\\n))*?)(?=<\\/xs:attribute>)", """
-\t\t\t\t<xs:annotation>
-\t\t\t\t\t<xs:documentation>Atributo opcional para la expresión del Banco conforme al catálogo, donde se realiza un depósito de nómina</xs:documentation>
-\t\t\t\t</xs:annotation>
-\t\t\t\t<xs:simpleType>
-\t\t\t\t\t<xs:restriction base="xs:string">
-\t\t\t\t\t\t<xs:pattern value="[0-9]{3}"/>
-\t\t\t\t\t</xs:restriction>
-\t\t\t\t</xs:simpleType>
-\t\t\t""")
-        content = replaceCatalogoPattern(content, 't_Clabe', '[0-9]{18}', false, 'Tipo definido para expresar la CLABE interbancaria')
+//        String content, String attribute, String oldRootBase, String newRootBase, String simpleTypeBase, String pattern, boolean required, String docAnnotation
+        content = changeAttributeBase(content, 'TipoPercepcion', null, null, 'xs:string', '[0-9]{3}', true, 'Clave agrupadora. Clasifica la percepción conforme al catálogo publicado en el portal del SAT en internet')
+        content = changeAttributeBase(content, 'TipoDeduccion', null, null, 'xs:string', '[0-9]{3}', true, 'Clave agrupadora. Clasifica la deducción conforme al catálogo publicado en el portal del SAT en internet')
+        content = changeAttributeBase(content, 'TipoIncapacidad', 'xs:int', 'xs:string', null, null, true, 'Razón de la incapacidad: Catálogo publicado en el portal del SAT en internet')
+        content = changeAttributeBase(content, 'TipoRegimen', null, null, 'xs:string', null, true, 'Atributo requerido para la expresión de la clave del régimen por el cual se tiene contratado al trabajador, conforme al catálogo publicado en el portal del SAT en internet')
+        content = changeAttributeBase(content, 'Banco', null, null, 'xs:string', '[0-9]{3}', false, 'Atributo opcional para la expresión del Banco conforme al catálogo, donde se realiza un depósito de nómina')
+        content = replaceCatalogoPattern(content, 't_Clabe', '[0-9]{18}', false, false, 'Tipo definido para expresar la CLABE interbancaria')
     }
     //some values of this file cant fit into a java class (max 64kb per method)
     if (url.endsWith('catCartaPorte.xsd')) {
-        content = replaceCatalogoPattern(content, 'c_Estaciones', '[0-9]{8}', true, null)
-        content = replaceCatalogoPattern(content, 'c_ClaveProdServCP', '[0-9]{8}', true, null)
-        content = replaceCatalogoPattern(content, 'c_MaterialPeligroso', 'M[0-9]{4}|[0-9]{4}', true, null)
+        content = replaceCatalogoPattern(content, 'c_Estaciones', '[0-9]{8}', true, false, null)
+        content = replaceCatalogoPattern(content, 'c_ClaveProdServCP', '[0-9]{8}', true, false, null)
+        content = replaceCatalogoPattern(content, 'c_MaterialPeligroso', 'M[0-9]{4}|[0-9]{4}', true, false, null)
     }
 
-    content = content.replaceAll("xmlType=\"xs:int\"", "xmlType=\"xs:integer\"")
     file.setText(content, 'UTF-8')
 }
 
