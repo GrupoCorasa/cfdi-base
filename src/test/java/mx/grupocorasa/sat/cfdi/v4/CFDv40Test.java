@@ -14,6 +14,7 @@ import org.junit.Test;
 import java.io.*;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
+import java.util.Objects;
 
 public final class CFDv40Test {
 
@@ -132,6 +133,7 @@ public final class CFDv40Test {
                 CFDv40 cfd3 = new CFDv40(bais);
                 cfd3.validar(null);
                 cfd3.verificar();
+                Assert.assertNotNull(bais);
             }
         }
     }
@@ -155,7 +157,7 @@ public final class CFDv40Test {
 //        try (ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
 //            cfd.guardar(byteArrayOutputStream, false);
 //            String comp = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><cfdi:Comprobante Version=\"3.3\" Serie=\"PPP\" Folio=\"34152\" Fecha=\"2021-03-11T14:54:56\" SubTotal=\"0\" Moneda=\"XXX\" Total=\"0\" TipoDeComprobante=\"P\" LugarExpedicion=\"83000\" Confirmacion=\"ECVH1\" xsi:schemaLocation=\"http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/CFDv40.xsd http://www.sat.gob.mx/Pagos http://www.sat.gob.mx/sitio_internet/cfd/Pagos/Pagos10.xsd\" xmlns:cfdi=\"http://www.sat.gob.mx/cfd/3\" xmlns:pago10=\"http://www.sat.gob.mx/Pagos\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><cfdi:CfdiRelacionados TipoRelacion=\"06\"><cfdi:CfdiRelacionado UUID=\"248C01A6-A08C-4821-BFAF-F1D04C0A0DC5\"/><cfdi:CfdiRelacionado UUID=\"4A3CC52B-4F7A-4FAF-9375-9905D535CB07\"/></cfdi:CfdiRelacionados><cfdi:Emisor Rfc=\"PPL961114GZ1\" Nombre=\"PHARMA PLUS SA DE CV\" RegimenFiscal=\"606\"/><cfdi:Receptor Rfc=\"OEGH910609BZ6\" Nombre=\"Heriberto Ortega Gonzalez\" UsoCFDI=\"P01\"/><cfdi:Conceptos><cfdi:Concepto ClaveProdServ=\"84111506\" Cantidad=\"1\" ClaveUnidad=\"ACT\" Descripcion=\"Pago\" ValorUnitario=\"0\" Importe=\"0\"/></cfdi:Conceptos><cfdi:Complemento><pago10:Pagos Version=\"1.0\"><pago10:Pago FechaPago=\"2020-01-01T13:42:56\" FormaDePagoP=\"04\" MonedaP=\"MXN\" TipoCambioP=\"1\" Monto=\"3000\" NumOperacion=\"ABC123\" RfcEmisorCtaOrd=\"ABC010101000\" NomBancoOrdExt=\"Razón Social Banco Ordenante\" CtaOrdenante=\"123456789012345678\" RfcEmisorCtaBen=\"CBA010101000\" CtaBeneficiario=\"876543210987654321\" TipoCadPago=\"01\"><pago10:DoctoRelacionado IdDocumento=\"8c6edff3-f9d0-4187-8574-4e199bac8730\" Serie=\"AAA\" Folio=\"987\" MonedaDR=\"MXN\" TipoCambioDR=\"1\" MetodoDePagoDR=\"PPD\" NumParcialidad=\"1\" ImpSaldoAnt=\"1500\" ImpPagado=\"1500\" ImpSaldoInsoluto=\"0\"/><pago10:DoctoRelacionado IdDocumento=\"153e2c1a-9901-4fc2-aa92-54bf6add80c4\" Serie=\"AAA\" Folio=\"988\" MonedaDR=\"MXN\" TipoCambioDR=\"1\" MetodoDePagoDR=\"PPD\" NumParcialidad=\"1\" ImpSaldoAnt=\"1000\" ImpPagado=\"1000\" ImpSaldoInsoluto=\"0\"/><pago10:DoctoRelacionado IdDocumento=\"47bdcbab-97be-4195-a674-043e33970121\" Serie=\"AAA\" Folio=\"989\" MonedaDR=\"MXN\" TipoCambioDR=\"1\" MetodoDePagoDR=\"PPD\" NumParcialidad=\"1\" ImpSaldoAnt=\"500\" ImpPagado=\"500\" ImpSaldoInsoluto=\"0\"/><pago10:Impuestos TotalImpuestosRetenidos=\"123\" TotalImpuestosTrasladados=\"123\"><pago10:Retenciones><pago10:Retencion Impuesto=\"002\" Importe=\"123\"/></pago10:Retenciones><pago10:Traslados><pago10:Traslado Impuesto=\"002\" TipoFactor=\"Tasa\" TasaOCuota=\"0.16\" Importe=\"123\"/></pago10:Traslados></pago10:Impuestos></pago10:Pago><pago10:Pago FechaPago=\"2020-02-01T13:42:56\" FormaDePagoP=\"03\" MonedaP=\"MXN\" TipoCambioP=\"1\" Monto=\"2000\" NumOperacion=\"ABC321\" RfcEmisorCtaOrd=\"AAA010101000\" NomBancoOrdExt=\"Razón Social Banco Ordenante\" CtaOrdenante=\"123456789012345679\" RfcEmisorCtaBen=\"BBB010101000\" CtaBeneficiario=\"976543210987654321\" TipoCadPago=\"01\"><pago10:DoctoRelacionado IdDocumento=\"0121a674-97be-4195-cbab-043e339747bd\" Serie=\"BBB\" Folio=\"987\" MonedaDR=\"MXN\" TipoCambioDR=\"1\" MetodoDePagoDR=\"PPD\" NumParcialidad=\"1\" ImpSaldoAnt=\"1500\" ImpPagado=\"1500\" ImpSaldoInsoluto=\"0\"/><pago10:DoctoRelacionado IdDocumento=\"80c42c1a-9901-4fc2-aa92-54bf6add153e\" Serie=\"BBB\" Folio=\"989\" MonedaDR=\"MXN\" TipoCambioDR=\"1\" MetodoDePagoDR=\"PPD\" NumParcialidad=\"1\" ImpSaldoAnt=\"500\" ImpPagado=\"500\" ImpSaldoInsoluto=\"0\"/></pago10:Pago></pago10:Pagos></cfdi:Complemento></cfdi:Comprobante>";
-//            Assert.assertEquals(comp, byteArrayOutputStream.toString());
+//            Assert.assertEquals(comp, byteArrayOutputStream.toString("UTF8"));
 //        }
 //    }
 //
@@ -208,14 +210,14 @@ public final class CFDv40Test {
 //        Assert.assertNotNull(sellado.getCertificado());
 //        Comprobante c2 = CFDv40.newComprobante(new FileInputStream("resources/xmls/cfdi/v40/CFDv40_cpago.xml"));
 //        CFDv40 cfd2 = new CFDv40(c2);
-//        try (OutputStream outputStream = new ByteArrayOutputStream(); OutputStream outputStream2 = new ByteArrayOutputStream()) {
+//        try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream(); ByteArrayOutputStream outputStream2 = new ByteArrayOutputStream()) {
 //            cfd.validar(null);
 //            cfd.verificar();
 //            cfd.guardar(outputStream, false);
 //            cfd2.validar(null);
 //            cfd2.verificar();
 //            cfd2.guardar(outputStream2, false);
-//            Assert.assertEquals(String.valueOf(outputStream2), String.valueOf(outputStream));
+//            Assert.assertEquals(outputStream2.toString("UTF8"), outputStream.toString("UTF8"));
 //        }
 //    }
 //

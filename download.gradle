@@ -285,12 +285,13 @@ tasks.register("satResources") {
         </jaxb:bindings>
     </jaxb:bindings>
 </jaxb:bindings>"""
-                    _cbf = new File("src/main/resources/bindingFiles/${actualXsd.getName().replace(".xsd", "_bind.xml")}")
+                    String _cbfPath = "src/main/resources/bindingFiles/${actualXsd.getName().replace(".xsd", "_bind.xml")}";
+                    _cbf = new File(_cbfPath)
                     if (!_cbf.getParentFile().exists()) _cbf.getParentFile().mkdir()
                     _cbf.setText(_customBindingContent, 'UTF-8')
 
                     bindingFileContent += "\t\t" + packageName.replace('.', '_').replace('__', '_') + "{\n" +
-                            "\t\t\tbindingFile = '" + (_cbf == null ? 'src/main/resources/bind.xml' : _cbf.getPath()) + "'\n" +
+                            "\t\t\tbindingFile = '" + (_cbf == null ? 'src/main/resources/bind.xml' : _cbfPath) + "'\n" +
                             "\t\t\tschemaRootDir = 'src/main/resources'\n" +
                             "\t\t\tschemaFile = '" + filePath.substring(1) + "'\n" +
                             "\t\t}\n"
