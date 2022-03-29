@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante Certificado="MIIFyDCCA7CgAwIBAgIUMzAwMDEwMDAwMDA0MDAwMDI0NDMwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWRpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMTkwNjE3MjA0MDUxWhcNMjMwNjE3MjA0MDUxWjCB7zEqMCgGA1UEAxMhWEVOT04gSU5EVVNUUklBTCBBUlRJQ0xFUyBTIERFIENWMSowKAYDVQQpEyFYRU5PTiBJTkRVU1RSSUFMIEFSVElDTEVTIFMgREUgQ1YxKjAoBgNVBAoTIVhFTk9OIElORFVTVFJJQUwgQVJUSUNMRVMgUyBERSBDVjElMCMGA1UELRMcWElBMTkwMTI4SjYxIC8gS0FITzY0MTEwMUIzOTEeMBwGA1UEBRMVIC8gS0FITzY0MTEwMUhOVExLUzA2MSIwIAYDVQQLExlYZW5vbiBJbmR1c3RyaWFsIEFydGljbGVzMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiJQ5YcSgjwsGf29+3go7VGdtMZCcH9wUpn46ZMAlFwUojnCPTvwJ3+cSwjqJnw8ahr3DuRwekvGR4BJAb5b9Xi8kyoiWtwcGOSWxO38Bp9J1e/BO9HMbQBPAtLDuG47oqnH8zWLOeaoYRJDpARw4RX1ko2+9tbj0ntBtM7Vk1E8EWiA/h2Meq0LIv1+ySGTUrEW46FM01J5pzELv5XupBghuJxR5DG9fiOW7u3dR5s3tZoVLwA1KdjJtY0mmnfCwxg6i5AqhvY+FAI5D6CF6/lHA8PWg63WasvrhuIv70xCLjgPT/j00ZcPrLvBf1DefGVic980Ch/SDvC+MdJ1F5wIDAQABox0wGzAMBgNVHRMBAf8EAjAAMAsGA1UdDwQEAwIGwDANBgkqhkiG9w0BAQsFAAOCAgEACjfTPoKY2N5MxjmAMltd5XZCV1vgAwEtrIRYTodhE8R0Tp1QanAXb0luPyBv5hIXWK4VqAI4fcTtP+n7kkrwfha6ErkPWFNJWJm8ZsMmby/3WgVoJkOFyRYQqr5Il3N6wMa5kiDBtDRbqB3iEXmvtrvjWSHyxAER+zo3jWGFlhBZ0nQNRtjx8sPFihVc5TUH682HJiU4oWvT63Dnra8ncqiW/uCuY86crnUq0fW7Lw/3+PY5xXjNxR/Hh3sUPITfJrGaLWurD1J9npr9yGAJ6t9zrhhZnepIC0DUMc5+j4pg1DrO32jzwUOLQqErDizh84NoJCWwbg+US8wi3zD0ZKiDv7XsTNWAW2Ap2JkzykKHjFTZiEm3uZOkJNfcu3o+kefr5HfXFT+iN9K5FUEhaQwgUeZBRJ8V5F6gmhz3d6ixVbiZoFNhYR8e2k8gF9gGrVMrEbJGQrl+6+ZYQLFiauXeG7fu1svk19PuyredRJGnseJqyV4RzcRGhJA+cLnmpdDOTEhignnvnhEuY6HVRYYXhOTyeeluET7KRCxbJGqO7TdWgjrHL3HRbNE4NY5GAdOZuLaWxElG5ZVCHqtG0Nh7UQAhcz+EKyZBAewv5XuH0OomZXw6mM2mY2soL6z1224NusM8/BbJcYTQUlAEKblEChhGK1XlxiVOU2nc9KE=" Exportacion="01" Fecha="2021-12-17T13:36:41" Folio="69" FormaPago="99" LugarExpedicion="63000" MetodoPago="PPD" Moneda="MXN" NoCertificado="30001000000400002443" Sello="Zp+6gTB4tYp78VE8dtUFqIf8XKjfomLnLPma3VWW5pf8Vr377qApfwWv88qq/iN9wEWT2ZGx4xDYomH5Xz1RfjNnr+wwQE/Mbyq/j8kyqTpSneC7oS2n/9WhHxZEcXBMmJMG3KLtb/Eh8LUjpL8oAkB+CzFqTZugcwpCMJW7S66x8Cu6q/rx0yMO0V0MPlajSWwyWHK5CDNDhGrg4YCCC/COuqik28icmscFZSO/TFEZ9L+3FDmtFbqpkqzoeMO0LCjyjFSKNcsU1eVcxI0sgamQRnZ9zUM5lved3Lmq2QcWOKsaWDfYGFMd84T/8LqG9o76C0TFrFd/DXJi66fd9g==" Serie="R" SubTotal="158794.70" TipoDeComprobante="I" Total="184201.87" Version="4.0" xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd">
+	<cfdi:InformacionGlobal Año="2021" Meses="01" Periodicidad="01"/>
+	<cfdi:Emisor Nombre="XENON INDUSTRIAL ARTICLES S DE CV" RegimenFiscal="610" Rfc="XIA190128J61"/>
+	<cfdi:Receptor DomicilioFiscalReceptor="85880" Nombre="MONICA HINOJOSA RUIZ" RegimenFiscalReceptor="610" Rfc="HIRM8308273E4" UsoCFDI="G01"/>
+	<cfdi:Conceptos>
+		<cfdi:Concepto Cantidad="6.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="SHERPRIMER NG GRIS CLARO" Importe="1379.38" NoIdentificacion="320349-1" ObjetoImp="02" Unidad="PZA" ValorUnitario="229.896552">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1379.38" Importe="220.7" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+			<cfdi:ACuentaTerceros DomicilioFiscalACuentaTerceros="83170" NombreACuentaTerceros="Premier del Noroeste SA de CV" RegimenFiscalACuentaTerceros="610" RfcACuentaTerceros="PNO930303CJ2"/>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="12.0000" ClaveProdServ="31211707" ClaveUnidad="H87" Descripcion="KIT RTS TRANSPARENTE ECO SW CLIMA CALIDO" Importe="1800.00" NoIdentificacion="322430" ObjetoImp="02" Unidad="PZA" ValorUnitario="150.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1800" Importe="288" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="6.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="SWA-NEGRO CHASIS" Importe="576.05" NoIdentificacion="330225-1" ObjetoImp="02" Unidad="PZA" ValorUnitario="96.008621">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="576.05" Importe="92.17" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="SWA-NEGRO CHASIS" Importe="652.00" NoIdentificacion="330225-4" ObjetoImp="02" Unidad="PZA" ValorUnitario="326.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="652" Importe="104.32" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="6.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="ENDURECEDOR P/SHERPRIMER NG" Importe="541.50" NoIdentificacion="331769-2" ObjetoImp="02" Unidad="PZA" ValorUnitario="90.250000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="541.5" Importe="86.64" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211803" ClaveUnidad="H87" Descripcion="REDUCTOR ACRILICO END SUPER RETARDADO ZP" Importe="667.24" NoIdentificacion="332039-4" ObjetoImp="02" Unidad="PZA" ValorUnitario="333.620000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="667.24" Importe="106.76" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211801" ClaveUnidad="H87" Descripcion="SWA-REMOVEDOR AMARILLO" Importe="472.00" NoIdentificacion="334055-1" ObjetoImp="02" Unidad="PZA" ValorUnitario="118.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="472" Importe="75.52" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="8.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="XCLO BODY FILLER" Importe="712.00" NoIdentificacion="339900-1" ObjetoImp="02" Unidad="PZA" ValorUnitario="89.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="712" Importe="113.92" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="6.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="XCLO BODY FILLER" Importe="1680.00" NoIdentificacion="339900-4" ObjetoImp="02" Unidad="PZA" ValorUnitario="280.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1680" Importe="268.8" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="100.0000" ClaveProdServ="31211915" ClaveUnidad="H87" Descripcion="COLADOR DE PAPEL PARA PINTURA" Importe="115.52" NoIdentificacion="343050" ObjetoImp="02" Unidad="PZA" ValorUnitario="1.155172">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="115.52" Importe="18.48" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211900" ClaveUnidad="H87" Descripcion="PALA METALICA 4 LTS" Importe="56.00" NoIdentificacion="343062-4" ObjetoImp="02" Unidad="PZA" ValorUnitario="28.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="56" Importe="8.96" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PINTURA PARA ALBERCA AZUL REAL 4 LTS" Importe="1017.67" NoIdentificacion="A05LJ01-4" ObjetoImp="02" Unidad="PZA" ValorUnitario="1017.670000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1017.67" Importe="162.83" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211506" ClaveUnidad="H87" Descripcion="TECHOLASTIC 3 AÑOS TERRACOTA 19L" Importe="2590.73" NoIdentificacion="A05RJ02-19" ObjetoImp="02" Unidad="PZA" ValorUnitario="863.577586">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2590.73" Importe="414.52" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211506" ClaveUnidad="H87" Descripcion="TECHOLASTIC 3 AÑOS BLANCO 19L" Importe="2590.73" NoIdentificacion="A05WJ06-19" ObjetoImp="02" Unidad="PZA" ValorUnitario="863.577586">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2590.73" Importe="414.52" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211505" ClaveUnidad="H87" Descripcion="BLOQUEADOR DE HUMEDAD 4 LT" Importe="2344.83" NoIdentificacion="B72WJ8010-4" ObjetoImp="02" Unidad="PZA" ValorUnitario="586.206897">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2344.83" Importe="375.17" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="10.0000" ClaveProdServ="30151802" ClaveUnidad="H87" Descripcion="BODY SEAL 1 LT" Importe="931.03" NoIdentificacion="BOD-1" ObjetoImp="02" Unidad="PZA" ValorUnitario="93.103000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="931.03" Importe="148.97" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="30151802" ClaveUnidad="H87" Descripcion="BODY SEAL 4 LTS" Importe="615.17" NoIdentificacion="BOD-4" ObjetoImp="02" Unidad="PZA" ValorUnitario="307.586207">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="615.17" Importe="98.43" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="01010101" ClaveUnidad="H87" Descripcion="PALA METALICA 19 LT" Importe="206.93" NoIdentificacion="343063.4" ObjetoImp="02" Unidad="PZA" ValorUnitario="103.465517">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="206.93" Importe="33.11" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211500" ClaveUnidad="H87" Descripcion="FLEX-CRYL ALUMINIO MEDIANO" Importe="1273.00" NoIdentificacion="340453.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="636.500000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1273" Importe="203.68" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="FLEX-CRYL AMARILLO LIMON" Importe="1284.40" NoIdentificacion="340455.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="642.200000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1284.4" Importe="205.5" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="01010101" ClaveUnidad="H87" Descripcion="FLEX-CRYL BLANCO" Importe="1328.10" NoIdentificacion="340460.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="664.050000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1328.1" Importe="212.5" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="FLEX-CRYL NEGRO" Importe="1273.00" NoIdentificacion="340465.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="636.500000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1273" Importe="203.68" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="FLEX-CRYL OCRE" Importe="1284.40" NoIdentificacion="340466.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="642.200000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1284.4" Importe="205.5" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="FLEX-CRYL ROJO CLARO" Importe="1295.79" NoIdentificacion="340469.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="647.896552">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1295.79" Importe="207.33" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="ESMALTE S.D. ALUMINIO MEDIANO" Importe="847.40" NoIdentificacion="330752.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="423.700000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="847.4" Importe="135.58" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="ESMALTE S.D. AMARILLO CROMO" Importe="1930.41" NoIdentificacion="330753.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="482.603448">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1930.41" Importe="308.87" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="ESMALTE S.D. AMARILLO LIMON" Importe="969.00" NoIdentificacion="330754.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="484.500000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="969" Importe="155.04" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="ESMALTE S.D. AMARILLO OCRE" Importe="875.90" NoIdentificacion="330757.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="437.950000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="875.9" Importe="140.14" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211500" ClaveUnidad="H87" Descripcion="ESMALTE S.D. BLANCO" Importe="1831.59" NoIdentificacion="330758.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="457.896552">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1831.59" Importe="293.05" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="ESMALTE S.D. ORO AMARILLENTO" Importe="809.40" NoIdentificacion="330759.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="404.698276">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="809.4" Importe="129.5" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="ESMALTE S.D. ORO ROJIZO" Importe="432.25" NoIdentificacion="330760.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="432.250000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="432.25" Importe="69.16" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="ESMALTE S.D. CHOCOLATE" Importe="991.79" NoIdentificacion="330761.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="495.896552">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="991.79" Importe="158.69" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="ESMALTE S.D. MARRON ROYAL" Importe="601.35" NoIdentificacion="330762.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="601.350000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="601.35" Importe="96.22" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="ESMALTE S.D. NEGRO BTE." Importe="849.29" NoIdentificacion="330765.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="424.646552">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="849.29" Importe="135.89" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="ESMALTE S.D. ROJO OXIDO" Importe="839.79" NoIdentificacion="330767.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="419.896552">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="839.79" Importe="134.37" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="ESMALTE S.D. VERDE ORGANICO" Importe="1026.00" NoIdentificacion="330769.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="513.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1026" Importe="164.16" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="ESMALTE S.D. VIOLETA" Importe="561.45" NoIdentificacion="330770.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="561.450000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="561.45" Importe="89.83" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="ESMALTE S.D. CHOCOLATE MATE" Importe="1107.71" NoIdentificacion="330772.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="553.853448">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1107.71" Importe="177.23" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211501" ClaveUnidad="H87" Descripcion="ESMALTE S.D. NEGRO MATE" Importe="485.45" NoIdentificacion="330773.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="485.450000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="485.45" Importe="77.67" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="FX - BASE COLOR BLANCO" Importe="1784.10" NoIdentificacion="324060.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="892.050000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1784.1" Importe="285.46" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="FX - BASE COLOR NEGRO" Importe="1784.10" NoIdentificacion="324068.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="892.050000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1784.1" Importe="285.46" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="FX - BASE COLOR ROJO CLARO" Importe="1784.10" NoIdentificacion="324071.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="892.050000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1784.1" Importe="285.46" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="FX - BASE COLOR NEGRO SUPER INTENSO" Importe="892.05" NoIdentificacion="324077.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="892.050000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="892.05" Importe="142.73" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="FX - BASE COLOR ALUMINIO MEDIANO" Importe="1784.10" NoIdentificacion="324079.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="892.050000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1784.1" Importe="285.46" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="FX PRIMER UNIVERSAL ROJO BERMELLÓN" Importe="401.84" NoIdentificacion="307117.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="133.946667">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="401.84" Importe="64.3" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="FX PRIMER UNIVERSAL BLANCO" Importe="401.84" NoIdentificacion="307118.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="133.946667">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="401.84" Importe="64.3" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="FX PRIMER UNIVERSAL NEGRO" Importe="401.84" NoIdentificacion="307119.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="133.946667">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="401.84" Importe="64.3" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="FX PRIMER UNIVERSAL GRIS" Importe="401.84" NoIdentificacion="307120.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="133.946667">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="401.84" Importe="64.3" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="FX PRIMER UNIVERSAL GRIS" Importe="965.21" NoIdentificacion="307120.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="482.603448">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="965.21" Importe="154.43" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="9.0000" ClaveProdServ="31211500" ClaveUnidad="H87" Descripcion="PLASTE GRIS CLARO" Importe="1350.93" NoIdentificacion="1000.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="150.103448">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1350.93" Importe="216.15" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211803" ClaveUnidad="H87" Descripcion="REDUCTOR P/POLIURETANO" Importe="703.00" NoIdentificacion="7431.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="351.500000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="703" Importe="112.48" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="6.0000" ClaveProdServ="31211604" ClaveUnidad="H87" Descripcion="ENDURECEDOR/QUALITY" Importe="769.50" NoIdentificacion="4548.21" ObjetoImp="02" Unidad="PZA" ValorUnitario="128.250000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="769.5" Importe="123.12" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="6.0000" ClaveProdServ="31211803" ClaveUnidad="H87" Descripcion="QUALITY TRANSPARENTE DE POLIURETANO" Importe="1191.31" NoIdentificacion="4547.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="198.551724">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1191.31" Importe="190.61" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211604" ClaveUnidad="H87" Descripcion="5060 FLEX PROMOTOR DE ADHERENCIA" Importe="1051.32" NoIdentificacion="5060.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="350.440000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1051.32" Importe="168.21" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="ESMALTE S.D. CHOCOLATE SATINADO 3.7" Importe="1045.00" NoIdentificacion="330792.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="522.500000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1045" Importe="167.2" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="PC COPPER AZUL CIELO" Importe="1590.00" NoIdentificacion="PCCBJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="530.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1590" Importe="254.4" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="PC COPPER AZUL CIELO" Importe="532.00" NoIdentificacion="PCCBJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="133.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="532" Importe="85.12" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER CHABACANO" Importe="2120.00" NoIdentificacion="PCCCJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="530.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2120" Importe="339.2" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="PC COPPER CHABACANO" Importe="532.00" NoIdentificacion="PCCCJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="133.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="532" Importe="85.12" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER VERDE MANZANA" Importe="1590.00" NoIdentificacion="PCCGJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="530.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1590" Importe="254.4" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER VERDE MANZANA" Importe="532.00" NoIdentificacion="PCCGJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="133.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="532" Importe="85.12" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER GRIS CLARO" Importe="1590.00" NoIdentificacion="PCCGJ02-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="530.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1590" Importe="254.4" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER GRIS CLARO" Importe="532.00" NoIdentificacion="PCCGJ02-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="133.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="532" Importe="85.12" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER PIÑON" Importe="2120.00" NoIdentificacion="PCCPJ02-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="530.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2120" Importe="339.2" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER PIÑON" Importe="532.00" NoIdentificacion="PCCPJ02-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="133.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="532" Importe="85.12" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER ROSA" Importe="1060.00" NoIdentificacion="PCCPJ03-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="530.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1060" Importe="169.6" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER ROSA" Importe="532.00" NoIdentificacion="PCCPJ03-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="133.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="532" Importe="85.12" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER LILA" Importe="1060.00" NoIdentificacion="PCCVJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="530.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1060" Importe="169.6" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER LILA" Importe="532.00" NoIdentificacion="PCCVJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="133.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="532" Importe="85.12" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="5.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER BLANCO" Importe="2650.00" NoIdentificacion="PCCWJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="530.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2650" Importe="424" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="6.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER BLANCO" Importe="798.00" NoIdentificacion="PCCWJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="133.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="798" Importe="127.68" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER BLANCO OSTION" Importe="1060.00" NoIdentificacion="PCCWJ02-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="530.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1060" Importe="169.6" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="6.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER BLANCO OSTION" Importe="798.00" NoIdentificacion="PCCWJ02-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="133.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="798" Importe="127.68" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER GIRASOL" Importe="1590.00" NoIdentificacion="PCCYJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="530.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1590" Importe="254.4" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC COPPER GIRASOL" Importe="532.00" NoIdentificacion="PCCYJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="133.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="532" Importe="85.12" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC GOLD AZUL REY" Importe="1103.00" NoIdentificacion="PCGBJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="1103.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1103" Importe="176.48" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC GOLD AZUL REY" Importe="544.00" NoIdentificacion="PCGBJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="272.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="544" Importe="87.04" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC GOLD NARANJA" Importe="2206.00" NoIdentificacion="PCGOJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="1103.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2206" Importe="352.96" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC GOLD NARANJA" Importe="544.00" NoIdentificacion="PCGOJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="272.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="544" Importe="87.04" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC GOLD ROJO CLARO" Importe="2206.00" NoIdentificacion="PCGRJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="1103.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2206" Importe="352.96" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC GOLD ROJO CLARO" Importe="544.00" NoIdentificacion="PCGRJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="272.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="544" Importe="87.04" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC GOLD ROJO TERRACOTA" Importe="2206.00" NoIdentificacion="PCGRJ02-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="1103.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2206" Importe="352.96" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC GOLD ROJO TERRACOTA" Importe="544.00" NoIdentificacion="PCGRJ02-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="272.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="544" Importe="87.04" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="5.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC GOLD BLANCO" Importe="5515.00" NoIdentificacion="PCGWJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="1103.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="5515" Importe="882.4" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC GOLD BLANCO" Importe="1088.00" NoIdentificacion="PCGWJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="272.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1088" Importe="174.08" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC GOLD AMARILLO LIMÓN" Importe="2206.00" NoIdentificacion="PCGYJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="1103.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2206" Importe="352.96" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC GOLD AMARILLO LIMÓN" Importe="544.00" NoIdentificacion="PCGYJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="272.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="544" Importe="87.04" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC GOLD AMARILLO OCRE" Importe="2206.00" NoIdentificacion="PCGYJ02-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="1103.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2206" Importe="352.96" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC GOLD AMARILLO OCRE" Importe="1088.00" NoIdentificacion="PCGYJ02-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="272.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1088" Importe="174.08" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC SILVER AZUL HORIZONTE" Importe="543.00" NoIdentificacion="PCSBJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="181.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="543" Importe="86.88" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC SILVER NEGRO" Importe="735.00" NoIdentificacion="PCSBJ02-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="735.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="735" Importe="117.6" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="PC SILVER NEGRO" Importe="362.00" NoIdentificacion="PCSBJ02-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="181.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="362" Importe="57.92" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC SILVER VERDE MANZANA" Importe="2205.00" NoIdentificacion="PCSGJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="735.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2205" Importe="352.8" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC SILVER VERDE MANZANA" Importe="724.00" NoIdentificacion="PCSGJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="181.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="724" Importe="115.84" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC SILVER ROJO BANDERA" Importe="1470.00" NoIdentificacion="PCSRJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="735.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1470" Importe="235.2" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="PC SILVER ROJO BANDERA" Importe="543.00" NoIdentificacion="PCSRJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="181.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="543" Importe="86.88" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC SILVER ROJO TEJA" Importe="1470.00" NoIdentificacion="PCSRJ02-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="735.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1470" Importe="235.2" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211500" ClaveUnidad="H87" Descripcion="PC SILVER ROJO TEJA" Importe="543.00" NoIdentificacion="PCSRJ02-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="181.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="543" Importe="86.88" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211500" ClaveUnidad="H87" Descripcion="PC SILVER TANGERINA" Importe="2940.00" NoIdentificacion="PCSTJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="735.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2940" Importe="470.4" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211500" ClaveUnidad="H87" Descripcion="PC SILVER TANGERINA" Importe="798.00" NoIdentificacion="PCSTJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="199.500000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="798" Importe="127.68" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC SILVER TURQUESA" Importe="2205.00" NoIdentificacion="PCSTJ02-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="735.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2205" Importe="352.8" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC SILVER TURQUESA" Importe="724.00" NoIdentificacion="PCSTJ02-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="181.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="724" Importe="115.84" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="5.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC SILVER BLANCO" Importe="3675.00" NoIdentificacion="PCSWJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="735.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="3675" Importe="588" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="5.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC SILVER BLANCO" Importe="905.00" NoIdentificacion="PCSWJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="181.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="905" Importe="144.8" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="5.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC SILVER BLANCO OSTION" Importe="3675.00" NoIdentificacion="PCSWJ02-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="735.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="3675" Importe="588" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="5.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC SILVER BLANCO OSTION" Importe="905.00" NoIdentificacion="PCSWJ02-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="181.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="905" Importe="144.8" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC SILVER AMARILLO LIMÓN" Importe="1470.00" NoIdentificacion="PCSYJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="735.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1470" Importe="235.2" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211502" ClaveUnidad="H87" Descripcion="PC SILVER AMARILLO LIMON" Importe="543.00" NoIdentificacion="PCSYJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="181.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="543" Importe="86.88" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211500" ClaveUnidad="H87" Descripcion="PC GOLD ZARZAMORA" Importe="2206.00" NoIdentificacion="PCGVJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="1103.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2206" Importe="352.96" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211500" ClaveUnidad="H87" Descripcion="PC GOLD ZARZAMORA" Importe="544.00" NoIdentificacion="PCGVJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="272.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="544" Importe="87.04" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS ALUMINIO FINO" Importe="396.55" NoIdentificacion="315000.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="99.137931">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="396.55" Importe="63.45" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS ALUMINIO FINO" Importe="698.28" NoIdentificacion="315000.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="349.137931">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="698.28" Importe="111.72" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS AMARILLO CROMO" Importe="413.79" NoIdentificacion="315001.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="103.448276">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="413.79" Importe="66.21" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS AMARILLO CROMO" Importe="724.14" NoIdentificacion="315001.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="362.068966">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="724.14" Importe="115.86" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS AMARILLO LIMON" Importe="413.79" NoIdentificacion="315002.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="103.448276">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="413.79" Importe="66.21" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS AMARILLO LIMON" Importe="724.14" NoIdentificacion="315002.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="362.068966">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="724.14" Importe="115.86" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS AMARILLO OXIDO" Importe="206.90" NoIdentificacion="315003.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="103.448276">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="206.9" Importe="33.1" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS AMARILLO OXIDO" Importe="724.14" NoIdentificacion="315003.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="362.068966">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="724.14" Importe="115.86" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS AZUL ROJIZO" Importe="206.90" NoIdentificacion="315004.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="103.448276">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="206.9" Importe="33.1" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS AZUL ROJIZO" Importe="362.07" NoIdentificacion="315004.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="362.070000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="362.07" Importe="57.93" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS AZUL VERDOSO" Importe="206.90" NoIdentificacion="315005.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="103.448276">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="206.9" Importe="33.1" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS AZUL VERDOSO" Importe="362.07" NoIdentificacion="315005.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="362.068966">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="362.07" Importe="57.93" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="10.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS BLANCO" Importe="948.28" NoIdentificacion="315006.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="94.827586">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="948.28" Importe="151.72" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="7.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS BLANCO" Importe="2407.76" NoIdentificacion="315006.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="343.965517">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2407.76" Importe="385.24" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS BLANCO" Importe="2965.52" NoIdentificacion="315006.61" ObjetoImp="02" Unidad="PZA" ValorUnitario="1482.758621">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="2965.52" Importe="474.48" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS BLANCO MATE" Importe="284.48" NoIdentificacion="315007.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="94.827586">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="284.48" Importe="45.52" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS BLANCO MATE" Importe="687.93" NoIdentificacion="315007.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="343.965517">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="687.93" Importe="110.07" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS CAFE ORGANICO AMARILLENTO" Importe="413.79" NoIdentificacion="315008.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="103.448276">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="413.79" Importe="66.21" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS CAFE ORGANICO AMARILLENTO" Importe="724.14" NoIdentificacion="315008.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="362.068966">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="724.14" Importe="115.86" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS CAFE OSCURO" Importe="206.90" NoIdentificacion="315009.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="103.448276">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="206.9" Importe="33.1" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS CAFE OSCURO" Importe="724.14" NoIdentificacion="315009.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="362.068966">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="724.14" Importe="115.86" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS GRIS OSCURO" Importe="379.31" NoIdentificacion="315010.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="94.827586">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="379.31" Importe="60.69" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS GRIS OSCURO" Importe="698.28" NoIdentificacion="315010.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="349.137931">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="698.28" Importe="111.72" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS MARRON" Importe="543.10" NoIdentificacion="315011.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="543.103448">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="543.1" Importe="86.9" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS NARANJA" Importe="310.34" NoIdentificacion="315012.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="103.446667">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="310.34" Importe="49.66" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS NARANJA" Importe="362.07" NoIdentificacion="315012.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="362.068966">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="362.07" Importe="57.93" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS NEGRO" Importe="284.48" NoIdentificacion="315013.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="94.827586">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="284.48" Importe="45.52" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS NEGRO" Importe="1031.90" NoIdentificacion="315013.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="343.965517">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1031.9" Importe="165.1" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS NEGRO" Importe="1482.76" NoIdentificacion="315013.61" ObjetoImp="02" Unidad="PZA" ValorUnitario="1482.758621">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1482.76" Importe="237.24" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="3.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS NEGRO MATE" Importe="284.48" NoIdentificacion="315014.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="94.827586">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="284.48" Importe="45.52" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211500" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS NEGRO MATE" Importe="687.93" NoIdentificacion="315014.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="343.965517">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="687.93" Importe="110.07" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS ROJO FUEGO" Importe="413.79" NoIdentificacion="315015.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="103.448276">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="413.79" Importe="66.21" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS ROJO FUEGO" Importe="724.14" NoIdentificacion="315015.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="362.068966">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="724.14" Importe="115.86" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS ROJO OXIDO" Importe="413.79" NoIdentificacion="315016.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="103.448276">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="413.79" Importe="66.21" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS ROJO OXIDO" Importe="724.14" NoIdentificacion="315016.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="362.068966">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="724.14" Importe="115.86" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS VERDE AMARILLENTO" Importe="206.90" NoIdentificacion="315018.41" ObjetoImp="02" Unidad="PZA" ValorUnitario="103.448276">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="206.9" Importe="33.1" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS VERDE AMARILLENTO" Importe="362.07" NoIdentificacion="315018.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="362.068966">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="362.07" Importe="57.93" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS VIOLETA" Importe="379.31" NoIdentificacion="315019.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="379.310345">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="379.31" Importe="60.69" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="1.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="EZ-COLOR PLUS VEHICULO MATEANTE" Importe="343.97" NoIdentificacion="315021.51" ObjetoImp="02" Unidad="PZA" ValorUnitario="343.970000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="343.97" Importe="55.03" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="2.0000" ClaveProdServ="31201600" ClaveUnidad="H87" Descripcion="SELLADOR 5X1" Importe="1910.00" NoIdentificacion="PCSSJ01-5G" ObjetoImp="02" Unidad="PZA" ValorUnitario="955.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="1910" Importe="305.6" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto Cantidad="4.0000" ClaveProdServ="31211515" ClaveUnidad="H87" Descripcion="SELLADOR 5X1" Importe="880.00" NoIdentificacion="PCSSJ01-G" ObjetoImp="02" Unidad="PZA" ValorUnitario="220.000000">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="880" Importe="140.8" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+	</cfdi:Conceptos>
+	<cfdi:Impuestos TotalImpuestosTrasladados="25407.17">
+		<cfdi:Traslados>
+			<cfdi:Traslado Base="158794.70" Importe="25407.17" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa"/>
+		</cfdi:Traslados>
+	</cfdi:Impuestos>
+	<cfdi:Complemento>
+		<tfd:TimbreFiscalDigital FechaTimbrado="2021-12-20T19:36:19" NoCertificadoSAT="30001000000400002495" RfcProvCertif="SPR190613I52" SelloCFD="Zp+6gTB4tYp78VE8dtUFqIf8XKjfomLnLPma3VWW5pf8Vr377qApfwWv88qq/iN9wEWT2ZGx4xDYomH5Xz1RfjNnr+wwQE/Mbyq/j8kyqTpSneC7oS2n/9WhHxZEcXBMmJMG3KLtb/Eh8LUjpL8oAkB+CzFqTZugcwpCMJW7S66x8Cu6q/rx0yMO0V0MPlajSWwyWHK5CDNDhGrg4YCCC/COuqik28icmscFZSO/TFEZ9L+3FDmtFbqpkqzoeMO0LCjyjFSKNcsU1eVcxI0sgamQRnZ9zUM5lved3Lmq2QcWOKsaWDfYGFMd84T/8LqG9o76C0TFrFd/DXJi66fd9g==" SelloSAT="pHmQ8tARDo3KHIWuIpumLM59TsOQXYHBPZYJ0DsXSTQe9E88veNImpu6mnd7WKT5oyaub1jUO7CwPl69rw/U33ivpXpCfUfjdPmwNlhs0ORk7kjV/XP7Bic/mD2QbCRepuuZgwjamNfzpIdY9dvue589TE5LZ4alRkIhx13sVtGvRfyCyRyWRknQJ0v6PN3qtyLY++EFSbQfw7UOOpW1KfQH1fTfRtu3TKkXxwJlqfwj1HfWadiFGc50vMIyDXinZesSeQ27gx8Ii8AAlcatbZDUt+aeHpK9+B/HmsekS3gxSJBwuhF6VW12KbAvNwj6T9ebhZsmJmpnVc8t8nheVQ==" UUID="F9700AA4-3040-42AF-B217-5F3488EC7A09" Version="1.1" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd"/>
+	</cfdi:Complemento>
+</cfdi:Comprobante>

@@ -56,6 +56,54 @@ public class ExampleCFDv40Factory {
         return comp;
     }
 
+    public Comprobante createComprobantePago() {
+        Comprobante comp = of.createComprobante();
+        comp.setVersion("4.0");
+        comp.setSerie("PPP");
+        comp.setFolio("54321");
+        comp.setFecha(LocalDateTime.of(2022, 2, 2, 15, 55, 57));
+//        comp.setSello();
+//        comp.setFormaPago();
+//        comp.setNoCertificado("30001000000400002463");
+//        comp.setCertificado();
+//        comp.setCondicionesDePago();
+        comp.setSubTotal(BigDecimal.ZERO);
+//        comp.setDescuento();
+        comp.setMoneda(CMoneda.XXX);
+//        comp.setTipoCambio();
+        comp.setTotal(BigDecimal.ZERO);
+        comp.setTipoDeComprobante(CTipoDeComprobante.P);
+        comp.setExportacion(CExportacion.VALUE_1);
+//        comp.setMetodoPago();
+        comp.setLugarExpedicion("83000");
+//        comp.setConfirmacion();
+//        comp.setInformacionGlobal(createCfdiInformacionGlobal());
+//        comp.getCfdiRelacionados().addAll(createCfdiRelacionados());
+        comp.setEmisor(createEmisor());
+        comp.setReceptor(createReceptor());
+
+        Comprobante.Conceptos conceptos = of.createComprobanteConceptos();
+        Comprobante.Conceptos.Concepto c1 = of.createComprobanteConceptosConcepto();
+        c1.setClaveProdServ("84111506");
+//        c1.setNoIdentificacion();
+        c1.setCantidad(BigDecimal.ONE);
+        c1.setClaveUnidad(CClaveUnidad.VALUE_241);
+//        c1.setUnidad();
+        c1.setDescripcion("Pago");
+        c1.setValorUnitario(BigDecimal.ZERO);
+        c1.setImporte(BigDecimal.ZERO);
+//        c1.setDescuento();
+        c1.setObjetoImp(CObjetoImp.VALUE_1);
+//        c1.setImpuestos(createImpuestosConceptos());
+//        c1.getInformacionAduanera().addAll(createInformacionAduanera());
+//        c1.getCuentaPredial().addAll(createCuentaPredial());
+        conceptos.getConcepto().add(c1);
+        comp.setConceptos(conceptos);
+
+//        comp.setImpuestos(createImpuestos());
+        return comp;
+    }
+
     private Comprobante.InformacionGlobal createCfdiInformacionGlobal() {
         Comprobante.InformacionGlobal cfdiInformacionGlobal = of.createComprobanteInformacionGlobal();
         cfdiInformacionGlobal.setPeriodicidad(CPeriodicidad.VALUE_3);
