@@ -304,25 +304,17 @@ public abstract class CfdCommon implements CfdInterface {
         for (final ClassPath.ClassInfo info : ClassPath.from(loader).getTopLevelClasses()) {
             if (info.getName().startsWith("mx.grupocorasa.sat.common.")
                     && namespaceMap.keySet().stream().map(k -> k.split(":")[1]).anyMatch(k -> k.equalsIgnoreCase(info.getPackageName()))
-                    && xml.contains(
-                    namespaceMap.entrySet().stream()
-                            .filter(entry -> entry.getKey().split(":")[1].equalsIgnoreCase(info.getPackageName())).map(entry -> entry.getValue()).findAny().orElse(null)
-            )) {
+                    && xml.contains(Objects.requireNonNull(namespaceMap.entrySet().stream().filter(entry -> entry.getKey().split(":")[1].equalsIgnoreCase(info.getPackageName())).map(Map.Entry::getValue).findAny().orElse(null)))
+            ) {
                 List<String> preList = namespaceMap.keySet().stream().filter(k ->
                         namespaceMap.get(k.split(":")[0] + ":" + info.getPackageName()) != null
                 ).collect(Collectors.toList());
+                if (preList.stream().map(p -> p.split(":")[0]).distinct().noneMatch(pre -> xml.contains("<" + pre + ":")))
+                    continue;
                 if (preList.size() > 1) {
                     String pre = preList.get(0).split(":")[0];
-                    int startIndex, endIndex;
-                    if (xml.contains("<" + pre) && xml.contains("</" + pre)) {
-                        startIndex = xml.indexOf("<" + pre);
-                        endIndex = xml.lastIndexOf("</" + pre);
-                    } else {
-                        startIndex = xml.indexOf("<" + pre);
-                        endIndex = xml.lastIndexOf("\"/>");
-                        if (endIndex < startIndex) endIndex = xml.lastIndexOf("</cfdi:Complemento>");
-                    }
-                    Matcher versionMatcher = Pattern.compile("(?<=[V|v]ersion=\")((.)*?)(?=\")", Pattern.CASE_INSENSITIVE).matcher(xml.substring(startIndex, endIndex));
+                    int startIndex = xml.indexOf("<" + pre);
+                    Matcher versionMatcher = Pattern.compile("(?<=[V|v]ersion=\")((.)*?)(?=\")", Pattern.CASE_INSENSITIVE).matcher(xml.substring(startIndex));
                     if (versionMatcher.find()) {
                         String version = versionMatcher.group().replace(".", "");
                         if (!info.getName().contains(version)) continue;
