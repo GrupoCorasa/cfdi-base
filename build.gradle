@@ -9,7 +9,7 @@ plugins {
 apply from: 'download.gradle'
 
 group 'mx.grupocorasa.cfdibase'
-version '4.0.11'
+version '4.0.12'
 
 publishing {
     repositories {

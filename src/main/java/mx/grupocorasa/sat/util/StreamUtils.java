@@ -1,6 +1,7 @@
 package mx.grupocorasa.sat.util;
 
 import com.google.common.io.ByteStreams;
+import org.apache.commons.io.input.BOMInputStream;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
