@@ -12,10 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Base64;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -145,9 +142,22 @@ public final class CFDv40 extends CFDv4 {
 
     private List<String> getComprobanteContexts(Comprobante comprobante) throws IOException {
         final List<String> contexts = new ArrayList<>();
-        if (comprobante != null && comprobante.getComplemento() != null && comprobante.getComplemento().getAny() != null && comprobante.getComplemento().getAny().size() > 0) {
-            for (Object c : comprobante.getComplemento().getAny()) {
-                defineComprobanteContext(c, contexts);
+        if (comprobante != null) {
+            if (comprobante.getComplemento() != null && comprobante.getComplemento().getAny() != null && !comprobante.getComplemento().getAny().isEmpty()) {
+                for (Object c : comprobante.getComplemento().getAny()) {
+                    defineComprobanteContext(c, contexts);
+                }
+            }
+            if (comprobante.getConceptos() != null && comprobante.getConceptos().getConcepto() != null) {
+                for (Object c : comprobante.getConceptos().getConcepto().stream()
+                        .filter(Objects::nonNull)
+                        .filter(c -> c.getComplementoConcepto() != null)
+                        .filter(c -> c.getComplementoConcepto().getAny() != null)
+                        .map(c -> c.getComplementoConcepto().getAny())
+                        .flatMap(List::stream).collect(Collectors.toList())
+                ) {
+                    defineComprobanteContext(c, contexts);
+                }
             }
         }
         return contexts;
