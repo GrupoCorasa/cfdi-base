@@ -52,7 +52,7 @@ public abstract class CfdCommon implements CfdInterface {
         List<InputStream> copies = StreamUtils.copyStream(in, 2);
         JAXBContext context = getFileContext(copies.get(0), addendas);
         Unmarshaller u = context.createUnmarshaller();
-        try (Reader reader = new InputStreamReader(copies.get(1))) {
+        try (Reader reader = new InputStreamReader(copies.get(1), StandardCharsets.UTF_8)) {
             return u.unmarshal(reader);
         }
     }
