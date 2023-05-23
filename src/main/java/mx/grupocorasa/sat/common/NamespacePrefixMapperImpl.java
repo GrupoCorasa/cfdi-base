@@ -1,6 +1,6 @@
 package mx.grupocorasa.sat.common;
 
-import com.sun.xml.bind.marshaller.NamespacePrefixMapper;
+import org.glassfish.jaxb.runtime.marshaller.NamespacePrefixMapper;
 
 import java.util.Map;
 
@@ -21,5 +21,5 @@ public final class NamespacePrefixMapperImpl extends NamespacePrefixMapper {
     public String[] getPreDeclaredNamespaceUris() {
         return new String[0];
     }
-    
+
 }

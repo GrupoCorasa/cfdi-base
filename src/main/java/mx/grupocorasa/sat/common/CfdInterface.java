@@ -1,11 +1,11 @@
 package mx.grupocorasa.sat.common;
 
 import com.google.common.base.Joiner;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.util.JAXBSource;
 import org.xml.sax.ErrorHandler;
 
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.util.JAXBSource;
 import javax.xml.transform.TransformerFactory;
 import java.io.OutputStream;
 import java.security.PrivateKey;

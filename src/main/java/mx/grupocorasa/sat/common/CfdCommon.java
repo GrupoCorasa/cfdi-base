@@ -2,6 +2,12 @@ package mx.grupocorasa.sat.common;
 
 import com.google.common.io.ByteStreams;
 import com.google.common.reflect.ClassPath;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.annotation.XmlSchema;
+import jakarta.xml.bind.util.JAXBSource;
 import mx.grupocorasa.sat.security.KeyLoaderEnumeration;
 import mx.grupocorasa.sat.security.factory.KeyLoaderFactory;
 import mx.grupocorasa.sat.util.StreamUtils;
@@ -9,12 +15,6 @@ import org.w3c.dom.Document;
 import org.xml.sax.ErrorHandler;
 
 import javax.xml.XMLConstants;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.XmlSchema;
-import javax.xml.bind.util.JAXBSource;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -91,7 +91,7 @@ public abstract class CfdCommon implements CfdInterface {
     public void guardar(OutputStream out, Boolean formatted) throws Exception {
         if (formatted == null) formatted = true;
         Marshaller m = createMarshaller();
-        m.setProperty("com.sun.xml.bind.namespacePrefixMapper", new NamespacePrefixMapperImpl(getLocalPrefixes()));
+        m.setProperty("org.glassfish.jaxb.namespacePrefixMapper", new NamespacePrefixMapperImpl(getLocalPrefixes()));
         m.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, formatted);
         m.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, String.join(" ", getSchemaLocation()));
