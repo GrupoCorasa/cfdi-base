@@ -9,7 +9,7 @@ plugins {
 apply from: 'download.gradle'
 
 group 'mx.grupocorasa.cfdibase'
-version '4.0.15'
+version '4.0.16'
 
 publishing {
     repositories {
@@ -34,7 +34,7 @@ tasks.withType(JavaCompile) {
 }
 
 ext {
-    jaxbVersion = '4.0.2'
+    jaxbVersion = '4.0.3'
 }
 
 //***DO NOT EDIT*** FROM HERE
@@ -374,8 +374,6 @@ dependencies {
     implementation 'com.google.guava:guava:31.0.1-jre'
     implementation 'ca.juliusdavies:not-yet-commons-ssl:0.3.11'
     implementation 'commons-io:commons-io:2.11.0'
-//    xjc "com.sun.xml.bind:jaxb-api:$jaxbVersion"
-//    implementation "com.sun.xml.bind:jaxb-api:$jaxbVersion"
     implementation('jakarta.xml.bind:jakarta.xml.bind-api:2.3.3')
     implementation('org.glassfish.jaxb:jaxb-runtime:2.3.6')
     xjc "com.sun.xml.bind:jaxb-impl:$jaxbVersion"
