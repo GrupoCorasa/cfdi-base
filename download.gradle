@@ -254,8 +254,8 @@ tasks.register("satResources") {
                         packageName = packageName.replaceAll('\\d+$', '')
                         packageName += version
                     }
-                    String _customBindingContent = """<jaxb:bindings version="2.1"
-    xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+                    String _customBindingContent = """<jaxb:bindings version="3.0"
+    xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
     xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
     xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <jaxb:bindings>
