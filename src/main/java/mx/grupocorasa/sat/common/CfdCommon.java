@@ -1,12 +1,10 @@
 package mx.grupocorasa.sat.common;
 
 import com.google.common.io.ByteStreams;
-import com.google.common.reflect.ClassPath;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
-import jakarta.xml.bind.annotation.XmlSchema;
 import jakarta.xml.bind.util.JAXBSource;
 import mx.grupocorasa.sat.security.KeyLoaderEnumeration;
 import mx.grupocorasa.sat.security.factory.KeyLoaderFactory;
@@ -25,7 +23,6 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 import java.io.*;
-import java.lang.annotation.Annotation;
 import java.nio.charset.StandardCharsets;
 import java.security.PrivateKey;
 import java.security.Signature;
@@ -33,7 +30,6 @@ import java.security.cert.X509Certificate;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public abstract class CfdCommon implements CfdInterface {
 
@@ -117,41 +113,29 @@ public abstract class CfdCommon implements CfdInterface {
         return new String(bytes, StandardCharsets.UTF_8);
     }
 
-    private void defineContexts(List<String> contexts, ClassPath.ClassInfo info) {
-        final Class<?> clazz = info.load();
-        for (Annotation annotation : clazz.getPackage().getAnnotations()) {
-            if (annotation.annotationType() == XmlSchema.class) {
-                String nsURI = ((XmlSchema) annotation).namespace();
-                final String[] nsUrl = new String[1];
-                Arrays.stream(getXSD())
-                        .filter(xsd -> xsd.contains(nsURI.substring(nsURI.lastIndexOf("/"))))
-                        .filter(xsd -> !xsd.contains("/catalogo/") && !xsd.contains("/catalogos/"))
-                        .findAny().ifPresent(value -> nsUrl[0] = value.replace("/xsd/common", "http://www.sat.gob.mx/sitio_internet/cfd"));
-                if (!getLocalPrefixes().containsKey(nsURI)) {
-                    getFileNamespaceMap().entrySet().stream()
-                            .filter(entry -> entry.getValue().equalsIgnoreCase(nsURI))
-                            .findFirst()
-                            .ifPresent(entry -> addNamespace(nsURI, entry.getKey().split(":")[0]));
-                }
-                if (!contexts.contains(info.getName().substring(0, info.getName().lastIndexOf(".")))) {
-                    contexts.add(info.getName().substring(0, info.getName().lastIndexOf(".")));
-                }
-                if (!getSchemaLocation().contains(nsURI + " " + nsUrl[0])) {
-                    addSchemaLocation(nsURI + " " + nsUrl[0]);
-                }
-                break;
-            }
-        }
+    private void defineContexts(List<String> contexts, String ns, String pkg, String url) {
+        Arrays.stream(getXSD())
+                .filter(xsd -> xsd.toLowerCase(Locale.ROOT).contains(url.substring(url.lastIndexOf("/") + 1).toLowerCase(Locale.ROOT)))
+                .filter(xsd -> !xsd.contains("/catalogo/") && !xsd.contains("/catalogos/"))
+                .findAny().ifPresent(value -> {
+                    String schemaLocation = url + " " + value.replace("/xsd/common", "http://www.sat.gob.mx/sitio_internet/cfd");
+                    addNamespace(url, ns);
+                    contexts.add(pkg);
+                    addSchemaLocation(schemaLocation);
+                });
     }
 
-    @SuppressWarnings("UnstableApiUsage")
-    protected void defineComprobanteContext(Object c, List<String> contexts) throws IOException {
-        final ClassLoader loader = Thread.currentThread().getContextClassLoader();
-        for (final ClassPath.ClassInfo info : ClassPath.from(loader).getTopLevelClasses()) {
-            if (info.getName().startsWith("mx.grupocorasa.sat.common.") && info.getName().equalsIgnoreCase(c.getClass().getName())) {
-                defineContexts(contexts, info);
-            }
-        }
+    protected void defineComprobanteContext(Object c, List<String> contexts) {
+        getFileNamespaceMap().entrySet().stream()
+                .filter(entry -> {
+                    if (entry.getKey().split(":")[1].equalsIgnoreCase(c.getClass().getPackageName())) return true;
+                    return c instanceof org.w3c.dom.Element && entry.getValue().equalsIgnoreCase(((org.w3c.dom.Element) c).getNamespaceURI());
+                })
+                .findAny().ifPresent(entry -> {
+                    String ns = entry.getKey().split(":")[0];
+                    String pkg = entry.getKey().split(":")[1];
+                    defineContexts(contexts, ns, pkg, entry.getValue());
+                });
     }
 
     protected void addNamespace(String uri, String prefix) {
@@ -294,36 +278,28 @@ public abstract class CfdCommon implements CfdInterface {
     }
     //***DO NOT EDIT*** TO HERE
 
-    @SuppressWarnings("UnstableApiUsage")
     protected JAXBContext getFileContext(InputStream in, String[] addendas) throws IOException, JAXBException {
         final List<String> contexts = new ArrayList<>();
         contexts.add(getBaseContext());
         contexts.addAll(Arrays.asList(addendas));
-        final ClassLoader loader = Thread.currentThread().getContextClassLoader();
         final String xml = new String(ByteStreams.toByteArray(in), StandardCharsets.UTF_8);
         Map<String, String> namespaceMap = getFileNamespaceMap();
-        for (final ClassPath.ClassInfo info : ClassPath.from(loader).getTopLevelClasses()) {
-            if (info.getName().startsWith("mx.grupocorasa.sat.common.")
-                    && namespaceMap.keySet().stream().map(k -> k.split(":")[1]).anyMatch(k -> k.equalsIgnoreCase(info.getPackageName()))
-                    && xml.contains(Objects.requireNonNull(namespaceMap.entrySet().stream().filter(entry -> entry.getKey().split(":")[1].equalsIgnoreCase(info.getPackageName())).map(Map.Entry::getValue).findAny().orElse(null)))
-            ) {
-                List<String> preList = namespaceMap.keySet().stream().filter(k ->
-                        namespaceMap.get(k.split(":")[0] + ":" + info.getPackageName()) != null
-                ).collect(Collectors.toList());
-                if (preList.stream().map(p -> p.split(":")[0]).distinct().noneMatch(pre -> xml.contains("<" + pre + ":")))
-                    continue;
-                if (preList.size() > 1) {
-                    String pre = preList.get(0).split(":")[0];
-                    int startIndex = xml.indexOf("<" + pre);
-                    Matcher versionMatcher = Pattern.compile("(?<=[V|v]ersion=\")((.)*?)(?=\")", Pattern.CASE_INSENSITIVE).matcher(xml.substring(startIndex));
-                    if (versionMatcher.find()) {
-                        String version = versionMatcher.group().replace(".", "");
-                        if (!info.getName().contains(version)) continue;
+        namespaceMap.entrySet().stream()
+                .filter(entry -> xml.toLowerCase(Locale.ROOT).contains(entry.getValue().toLowerCase(Locale.ROOT)))
+                .forEach(entry -> {
+                    String ns = entry.getKey().split(":")[0];
+                    String pkg = entry.getKey().split(":")[1];
+                    if (!xml.contains("<" + ns + ":")) return;
+                    if (namespaceMap.entrySet().stream().filter(e -> e.getValue().equalsIgnoreCase(entry.getValue())).count() > 1) {
+                        int startIndex = xml.indexOf("<" + ns);
+                        Matcher versionMatcher = Pattern.compile("(?<=[V|v]ersion=\")((.)*?)(?=\")", Pattern.CASE_INSENSITIVE).matcher(xml.substring(startIndex));
+                        if (versionMatcher.find()) {
+                            String version = versionMatcher.group().replace(".", "");
+                            if (!entry.getKey().contains(version)) return;
+                        }
                     }
-                }
-                defineContexts(contexts, info);
-            }
-        }
+                    defineContexts(contexts, ns, pkg, entry.getValue());
+                });
         return JAXBContext.newInstance(JOINER.join(contexts));
     }
 }
