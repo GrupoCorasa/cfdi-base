@@ -33,6 +33,7 @@ public final class CFDv40 extends CFDv4 {
             "/xsd/cfd/4/cfdv40.xsd",
             "/xsd/common/CartaPorte/CartaPorte20.xsd",
             "/xsd/common/CartaPorte/CartaPorte30.xsd",
+            "/xsd/common/CartaPorte/CartaPorte31.xsd",
             "/xsd/common/ComercioExterior11/ComercioExterior11.xsd",
             "/xsd/common/ComercioExterior20/ComercioExterior20.xsd",
             "/xsd/common/EstadoDeCuentaCombustible/ecc12.xsd",
