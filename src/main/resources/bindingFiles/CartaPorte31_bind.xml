@@ -1,0 +1,39 @@
+<jaxb:bindings version="3.0"
+    xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
+    xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <jaxb:bindings>
+        <jaxb:globalBindings typesafeEnumMaxMembers="100000" typesafeEnumMemberName="generateName">
+            <xjc:javaType name="java.time.LocalDateTime" xmlType="xs:dateTime" adapter="mx.grupocorasa.sat.util.DateTimeAdapter"/>
+            <xjc:javaType name="java.time.LocalDate" xmlType="xs:date" adapter="mx.grupocorasa.sat.util.DateAdapter"/>
+        </jaxb:globalBindings>
+    </jaxb:bindings>
+	<jaxb:bindings>
+        <jaxb:bindings schemaLocation="../xsd/common/catalogos/catCFDI.xsd" node="/xs:schema">
+            <jaxb:schemaBindings>
+                <jaxb:package name="mx.grupocorasa.sat.common.catalogos"/>
+            </jaxb:schemaBindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
+	<jaxb:bindings>
+        <jaxb:bindings schemaLocation="../xsd/common/catalogos/ComExt/catComExt.xsd" node="/xs:schema">
+            <jaxb:schemaBindings>
+                <jaxb:package name="mx.grupocorasa.sat.common.catalogos.ComExt"/>
+            </jaxb:schemaBindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
+	<jaxb:bindings>
+        <jaxb:bindings schemaLocation="../xsd/common/catalogos/CartaPorte/catCartaPorte.xsd" node="/xs:schema">
+            <jaxb:schemaBindings>
+                <jaxb:package name="mx.grupocorasa.sat.common.catalogos.CartaPorte"/>
+            </jaxb:schemaBindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
+	<jaxb:bindings>
+        <jaxb:bindings schemaLocation="../xsd/common/CartaPorte/CartaPorte31.xsd" node="/xs:schema">
+            <jaxb:schemaBindings>
+                <jaxb:package name="mx.grupocorasa.sat.common.CartaPorte31"/>
+            </jaxb:schemaBindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
+</jaxb:bindings>

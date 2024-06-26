@@ -9,7 +9,7 @@ plugins {
 apply from: 'download.gradle'
 
 group 'mx.grupocorasa.cfdibase'
-version '4.0.17'
+version '4.0.18'
 
 publishing {
     repositories {
@@ -20,7 +20,7 @@ publishing {
                 username = env.USERNAME.value
                 password = env.GP_TOKEN.value
             }
-        }
+            }
     }
     publications {
         gpr(MavenPublication) {
@@ -316,6 +316,11 @@ xjcGeneration {
 			bindingFile = 'src/main/resources/bindingFiles/CartaPorte30_bind.xml'
 			schemaRootDir = 'src/main/resources'
 			schemaFile = 'xsd/common/CartaPorte/CartaPorte30.xsd'
+		}
+		mx_grupocorasa_sat_common_CartaPorte31{
+			bindingFile = 'src/main/resources/bindingFiles/CartaPorte31_bind.xml'
+			schemaRootDir = 'src/main/resources'
+			schemaFile = 'xsd/common/CartaPorte/CartaPorte31.xsd'
 		}
 		mx_grupocorasa_sat_cfd_40{
 			bindingFile = 'src/main/resources/bindingFiles/cfdv40_bind.xml'
