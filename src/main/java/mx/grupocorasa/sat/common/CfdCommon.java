@@ -229,6 +229,7 @@ public abstract class CfdCommon implements CfdInterface {
     private Map<String, String> getFileNamespaceMap() {
         Map<String, String> namespaceMap = new HashMap<>();
 		namespaceMap.put("ecc:mx.grupocorasa.sat.common.ecc", "http://www.sat.gob.mx/ecc");
+		namespaceMap.put("valesdedespensa:mx.grupocorasa.sat.common.valesdedespensa10", "http://www.sat.gob.mx/valesdedespensa");
 		namespaceMap.put("vehiculousado:mx.grupocorasa.sat.common.vehiculousado10", "http://www.sat.gob.mx/vehiculousado");
 		namespaceMap.put("psgecfd:mx.grupocorasa.sat.common.psgecfd", "http://www.sat.gob.mx/psgecfd");
 		namespaceMap.put("cce20:mx.grupocorasa.sat.common.ComercioExterior20", "http://www.sat.gob.mx/ComercioExterior20");
